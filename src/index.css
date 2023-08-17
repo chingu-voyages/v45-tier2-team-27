@@ -1,3 +1,216 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  @apply font-custom-lexend-exa;   
+}
+
+.app-border{
+    @apply bg-no-repeat m-1 ml-2;
+    background-image: url('/images/outline-small.png');
+}
+
+/* LANDING */
+
+.landing-container{
+    @apply flex flex-col justify-between items-center 
+}
+
+.landing-title{
+    @apply text-3xl mb-12 mt-[4.5rem]
+}
+
+.asteroid-container{
+    @apply flex flex-col mb-[6.5rem] text-center 
+}
+
+.year-select,
+.meteorite-composition,
+.mass-range{
+  @apply focus:outline-none w-44 shadow-md
+}
+
+.year-select{
+    @apply mb-[6.5rem] mr-40 
+}
+
+.meteorite-composition{
+    @apply mb-[6.5rem] mr-40 
+}
+
+.mass-range{
+    @apply mb-[6rem]
+}
+
+.landing-btn-container{
+    @apply flex flex-col pb-16
+}
+
+.clear-btn,
+.search-btn{
+    @apply border-t-2 border-b-2 px-5 py-1
+}
+
+.search-btn{
+    @apply border-black ;
+    border-radius: 12px 0 12px 0px
+}
+
+.clear-btn{
+    @apply border-gray-500 mb-7;
+    border-radius: 12px 0px 12px 0
+}
+
+   /* TRAPEZOIDS */
+
+   .asteroid-trap,
+   .upside-down-asteroid-trap,
+   .year-trap,
+   .upside-down-year-trap,
+   .composition-trap,
+   .upside-down-composition-trap,
+   .mass-trap,
+   .upside-down-mass-trap {
+    @apply w-[60px] border-b-[6px] border-black border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+   }
+
+   .upside-down-asteroid-trap,
+   .upside-down-composition-trap,
+   .upside-down-mass-trap,
+   .upside-down-year-trap {
+    @apply rotate-180;  
+   }
+
+   .year-trap{
+    @apply mr-[17rem];
+   }
+
+   .upside-down-year-trap{
+    @apply relative top-[-104px] mr-[17rem] ;
+   }
+
+   .composition-trap{
+    @apply mr-[17rem] ;
+   }
+
+   .upside-down-composition-trap{
+    @apply relative top-[-104px] mr-[17rem];
+   }
+
+   .mass-trap{
+    @apply mr-28;
+   }
+
+   .upside-down-mass-trap{
+    @apply relative bottom-[5.9rem] right-[3.6rem];
+  
+   }
+
+   /* GLOBE */
+
+   .globe-container{
+    @apply absolute top-[17rem] right-0
+   }
+
+   /* LINES */
+
+  .line {
+    @apply absolute border-[1px] border-black;
+    
+  }
+  
+  .line-1 {
+    @apply top-[11.7rem] right-[4rem] h-[5.9rem] rotate-[165deg];
+  }
+
+  .line-2{
+    @apply top-[18.6rem] right-[8rem] h-[3.8rem] rotate-[110deg];
+  }
+
+  .line-3{
+    @apply top-[24.9rem] right-[8rem] h-[3.9rem] rotate-[70deg];
+  }
+  
+  .line-4 {
+    @apply top-[28.6rem] right-[4.2rem] h-24 rotate-[20deg];
+  }
+
+  .dot{
+    @apply absolute w-1.5 h-1.5 bg-black rounded-xl bottom-[-4px] left-[100%] transform translate-x-[-50%];
+  }
+
+  /* Media */
+  
+  @media(min-width: 375px){
+
+      .app-border{
+        background-image: url('/images/outline.png');
+    }
+    
+    .line-1 {
+        @apply top-[12rem] right-[4.3rem] h-[5.6rem] rotate-[115deg];
+      }
+    
+      .line-2{
+        @apply top-[18.8rem] right-[8.3rem] h-[4.2rem] rotate-[115deg];
+      }
+    
+      .line-3{
+        @apply top-[24.8rem] right-[8.4rem] h-[4.3rem] rotate-[70deg];
+      }
+      
+      .line-4 {
+        @apply top-[29.5rem] right-[4.10rem] h-[6.1rem] rotate-[30deg];
+      }
+  }
+
+  @media(min-width: 390px){
+
+    .app-border{
+      background-image: url('/images/outline-md.png');
+  }
+   
+    .line-1 {
+      @apply top-[11.9rem] right-[4.3rem] h-[5.8rem] rotate-[155deg];
+    }
+  
+    .line-2{
+      @apply top-[18.5rem] right-[8.6rem] h-[4.7rem] rotate-[115deg];
+    }
+  
+    .line-3{
+      @apply top-[24.5rem] right-[8.4rem] h-[4.6rem] rotate-[70deg];
+    }
+    
+    .line-4 {
+      @apply top-[29.5rem] right-[4.50rem] h-[6.3rem] rotate-[30deg];
+    }
+      
+  }
+
+  @media(min-width: 405px){
+
+    .app-border{
+      background-image: url('/images/outline-lg.png');
+    }
+    
+    .line-1 {
+      @apply top-[11.9rem] right-[5.2rem] h-[6.2rem] rotate-[155deg];
+    }
+
+    .line-2{
+      @apply top-[18.3rem] right-[9rem] h-[5.4rem] rotate-[115deg];
+    }
+
+    .line-3{
+      @apply top-[23.9rem] right-[8.7rem] h-[5.9rem] rotate-[70deg];
+    }
+    
+    .line-4 {
+      @apply top-[28.5rem] right-[5rem] h-[6.7rem] rotate-[30deg];
+    }
+      
+  }
+
+  
