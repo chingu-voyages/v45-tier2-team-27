@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+   
+   /* TRAPEZOIDS */
+
+   .asteroid-trap,
+   .upside-down-asteroid-trap,
+   .year-trap,
+   .upside-down-year-trap,
+   .composition-trap,
+   .upside-down-composition-trap,
+   .mass-trap,
+   .upside-down-mass-trap {
+    @apply w-[55px] border-b-[6px] border-black border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+   }
+
+   .year-trap,
+   .composition-trap,
+   .mass-trap,
+   .asteroid-trap{
+    @apply invisible
+   }
+
+   .upside-down-asteroid-trap,
+   .upside-down-composition-trap,
+   .upside-down-mass-trap,
+   .upside-down-year-trap {
+    @apply rotate-180;  
+   }
+
+   .year-dropdown-container:hover .year-trap,
+   .composition-dropdown-container:hover .composition-trap,
+   .mass-dropdown-container:hover .mass-trap,
+   .asteroid-input-container:hover .asteroid-trap {
+    @apply visible;
+  }
+
+   .year-trap{
+    @apply mr-[17rem] ;
+   }
+
+   .upside-down-year-trap{
+    @apply relative mr-[17rem] ;
+   }
+
+   .composition-trap{
+    @apply mr-[17rem] ;
+   }
+
+   .upside-down-composition-trap{
+    @apply relative  mr-[17rem];
+   }
+

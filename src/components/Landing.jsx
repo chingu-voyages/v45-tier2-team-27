@@ -5,59 +5,111 @@ import Trapezoid from "./Trapezoid";
 
 export default function Landing(){
 
+    const generateYearOptions = () => {
+        const currentYear = new Date().getFullYear();
+        const startYear = 1900;
+        const yearOptions = [];
+      
+        for (let year = currentYear; year >= startYear; year -= 10) {
+          yearOptions.push(
+            <option key={year} value={year}>
+              {Math.max(year - 9, startYear)} - {year}
+            </option>
+          );
+        }
+      
+        return yearOptions;
+      };
+
+      const compositions = [
+        { value: 'iron', label: 'Iron' },
+        { value: 'stony', label: 'Stony' },
+        { value: 'chondrite', label: 'Chondrite' },
+      ];
+    
+      const massRanges = [
+        { value: 'small', label: 'Small' },
+        { value: 'medium', label: 'Medium' },
+        { value: 'large', label: 'Large' },
+      ];
+
     return(
         <div className="landing-container">
             <h1 className="landing-title">FIREBALL</h1>
             <div className="asteroid-container">
-                <div className="asteroid-trap">
-                    <Trapezoid />
-                </div>  
-                <input placeholder="Type Asteroid Name" className="shadow-md" type="text" />
-                <div className="upside-down-asteroid-trap">
-                    <Trapezoid />
+                <div className="asteroid-input-container">
+                    <div className="asteroid-trap">
+                        <Trapezoid />
+                    </div>  
+                    <input className="asteroid-input" type="text" />
+                    <div className="upside-down-asteroid-trap">
+                        <Trapezoid />
+                    </div>
                 </div>
+                <p className="asteroid-text">Asteroid Name</p>
             </div>
 
-            <div className="year-trap">
-                <Trapezoid />
-            </div>
-            <select name="year-select" id="year-select" className="year-select ">
-                <option value="" disabled selected>Select a Year</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-            </select>
-            <div className="upside-down-year-trap">
-                <Trapezoid />
-            </div>
 
-            <div className="composition-trap">
-                <Trapezoid />
+            <div className="year-select-container">
+                <div className="year-dropdown-container">
+                    <div className="year-trap">
+                        <Trapezoid />
+                    </div>
+                    <select name="year-select" id="year-select" className="year-select hover-show-trap">
+                        <option value="" disabled selected></option>
+                        {generateYearOptions()}
+                    </select>
+                    
+                    <div className="upside-down-year-trap">
+                        <Trapezoid />
+                    </div>
+                </div>
+                <p className="year-dropdown-text">Year of Strike</p>
             </div>
-            <select name="Meteorite-composition" id="meteorite-composition" className="meteorite-composition">
-                <option value="" disabled selected>Select a Composition</option>
-                <option value="iron">Iron</option>
-                <option value="stony">Stony</option>
-                <option value="chondrite">Chondrite</option>
-            </select>
-            <div className="upside-down-composition-trap">
-                <Trapezoid />
+            
+            
+            <div className="composition-select-container">
+                <div className="composition-dropdown-container">
+                    <div className="composition-trap">
+                        <Trapezoid />
+                    </div>
+                    <select name="Meteorite-composition" id="meteorite-composition" className="meteorite-composition">
+                        <option value="" disabled selected></option>
+                        {compositions.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                        ))}
+                    </select>
+                    <div className="upside-down-composition-trap">
+                        <Trapezoid />
+                    </div>
+                </div>
+                <p className="composition-dropdown-text">Meteorite Composition</p>
             </div>
+            
+            <div className="mass-select-container">
+                <div className="mass-dropdown-container">
+                    <div className="mass-trap">
+                        <Trapezoid />
+                    </div>
+                    <select name="Mass Range" id="mass-range" className="mass-range">
+                        <option value="" disabled selected></option>
+                        {massRanges.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                        ))}
+                    </select>
+                    <div className="upside-down-mass-trap">
+                        <Trapezoid />
+                    </div>
+                </div>
+                <p className="mass-dropdown-text">Mass Range</p>
+            </div>
+            
 
-            <div className="mass-trap">
-                <Trapezoid />
-            </div>
-            <select name="Mass Range" id="mass-range" className="mass-range">
-                <option value="" disabled selected>Select a Mass Range</option>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <div className="upside-down-mass-trap">
-                <Trapezoid />
-            </div>
-
-            <div className="landing-btn-container">
+            <div className="landing-btn-container mt-5">
                 <button className="clear-btn">CLEAR</button>
                 <button className="search-btn">SEARCH</button>
             </div>

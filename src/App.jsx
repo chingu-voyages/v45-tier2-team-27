@@ -1,5 +1,8 @@
 import { createContext, useState } from "react"
 import './App.css'
+import './Landing.css'
+import './ConnectingLines.css'
+import './trapezoid.css'
 import Landing from './components/Landing'
 
 
@@ -10,7 +13,8 @@ function App() {
 
   return (
     <AuthContext.Provider value={{meteoriteData, setMeteoriteData}}>
-      <div className='app-border'>
+      <img src="/images/outline.png" alt="" className="app-border"/>
+      <div>
         <Landing />  
       </div>     
     </AuthContext.Provider>
