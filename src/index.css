@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  @apply font-custom-lexend-exa;   
+}
+
+.app-border{
+    @apply absolute top-0 left-0 bg-transparent z-0 w-screen p-4 h-[50rem] pointer-events-none;
+}
+
+
+
+   
+
+  

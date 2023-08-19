@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* LANDING */
+
+.landing-container{
+    @apply flex flex-col items-center 
+}
+
+.landing-title{
+    @apply text-3xl mb-12 mt-[4rem]
+}
+
+.asteroid-container{
+    @apply flex flex-col mb-[6.5rem] text-center 
+}
+
+.asteroid-input{
+    @apply px-2
+}
+
+.year-select,
+.meteorite-composition,
+.mass-range,
+.asteroid-input{
+  @apply focus:outline-none w-[186px] py-0.5 border-b-2 border-black border-b border-black bg-transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+ 
+}
+
+.year-select,
+.meteorite-composition,
+.mass-range,
+.asteroid-input{
+    @apply py-1
+}
+
+.year-dropdown-container:hover .year-select,
+.composition-dropdown-container:hover .meteorite-composition,
+.mass-dropdown-container:hover .mass-range,
+.asteroid-input-container:hover .asteroid-input{
+    @apply bg-white border rounded-sm py-1;
+    -webkit-appearance: menulist; 
+    -moz-appearance: menulist; 
+}
+
+.year-select{
+    @apply my-0 py-0 
+}
+
+.year-select-container,
+.composition-select-container {
+    @apply mb-[5.5rem] py-0 ;
+}
+
+.mass-select-container{
+    @apply  h-10  mb-8
+}
+
+.mass-dropdown-container{
+    @apply w-[11.7rem] p-0 m-0 h-10
+}
+
+.year-dropdown-container{
+    @apply w-[11.7rem] mr-[8.5rem]
+  }
+
+.year-dropdown-text,
+.mass-dropdown-text,
+.composition-dropdown-text{
+    @apply relative  left-[3.5rem] text-xs py-0 mt-[-7px]
+}
+
+.asteroid-text{
+    @apply absolute text-xs top-48  right-36 
+}
+
+.mass-dropdown-text{
+    @apply mt-[-13px] py-1
+}
+
+.meteorite-composition,
+.mass-range{
+    @apply my-0 py-0
+}
+
+.landing-btn-container{
+    @apply flex flex-col pb-16
+}
+
+.clear-btn,
+.search-btn{
+    @apply border-t-2 border-b-2 px-5 py-1
+}
+
+.search-btn{
+    @apply border-black ;
+    border-radius: 12px 0 12px 0px
+}
+
+.clear-btn{
+    @apply border-gray-500 mb-7;
+    border-radius: 12px 0px 12px 0
+}
+
+/* GLOBE */
+
+.globe-container{
+@apply absolute top-[17rem] right-0
+}
+
+   

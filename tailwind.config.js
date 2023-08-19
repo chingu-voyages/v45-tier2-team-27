@@ -6,7 +6,11 @@ export default {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'custom-lexend-exa': ['Lexend Exa', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

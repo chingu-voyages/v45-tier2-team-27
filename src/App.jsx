@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { createContext, useState } from "react"
 import './App.css'
+import './Landing.css'
+import './ConnectingLines.css'
+import './trapezoid.css'
+import Landing from './components/Landing'
+
+
+export const AuthContext = createContext()
 
 function App() {
-
+  const [meteoriteData, setMeteoriteData] = useState([])
 
   return (
-    <>
-      <div className='text-2xl text-indigo-700'>Hello World</div>
-      <div>Hey Again</div>
-    </>
+    <AuthContext.Provider value={{meteoriteData, setMeteoriteData}}>
+      <img src="/images/outline.png" alt="" className="app-border"/>
+      <div>
+        <Landing />  
+      </div>     
+    </AuthContext.Provider>
   )
 }
 
