@@ -3,6 +3,7 @@ import './App.css'
 import './Landing.css'
 import './ConnectingLines.css'
 import './trapezoid.css'
+import './BorderImages.css'
 import Landing from './components/Landing'
 
 
@@ -13,7 +14,6 @@ function App() {
 
   return (
     <AuthContext.Provider value={{meteoriteData, setMeteoriteData}}>
-      <img src="/images/outline.png" alt="" className="app-border"/>
       <div>
         <Landing />  
       </div>     

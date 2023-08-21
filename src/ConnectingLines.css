@@ -11,11 +11,11 @@
   }
   
   .line-1 {
-    @apply top-[11.8rem] right-[3.9rem] h-[6rem] rotate-[165deg];
+    @apply top-[11.5rem] right-[3.9rem] h-[6.2rem] rotate-[165deg];
   }
 
   .line-2{
-    @apply top-[19.6rem] right-[7.7rem] h-[3.2rem] rotate-[110deg];
+    @apply top-[19.45rem] right-[7.7rem] h-[3.2rem] rotate-[110deg];
   }
 
   .line-3{
@@ -33,18 +33,14 @@
   /* Media */
   
   @media(min-width: 380px){
-    
-    .line {
-        @apply absolute border-[1px] border-black;
-        
-      }
+
       
       .line-1 {
-        @apply top-[11.8rem] right-[4.2rem] h-[6rem] rotate-[160deg];
+        @apply top-[11.4rem] right-[4.5rem] h-[6.6rem] rotate-[160deg];
       }
     
       .line-2{
-        @apply top-[19.5rem] right-[8rem] h-[3.7rem] rotate-[110deg];
+        @apply top-[19.3rem] right-[8rem] h-[3.7rem] rotate-[110deg];
       }
     
       .line-3{
@@ -58,34 +54,26 @@
 
   @media(min-width: 390px){
 
-  .line {
-    @apply absolute border-[1px] border-black;
-    
-  }
   
   .line-1 {
-    @apply top-[11.8rem] right-[4.2rem] h-[6rem] rotate-[160deg];
+    @apply top-[11.2rem] right-[4.6rem] h-[6.7rem] rotate-[155deg];
   }
 
   .line-2{
-    @apply top-[19.5rem] right-[8rem] h-[3.7rem] rotate-[110deg];
+    @apply top-[19rem] right-[8.3rem] h-[4.4rem] rotate-[110deg];
   }
 
   .line-3{
-    @apply top-[25.2rem] right-[7.7rem] h-[4.8rem] rotate-[60deg];
+    @apply top-[24.7rem] right-[8rem] h-[5.4rem] rotate-[60deg];
   }
   
   .line-4 {
-    @apply top-[28.7rem] right-[4.4rem] h-[8.6rem] rotate-[15deg];
+    @apply top-[28.6rem] right-[4.4rem] h-[8.9rem] rotate-[24deg];
   }
 }
 
   @media(min-width: 405px){
-    
-    .line {
-        @apply absolute border-[1px] border-black;
-        
-      }
+
       
       .line-1 {
         @apply top-[11.4rem] right-[5rem] h-[6.8rem] rotate-[160deg];
@@ -106,11 +94,7 @@
   }
 
   @media(min-width: 420px){
-    
-    .line {
-        @apply absolute border-[1px] border-black;
-        
-      }
+
       
       .line-1 {
         @apply top-[11.4rem] right-[5.3rem] h-[7.1rem] rotate-[160deg];
@@ -131,11 +115,7 @@
   }
 
   @media(min-width: 450px){
-    
-    .line {
-        @apply absolute border-[1px] border-black;
-        
-      }
+
       
       .line-1 {
         @apply top-[11.2rem] right-[5.7rem] h-[7.4rem] rotate-[150deg];
@@ -154,3 +134,82 @@
       }
       
   }
+
+  @media(min-width: 470px){
+    
+
+      
+      .line-1 {
+        @apply top-[10.9rem] right-[6rem] h-[7.7rem] rotate-[145deg];
+      }
+    
+      .line-2{
+        @apply top-[17.7rem] right-[9.5rem] h-[6.6rem] rotate-[100deg];
+      }
+    
+      .line-3{
+        @apply top-[23.6rem] right-[9.2rem] h-[7.7rem] rotate-[70deg];
+      }
+      
+      .line-4 {
+        @apply top-[27.9rem] right-[6rem] h-[9.9rem] rotate-[30deg];
+      }
+      
+  }
+
+  @media(min-width: 495px){
+    
+      .line-1 {
+        @apply top-[10.6rem] right-[6.4rem] h-[8.3rem] rotate-[140deg];
+      }
+    
+      .line-2{
+        @apply top-[17.5rem] right-[9.9rem] h-[7.3rem] rotate-[100deg];
+      }
+    
+      .line-3{
+        @apply top-[23.2rem] right-[9.7rem] h-[8.3rem] rotate-[70deg];
+      }
+      
+      .line-4 {
+        @apply top-[27.75rem] right-[6.2rem] h-[10.3rem] rotate-[35deg];
+      }
+  }
+
+  @media(min-width: 520px){
+    
+    .line-1 {
+      @apply top-[10.5rem] right-[7.1rem] h-[8.9rem] rotate-[140deg];
+    }
+  
+    .line-2{
+      @apply top-[17.15rem] right-[10.3rem] h-[8.2rem] rotate-[100deg];
+    }
+  
+    .line-3{
+      @apply top-[22.7rem] right-[10.1rem] h-[9.1rem] rotate-[70deg];
+    }
+    
+    .line-4 {
+      @apply top-[27.45rem] right-[6.75rem] h-[10.9rem] rotate-[38deg];
+    }
+}
+
+@media(min-width: 540px){
+    
+  .line-1 {
+    @apply top-[10.2rem] right-[7.3rem] h-[9.5rem] rotate-[135deg];
+  }
+
+  .line-2{
+    @apply top-[16.85rem] right-[10.6rem] h-[8.8rem] rotate-[100deg];
+  }
+
+  .line-3{
+    @apply top-[22.3rem] right-[10.5rem] h-[9.7rem] rotate-[70deg];
+  }
+  
+  .line-4 {
+    @apply top-[27.1rem] right-[7.1rem] h-[11.4rem] rotate-[40deg];
+  }
+}

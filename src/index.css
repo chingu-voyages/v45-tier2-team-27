@@ -7,7 +7,7 @@ body{
 }
 
 .app-border{
-    @apply absolute top-0 left-0 bg-transparent z-0 w-screen p-4 h-[50rem] pointer-events-none;
+    @apply absolute top-0 left-0 bg-transparent z-0 w-screen p-4 h-[50.5rem] pointer-events-none;
 }
 
 
