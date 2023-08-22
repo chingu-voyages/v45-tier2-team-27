@@ -17,7 +17,7 @@
 }
 
 .bottom-border-line{
-    @apply absolute bottom-[25.75rem] left-[5rem] h-[1.4px] w-[60%] bg-gray-500
+    @apply absolute bottom-[26rem] left-[5rem] h-[1.4px] w-[60%] bg-gray-500
 }
 
 .top-right-border-line{
