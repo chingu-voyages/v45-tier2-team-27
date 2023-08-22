@@ -7,6 +7,7 @@ export default function Globe(){
             <div className="globe-container">
                 <img className="globe-img" src="./images/globe.png" alt="" />
             </div>
+            <img className="globe-gif" src="./images/globe.gif" alt="" />
         </div>
        
     )

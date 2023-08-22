@@ -3,6 +3,7 @@ import './App.css';
 import './Landing.css';
 import './ConnectingLines.css';
 import './trapezoid.css';
+import './BorderImages.css'
 import Landing from './components/Landing';
 import { Route, Routes } from 'react-router-dom';
 import LineChart from './components/LineChart';
@@ -16,14 +17,12 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ meteoriteData, setMeteoriteData }}>
-      <img src="/images/outline.png" alt="" className="app-border" />
       <div>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/linechart" element={<LineChart />} />
           <Route path="/barchart" element={<BarChart />} />
           <Route path="/radiochart" element={<RadialChartComponent />} />
-
         </Routes>
       </div>
     </AuthContext.Provider>

@@ -1,4 +1,5 @@
 
+import BorderImages from "./BorderImages";
 import ConnectingLines from "./ConnectingLines"
 import Globe from "./Globe";
 import Trapezoid from "./Trapezoid";
@@ -35,7 +36,7 @@ export default function Landing(){
 
     return(
         <div className="landing-container">
-            <h1 className="landing-title">FIREBALL</h1>
+            <h1 className="landing-title">SKYFALL</h1>
             <div className="asteroid-container">
                 <div className="asteroid-input-container">
                     <div className="asteroid-trap">
@@ -110,14 +111,22 @@ export default function Landing(){
             
 
             <div className="landing-btn-container mt-5">
-                <button className="clear-btn">CLEAR</button>
-                <button className="search-btn">SEARCH</button>
+                <div className="search-btn-container">
+                    <img className="small-black-border" src="/images/small-black-border.png" alt="" />
+                    <button className="search-btn">SEARCH</button>
+                </div>
+                <div className="clear-btn-container">
+                    <button className="clear-btn">CLEAR</button>
+                    <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
+                </div>
             </div>
 
             <div className="landing-globe-container">
                 <Globe />
                 <ConnectingLines />
             </div>
+
+            <BorderImages />
         </div>
     )
 }

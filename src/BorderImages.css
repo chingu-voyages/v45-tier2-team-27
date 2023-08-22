@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.top-left-border-img{
+    @apply absolute top-[1.8rem] left-[1.3rem]
+}
+
+.top-border-container{
+    @apply mt-5 bg-blue-500
+}
+
+
+.top-border-line{
+    @apply absolute top-[2.95rem] left-[7.5rem] w-[34%] bg-gray-500 h-[1.4px]
+}
+
+.bottom-border-line{
+    @apply absolute bottom-[26rem] left-[5rem] h-[1.4px] w-[60%] bg-gray-500
+}
+
+.top-right-border-line{
+    @apply absolute top-[12rem] h-[1.5px] right-[-4.19rem] w-40 bg-gray-500 rotate-[90deg]
+}
+
+.bottom-right-border-line{
+    @apply absolute top-[38.95rem] h-[1.5px] right-[-8.96rem] w-[19.5rem] bg-gray-500 rotate-[90deg]
+}
+
+.left-border-line{
+    @apply absolute top-[27.5rem] left-[-20.39rem] h-[1.5px] w-[42.4rem] bg-gray-500 rotate-[90deg] 
+}
+
+
+
+    .app-border{
+        @apply hidden
+    }
+
+    .border-container{
+        @apply flex
+    }
+
+    .bottom-border-container{
+        @apply mt-[-90px]
+    }
+
+    /* Border images */
+
+    .top-left-border-img{
+        @apply absolute top-8 left-4
+    }
+
+    .top-right-border-img{
+        @apply absolute top-[1.19rem] right-[0.9rem]
+    }
+
+    .bottom-right-border-img{
+        @apply absolute right-[1.7rem] bottom-[26.3rem]
+    }
+
+    .bottom-left-border-img{
+        @apply absolute left-4 bottom-[26.5rem]
+    }
+
+    .side-bar-img{
+        @apply absolute right-5 top-40
+    }
+
+    /* Borders */
+
+    .top-right-border{
+        @apply absolute top-4 right-3
+    }
+
+    .top-left-border{
+        @apply absolute top-4 left-3
+    }
+
+    .bottom-right-border{
+        @apply absolute right-3
+    }
+
+    .bottom-left-border{
+        @apply absolute left-3
+    }
+
+ 
+
+    @media(min-width: 371px){
+        .top-border-line{
+            @apply w-[36%]
+        }
+
+        .bottom-border-line{
+            @apply w-[62%]
+        }
+    }
+
+    @media(min-width: 383px){
+        .top-border-line{
+            @apply w-[39%]
+        }
+
+        .bottom-border-line{
+            @apply w-[64%]
+        }
+    }
+
+    @media(min-width: 400px){
+        .top-border-line{
+            @apply w-[42%]
+        }
+
+        .bottom-border-line{
+            @apply w-[66%]
+        }
+    }
+
+    @media(min-width: 423px){
+        .top-border-line{
+            @apply w-[45%]
+        }
+
+        .bottom-border-line{
+            @apply w-[68%]
+        }
+    }
+
+    @media(min-width: 446px){
+        .top-border-line{
+            @apply w-[48%]
+        }
+
+        .bottom-border-line{
+            @apply w-[70%]
+        }
+    }
+
+    @media(min-width: 472px){
+        .top-border-line{
+            @apply w-[50%]
+        }
+
+        .bottom-border-line{
+            @apply w-[72%]
+        }
+    }
+
+    @media(min-width: 491px){
+        .top-border-line{
+            @apply w-[53%]
+        }
+
+        .bottom-border-line{
+            @apply w-[73%]
+        }
+    }
+
+    @media(min-width: 521px){
+        .top-border-line{
+            @apply w-[55%]
+        }
+
+        .bottom-border-line{
+            @apply w-[74%]
+        }
+    }
+
+    @media(min-width: 545px){
+        .top-border-line{
+            @apply w-[57%]
+        }
+
+        .bottom-border-line{
+            @apply w-[75%]
+        }
+    }
+
+    @media(min-width: 569px){
+        .top-border-line{
+            @apply w-[58%]
+        }
+
+        .bottom-border-line{
+            @apply w-[76%]
+        }
+    }
+
+    @media(min-width: 579px){
+        .top-border-line{
+            @apply w-[60%]
+        }
+
+        .bottom-border-line{
+            @apply w-[77%]
+        }
+    }
+
+    @media(min-width: 612px){
+        .top-border-line{
+            @apply w-[62%]
+        }
+
+        .bottom-border-line{
+            @apply w-[78%]
+        }
+    }
+
+    @media(min-width: 646px){
+        .top-border-line{
+            @apply w-[64%]
+        }
+
+        .bottom-border-line{
+            @apply w-[79%]
+        }
+    }
+
+    @media(min-width: 680px){
+        .top-border-line{
+            @apply w-[65%]
+        }
+
+        .bottom-border-line{
+            @apply w-[80%]
+        }
+    }
+
+    @media(min-width: 700px){
+        .top-border-line{
+            @apply w-[66%]
+        }
+
+        .bottom-border-line{
+            @apply w-[81%]
+        }
+    }
+
+    @media(min-width: 722px){
+        .top-border-line{
+            @apply w-[67%]
+        }
+
+        .bottom-border-line{
+            @apply w-[82%]
+        }
+    }
+
+    @media(min-width: 740px){
+        .top-border-line{
+            @apply w-[68%]
+        }
+    }
+
+    @media(min-width: 766px){
+        .top-border-line{
+            @apply w-[69%]
+        }
+    }
+
+    @media(min-width: 790px){
+        .top-border-line{
+            @apply w-[70%]
+        }
+
+        .bottom-border-line{
+            @apply w-[83%]
+        }
+    }
+
+    @media(min-width: 820px){
+        .top-border-line{
+            @apply w-[71%]
+        }
+    }
+
+    @media(min-width: 845px){
+        .top-border-line{
+            @apply w-[72%]
+        }
+    }
+
+    @media(min-width: 873px){
+        .top-border-line{
+            @apply w-[73%]
+        }
+    }
+
+    @media(min-width: 909px){
+        .top-border-line{
+            @apply w-[74%]
+        }
+    }
+
+    @media(min-width: 940px){
+        .top-border-line{
+            @apply w-[75%]
+        }
+
+        .bottom-border-line{
+            @apply w-[84%]
+        }
+    }
+
+    @media(min-width: 980px){
+        .top-border-line{
+            @apply w-[76%]
+        }
+    }
+
+    @media(min-width: 1013px){
+        .top-border-line{
+            @apply w-[77%]
+        }
+
+        .bottom-border-line{
+            @apply w-[85%]
+        }
+    }
+
+    @media(min-width: 1067px){
+        .top-border-line{
+            @apply w-[78%]
+        }
+
+        .bottom-border-line{
+            @apply w-[86%]
+        }
+    }
+
+    @media(min-width: 1115px){
+        .top-border-line{
+            @apply w-[79%]
+        }
+
+        .bottom-border-line{
+            @apply w-[87%]
+        }
+    }
+
+    @media(min-width: 1168px){
+        .top-border-line{
+            @apply w-[80%]
+        }
+
+        .bottom-border-line{
+            @apply w-[88%]
+        }
+    }
+
+    @media(min-width: 1227px){
+        .top-border-line{
+            @apply w-[81%]
+        }
+
+        .bottom-border-line{
+            @apply w-[89%]
+        }
+    }

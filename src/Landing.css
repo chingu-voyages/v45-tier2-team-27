@@ -10,7 +10,7 @@
 }
 
 .landing-title{
-    @apply text-3xl mb-12 mt-[4rem]
+    @apply text-3xl mb-[1.85rem] mt-[5rem]
 }
 
 .asteroid-container{
@@ -75,7 +75,7 @@
 }
 
 .asteroid-text{
-    @apply absolute text-xs top-48  right-36 
+    @apply relative text-xs mt-[-7px] mb-[-7px]
 }
 
 .mass-dropdown-text{
@@ -91,19 +91,25 @@
     @apply flex flex-col pb-16
 }
 
-.clear-btn,
 .search-btn{
-    @apply border-t-2 border-b-2 px-5 py-1
+    @apply text-[24px] font-bold mb-7
 }
 
-.search-btn{
-    @apply border-black ;
-    border-radius: 12px 0 12px 0px
+.small-black-border{
+    @apply pointer-events-none fixed mb-7
+}
+
+.small-gray-border{
+    @apply pointer-events-none fixed 
+}
+
+.search-btn-container,
+.clear-btn-container{
+    @apply flex justify-center items-center
 }
 
 .clear-btn{
-    @apply border-gray-500 mb-7;
-    border-radius: 12px 0px 12px 0
+@apply text-[20px]
 }
 
 /* GLOBE */
@@ -111,5 +117,10 @@
 .globe-container{
 @apply absolute top-[17rem] right-0
 }
+
+.globe-gif{
+    @apply absolute top-[18rem] w-40 right-[-83px]
+}
+
 
    
