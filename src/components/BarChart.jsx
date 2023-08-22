@@ -68,7 +68,7 @@ export default function BarChartComponent() {
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
-                    <YAxis />
+                    <YAxis scale="log" domain={['auto', 'auto']} reversed={true} />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend />
                     <Bar dataKey="mass" fill="#8884d8" />
