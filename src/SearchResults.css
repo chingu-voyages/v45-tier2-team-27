@@ -1,0 +1,16 @@
+th,td {
+    padding: 12px 0;
+    
+}
+
+.search-field {
+    border: solid 1px black;
+    border-bottom: none;
+}
+
+.search-results-data {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
