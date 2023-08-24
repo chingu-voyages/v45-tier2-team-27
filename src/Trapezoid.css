@@ -37,19 +37,29 @@
     @apply visible;
   }
 
-   .year-trap{
-    @apply mr-[17rem] ;
-   }
-
-   .upside-down-year-trap{
-    @apply relative mr-[17rem] ;
-   }
-
-   .composition-trap{
-    @apply mr-[17rem] ;
-   }
-
    .upside-down-composition-trap{
-    @apply relative  mr-[17rem];
+    @apply relative  mr-[16.8rem];
    }
 
+@media(min-width: 766px){
+  .upside-down-composition-trap,
+  .upside-down-year-trap{
+    @apply absolute left-[8.1rem] 
+  }
+
+  .composition-trap,
+  .year-trap{
+    @apply absolute left-[8.2rem] top-[-5px]
+  }
+}
+
+@media(min-width: 1280px){
+    .upside-down-asteroid-trap,
+    .asteroid-trap{
+      @apply fixed left-[12rem]
+    }
+
+    .asteroid-trap{
+      @apply mt-[-6px]
+    }
+}

@@ -9,11 +9,7 @@ export default function BorderImages(){
                 <img className="top-left-border-img" src="/images/top-left-border-img.png" alt="" />
                 <img className="top-right-border" src="/images/top-right-border.png" alt="" />
                 <img className="top-right-border-img" src="/images/top-right-border-img.png" alt="" />
-                <div className="top-border-line"></div>
-                <div className="top-right-border-line"></div>
-                <div className="bottom-right-border-line"></div>
-                <div className="left-border-line"></div>
-                <div className="bottom-border-line"></div>
+               
             </div>
 
             
