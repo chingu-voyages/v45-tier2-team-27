@@ -109,8 +109,12 @@ export default function Landing(){
                 <p className="mass-dropdown-text">Mass Range</p>
             </div>
             
+            <div className="landing-globe-container">
+                <Globe />
+                <ConnectingLines />
+            </div>
 
-            <div className="landing-btn-container mt-5">
+            <div className="landing-btn-container">
                 <div className="search-btn-container">
                     <img className="small-black-border" src="/images/small-black-border.png" alt="" />
                     <button className="search-btn">SEARCH</button>
@@ -120,12 +124,6 @@ export default function Landing(){
                     <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
                 </div>
             </div>
-
-            <div className="landing-globe-container">
-                <Globe />
-                <ConnectingLines />
-            </div>
-
             <BorderImages />
         </div>
     )

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply font-custom-lexend-exa;   
+  @apply font-custom-lexend-exa overflow-x-hidden;   
 }
 
 .app-border{
