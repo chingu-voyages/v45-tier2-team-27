@@ -6,9 +6,9 @@ export default function NewSearchBtn() {
         alt=""
         className="large-black-border absolute -top-2 left-0 right-0 m-auto"
       />
-      <button type="button" className="uppercase relative">
+      <a href="/" className="uppercase relative" aria-label="Start a new search">
         Start new search
-      </button>
+      </a>
     </div>
   );
 }
