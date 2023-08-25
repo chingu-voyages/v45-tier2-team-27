@@ -1,5 +1,14 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { PureComponent } from 'react';
+import {
+    ScatterChart,
+    Scatter,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    ZAxis
+} from "recharts";
 const data = [
     {
         name: "Aachen",
@@ -53,27 +62,31 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 
-export default function BarChartComponent() {
+export default function Scatterchart() {
     return (
         <div className="flex justify-center items-center">
-            <ResponsiveContainer width="100%" height={700}>
-                <BarChart
+            <ScatterChart
+                width={800}
+                height={300}
+                margin={{
+                    top: 65,
+                    right: 60,
+                    left: 60,
+                    bottom: -20
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" name="Meteorite Name" />
+                <YAxis dataKey="mass" name="Mass" scale="log" domain={['auto', 'auto']} reversed={true} />
+                <ZAxis dataKey="recclass" name="Recclass" />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend />
+                <Scatter
+                    name="Meteorites"
                     data={data}
-                    margin={{
-                        top: 200,
-                        right: 120,
-                        left: 120,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis scale="log" domain={['auto', 'auto']} reversed={true} />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend />
-                    <Bar dataKey="mass" fill="#8884d8" />
-                </BarChart>
-            </ResponsiveContainer>
+                    fill="#8884d8"
+                />
+            </ScatterChart>
         </div>
     );
 }
