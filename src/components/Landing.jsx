@@ -3,7 +3,7 @@ import BorderImages from "./BorderImages";
 import ConnectingLines from "./ConnectingLines"
 import Globe from "./Globe";
 import Trapezoid from "./Trapezoid";
-
+import '../landing.css';
 export default function Landing(){
 
     const generateYearOptions = () => {

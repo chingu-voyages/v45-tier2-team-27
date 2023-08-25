@@ -1,4 +1,4 @@
-
+import '../borderImages.css'
 
 export default function BorderImages(){
 
@@ -9,7 +9,6 @@ export default function BorderImages(){
                 <img className="top-left-border-img" src="/images/top-left-border-img.png" alt="" />
                 <img className="top-right-border" src="/images/top-right-border.png" alt="" />
                 <img className="top-right-border-img" src="/images/top-right-border-img.png" alt="" />
-               
             </div>
 
             
@@ -19,7 +18,6 @@ export default function BorderImages(){
                 <img className="bottom-right-border-img" src="/images/bottom-right-border-img.png" alt="" />
                 <img className="bottom-left-border-img" src="/images/bottom-left-border-img.png" alt="" />
             </div>
-           
             <img className="side-bar-img" src="/images/side-bar-img.png" alt="" />
         </div>
     )
