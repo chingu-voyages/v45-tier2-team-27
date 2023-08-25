@@ -300,3 +300,39 @@
     }
   }
 }
+
+@media(max-height: 950px){
+  .line-1 {
+    @apply top-[11.4rem] right-[5rem] h-[6.8rem] rotate-[160deg];
+  }
+
+  .line-2{
+    @apply top-[19rem] right-[8.5rem] h-[4.5rem] rotate-[110deg];
+  }
+
+  .line-3{
+    @apply top-[24.5rem] right-[8.3rem] h-[5.5rem] rotate-[60deg];
+  }
+  
+  .line-4 {
+    @apply top-[28.4rem] right-[4.9rem] h-[8.9rem] rotate-[20deg];
+  }
+}
+
+@media(max-height: 800px) {
+  .line-1 {
+    @apply top-[10.4rem] right-[4.5rem] h-[4.4rem] rotate-[155deg];
+  }
+
+  .line-2{
+    @apply top-[15rem] right-[7.9rem] h-[4.3rem] rotate-[110deg];
+  }
+
+  .line-3{
+    @apply top-[19.5rem] right-[8rem] h-[4.4rem] rotate-[60deg];
+  }
+  
+  .line-4 {
+    @apply top-[24.4rem] right-[4.5rem] h-[5.1rem] rotate-[28deg];
+  }
+}

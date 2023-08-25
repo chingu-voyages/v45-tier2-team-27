@@ -232,8 +232,27 @@
         border-radius: 100%;
     }
 }
+
+@media(max-height: 950px){
+    .search-btn,
+    .small-black-border,
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-[10rem]
+    }
+}
+
+@media(max-height: 900px){
+    .search-btn,
+    .small-black-border,
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-[10.5rem]
+    }
+}
+
    
-@media(max-height: 700px){
+@media(max-height: 800px){
     .landing-title{
         @apply mt-16
     }
@@ -259,18 +278,36 @@
     }
 
     .globe-container{
-        @apply top-[13.7rem] 
+        @apply top-[13.4rem] 
     }
     
     .globe-gif{
-        @apply top-[14.7rem] 
+        @apply top-[14.4rem] 
     }
 
-    .clear-btn{
-        @apply bottom-[5rem]
-    }
-
+    .search-btn,
+    .small-black-border,
+    .clear-btn,
     .small-gray-border{
         @apply bottom-[5rem]
+    }
+}
+
+@media(max-height: 750px){
+    .search-btn,
+    .small-black-border,
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-[3.5rem]
+    }
+}
+
+
+@media(max-height: 700px){
+    .search-btn,
+    .small-black-border,
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-[5.5rem]
     }
 }
