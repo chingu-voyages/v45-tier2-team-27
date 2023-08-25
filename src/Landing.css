@@ -259,11 +259,11 @@
     }
 
     .globe-container{
-        @apply top-[14rem] 
+        @apply top-[13.7rem] 
     }
     
     .globe-gif{
-        @apply top-[15rem] 
+        @apply top-[14.7rem] 
     }
 
     .clear-btn{
