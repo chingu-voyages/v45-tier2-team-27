@@ -1,4 +1,4 @@
-import '../borderImages.css'
+
 
 export default function BorderImages(){
 
