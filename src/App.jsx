@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 import './App.css';
-import '/src/landing.css';
-import '/src/connectingLines.css';
-import '/src/trapezoid.css';
-import '/src/borderImages.css'
+import './Landing.css';
+import './ConnectingLines.css';
+import './Trapezoid.css';
+import './BorderImages.css'
 import Landing from './components/Landing';
 import { Route, Routes } from 'react-router-dom';
 import LineChart from './components/LineChart';
