@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply font-custom-lexend-exa overflow-hidden p-0 m-0;   
+  @apply font-custom-lexend-exa overflow-hidden p-0 m-0 w-screen;   
 }
 
 

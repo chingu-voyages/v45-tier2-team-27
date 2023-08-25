@@ -35,9 +35,7 @@
     @apply hidden
 }
 
-.border-container{
-    @apply flex
-}
+
 
 /* Border images */
 
@@ -93,27 +91,16 @@
 @media(max-height: 800px){
     .bottom-right-border,
     .bottom-left-border{
-        @apply  bottom-12
-    }
-
-    .bottom-right-border{
-        @apply right-[-1.2rem]
-    }
-
-    .top-right-border{
-        @apply right-[-1.2rem]
+        @apply  bottom-16
     }
     
     .bottom-left-border-img{
-        @apply bottom-[3.4rem] 
+        @apply bottom-[5.4rem] 
     }
 
     .bottom-right-border-img{
-        @apply bottom-[3.2rem] right-[-0.2rem]
+        @apply bottom-[5.2rem] 
     }
 
-    .top-right-border-img{
-        @apply right-[-0.9rem]
-    }
     
 }
