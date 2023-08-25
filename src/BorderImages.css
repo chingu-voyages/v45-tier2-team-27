@@ -3,42 +3,6 @@
 @tailwind utilities;
 
 
-.top-left-border-img{
-    @apply absolute top-[1.8rem] left-[1.3rem]
-}
-
-.top-border-container{
-    @apply mt-5 bg-blue-500
-}
-
-.top-border-line{
-    @apply absolute top-[2.95rem] left-[7.5rem] w-[34%] bg-gray-500 h-[1.4px]
-}
-
-.bottom-border-line{
-    @apply absolute bottom-1 left-[5rem] h-[1.5px] w-[60%] bg-gray-500
-}
-
-.top-right-border-line{
-    @apply absolute top-[12rem] h-[1.5px] right-[-4.19rem] w-40 bg-gray-500 rotate-[90deg]
-}
-
-.bottom-right-border-line{
-    @apply absolute top-[38.95rem] h-[1.5px] right-[-8.96rem] w-[19.5rem] bg-gray-500 rotate-[90deg]
-}
-
-.left-border-line{
-    @apply absolute top-[27.5rem] left-[-20.39rem] h-[1.5px] w-[42.4rem] bg-gray-500 rotate-[90deg] 
-}
-
-.app-border{
-    @apply hidden
-}
-
-.border-container{
-    @apply flex
-}
-
 /* Border images */
 
 .top-left-border-img{
@@ -87,5 +51,89 @@
 @media(min-width:1280px){
     .border-container{
         @apply hidden
+    }
+}
+
+@media(max-height: 950px){
+    .bottom-right-border,
+    .bottom-left-border{
+        @apply  bottom-8 
+    }
+    
+    .bottom-left-border-img{
+        @apply bottom-[2.5rem]
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[2.2rem]
+    }
+
+    .side-bar-img{
+        @apply top-40
+    }
+}
+
+@media(max-height: 900px){
+    .bottom-right-border,
+    .bottom-left-border{
+        @apply  bottom-24 
+    }
+    
+    .bottom-left-border-img{
+        @apply bottom-[6.5rem]
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[6.2rem]
+    }
+
+}
+
+@media(max-height: 800px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-8
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-9
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-10
+    }
+    .side-bar-img{
+        @apply top-32
+    }
+}
+
+@media(max-height: 750px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-0
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-1
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-2
+    }
+
+}
+
+@media (max-height: 700px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-10
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-11
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-12
     }
 }
