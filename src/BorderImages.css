@@ -90,17 +90,27 @@
     }
 }
 
-@media(max-height: 900px){
+@media(max-height: 800px){
     .bottom-right-border,
     .bottom-left-border{
-        @apply  bottom-5
+        @apply  bottom-12
     }
+
+
     
     .bottom-left-border-img{
-        @apply bottom-[1.7rem]
+        @apply bottom-[3.4rem] 
     }
 
     .bottom-right-border-img{
-        @apply bottom-[1.5rem]
+        @apply bottom-[3.2rem] 
+    }
+
+    .top-right-border-img{
+       
+    }
+
+    .border-container{
+        @apply p-0 m-0
     }
 }

@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 body{
-  @apply font-custom-lexend-exa overflow-hidden h-screen;   
+  @apply font-custom-lexend-exa overflow-hidden p-0 m-0;   
 }
 
-.app-border{
-    @apply absolute top-0 left-0 bg-transparent z-0 w-screen p-4 h-[50.5rem] pointer-events-none;
-}
+
 
 
 
