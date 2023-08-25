@@ -96,21 +96,24 @@
         @apply  bottom-12
     }
 
+    .bottom-right-border{
+        @apply right-[-1.2rem]
+    }
 
+    .top-right-border{
+        @apply right-[-1.2rem]
+    }
     
     .bottom-left-border-img{
         @apply bottom-[3.4rem] 
     }
 
     .bottom-right-border-img{
-        @apply bottom-[3.2rem] 
+        @apply bottom-[3.2rem] right-[-0.2rem]
     }
 
     .top-right-border-img{
-       
+        @apply right-[-0.9rem]
     }
-
-    .border-container{
-        @apply p-0 m-0
-    }
+    
 }
