@@ -115,11 +115,11 @@
 /* GLOBE */
 
 .globe-container{
-    @apply fixed top-[18rem] right-0 overflow-hidden
+    @apply fixed top-[18rem] right-0 
 }
 
 .globe-gif{
-    @apply fixed top-[19rem] right-[-5.2rem] w-40  overflow-hidden max-w-[100%]
+    @apply fixed top-[19rem] right-[-5.2rem] w-40 max-w-[100%]
 }
 
 
@@ -233,21 +233,21 @@
     }
 }
    
-@media(max-height: 800px){
+@media(max-height: 700px){
     .landing-title{
         @apply mt-16
     }
 
     .asteroid-container{
-        @apply mb-16
+        @apply mb-[3.5rem]
     }
 
     .year-select-container{
-        @apply mb-16
+        @apply mb-[3.5rem]
     }
 
     .composition-select-container{
-        @apply mb-16
+        @apply mb-[3.5rem]
     }
 
     .mass-select-container{
