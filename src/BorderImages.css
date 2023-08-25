@@ -57,15 +57,15 @@
 @media(max-height: 800px){
     .bottom-right-border,
     .bottom-left-border{
-        @apply  bottom-1 right-0
+        @apply  bottom-10 
     }
     
     .bottom-left-border-img{
-        @apply bottom-[0.7rem] 
+        @apply bottom-12
     }
 
     .bottom-right-border-img{
-        @apply bottom-[0.5rem] right-4
+        @apply bottom-11 
     }
 
     

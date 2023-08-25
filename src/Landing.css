@@ -265,4 +265,12 @@
     .globe-gif{
         @apply top-[15rem] 
     }
+
+    .clear-btn{
+        @apply bottom-[5rem]
+    }
+
+    .small-gray-border{
+        @apply bottom-[5rem]
+    }
 }
