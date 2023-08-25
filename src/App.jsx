@@ -6,10 +6,10 @@ import './Trapezoid.css';
 import './BorderImages.css'
 import Landing from './components/Landing';
 import { Route, Routes } from 'react-router-dom';
-import LineChart from './components/LineChart';
-import BarChart from './components/BarChart';
+import RadarChart from './components/RadarChart';
+import ScatterChart from './components/ScatterChart';
 import RadialChartComponent from "./components/RadioChart";
-
+import SearchResults from "./components/SearchResults";
 export const AuthContext = createContext();
 
 function App() {
@@ -20,9 +20,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/linechart" element={<LineChart />} />
-          <Route path="/barchart" element={<BarChart />} />
-          <Route path="/radiochart" element={<RadialChartComponent />} />
+          <Route path="/radar-chart" element={<RadarChart />} />
+          <Route path="/scatter-chart" element={<ScatterChart />} />
+          <Route path="/radio-chart" element={<RadialChartComponent />} />
+          <Route path="/search-results" element={<SearchResults />} />
         </Routes>
       </div>
     </AuthContext.Provider>
