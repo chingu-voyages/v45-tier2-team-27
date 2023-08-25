@@ -88,7 +88,7 @@
 }
 
 .landing-btn-container{
-    @apply flex flex-col  pb-16 
+    @apply flex flex-col 
 }
 
 .search-btn{
@@ -233,3 +233,28 @@
     }
 }
    
+@media(max-height: 700px){
+    .landing-title{
+        @apply mt-16
+    }
+
+    .asteroid-container{
+        @apply mb-10
+    }
+
+    .year-select-container{
+        @apply mb-10
+    }
+
+    .composition-select-container{
+        @apply mb-10
+    }
+
+    .mass-select-container{
+        @apply mb-0
+    }
+
+    .landing-btn-container{
+        @apply mt-[-70px]
+    }
+}

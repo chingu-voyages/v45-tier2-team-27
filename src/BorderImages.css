@@ -89,3 +89,18 @@
         @apply hidden
     }
 }
+
+@media(max-height: 900px){
+    .bottom-right-border,
+    .bottom-left-border{
+        @apply  bottom-5
+    }
+    
+    .bottom-left-border-img{
+        @apply bottom-[1.7rem]
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[1.5rem]
+    }
+}
