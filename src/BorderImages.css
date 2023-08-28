@@ -137,3 +137,25 @@
         @apply bottom-12
     }
 }
+
+@media (max-height: 640px){
+    .top-left-border,
+    .top-right-border,
+    .top-left-border-img,
+    .top-right-border-img{
+        @apply mt-[-10px]
+    }
+
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-16
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[4.2rem]
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-[4.4rem]
+    }
+}

@@ -123,6 +123,57 @@
 }
 
 
+@media(min-width:600px){
+    .asteroid-container{
+        @apply fixed top-40 left-7
+    }
+
+    .composition-select-container{
+        @apply fixed top-[10.5rem] right-7 mt-1
+    }
+
+    .year-select-container{
+        @apply fixed top-[35.3rem] right-[-105px]
+    }
+
+    .mass-select-container{
+        @apply fixed top-[35rem] left-7
+    }
+    
+    .landing-btn-container{
+        @apply mt-[37rem]
+    }
+
+    .composition-dropdown-text,
+    .year-dropdown-text{
+        @apply relative left-2 top-[0.4rem]
+    }
+
+    .year-dropdown-text{
+        @apply left-[3.5rem]
+    }
+
+    /* GLOBE */
+    .globe-container{
+        @apply hidden
+    }
+
+    .globe-gif-container{
+        @apply flex justify-center items-center ;
+        
+    }
+
+    .globe-gif{
+        @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
+        border-radius: 100%
+    }
+
+    .globe-border{
+        @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
+        border-radius: 100%;
+    }
+}
+
 @media(min-width:766px){
 
     .asteroid-container{
