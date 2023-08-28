@@ -41,6 +41,20 @@
     @apply relative  mr-[16.8rem];
    }
 
+/* MEDIA */
+
+  @media(min-width: 600px){
+  .upside-down-composition-trap,
+  .upside-down-year-trap{
+    @apply absolute left-[8.1rem] 
+  }
+
+  .composition-trap,
+  .year-trap{
+    @apply absolute left-[8.2rem] top-[-5px]
+  }
+}
+
 @media(min-width: 766px){
   .upside-down-composition-trap,
   .upside-down-year-trap{
