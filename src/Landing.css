@@ -122,28 +122,7 @@
     @apply fixed top-[19rem] right-[-5.2rem] w-40 max-w-[100%]
 }
 
-@media(max-width:320px){
-    .search-btn,
-    .small-black-border{
-        @apply mt-[-15px] mb-3
-    }
 
-    .asteroid-input{
-        @apply w-40 mr-5
-    }
-
-    .year-select{
-        @apply w-40 
-    }
-
-    .meteorite-composition{
-        @apply w-40 
-    }
-
-    .mass-range{
-        @apply w-40
-    }
-}
 
 
 @media(min-width:600px){
@@ -383,6 +362,52 @@
     .clear-btn,
     .small-gray-border{
         @apply bottom-[5.5rem]
+    }
+}
+
+@media(max-height:640px) and (max-width:320px){
+    .search-btn,
+    .small-black-border{
+        @apply mt-[-30px] mb-3
+    }
+
+    .asteroid-input{
+        @apply w-40 mr-5
+    }
+
+    .year-select{
+        @apply w-40 
+    }
+
+    .meteorite-composition{
+        @apply w-40 
+    }
+
+    .mass-range{
+        @apply w-40
+    }
+
+    .year-select-container{
+        @apply ml-2
+    }
+
+    .composition-select-container{
+        @apply ml-2
+    }
+
+    .globe-container{
+        @apply  top-[13.5rem] 
+    }
+    
+    .globe-gif{
+        @apply  top-[14.5rem] 
+    }
+
+    .asteroid-container,
+    .year-select-container,
+    .composition-select-container,
+    .mass-select-container{
+        @apply mb-10
     }
 }
 

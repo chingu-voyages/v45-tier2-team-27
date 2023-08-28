@@ -278,57 +278,72 @@
 
 }
 
-  @media(max-height: 800px) and (min-width: 380px) {
-    .line-1 {
-      @apply top-[10.25rem] right-[4.7rem] h-[4.5rem] rotate-[150deg];
-    }
-  
-    .line-2{
-      @apply top-[15.05rem] right-[8.1rem] h-[4.5rem] rotate-[110deg];
-    }
-  
-    .line-3{
-      @apply top-[19.8rem] right-[8rem] h-[4.5rem] rotate-[70deg];
-    }
-    
-    .line-4 {
-      @apply top-[24.5rem] right-[4.5rem] h-[5.1rem] rotate-[35deg];
-    }
+@media(max-height: 800px) and (min-width: 380px) {
+.line-1 {
+  @apply top-[10.25rem] right-[4.7rem] h-[4.5rem] rotate-[150deg];
+}
+
+.line-2{
+  @apply top-[15.05rem] right-[8.1rem] h-[4.5rem] rotate-[110deg];
+}
+
+.line-3{
+  @apply top-[19.8rem] right-[8rem] h-[4.5rem] rotate-[70deg];
+}
+
+.line-4 {
+  @apply top-[24.5rem] right-[4.5rem] h-[5.1rem] rotate-[35deg];
+}
+}
+
+@media(max-height: 800px) and (min-width: 400px) {
+  .line-1 {
+    @apply top-[10.1rem] right-[5rem] h-[4.8rem] rotate-[145deg];
   }
 
-    @media(max-height: 800px) and (min-width: 400px) {
-      .line-1 {
-        @apply top-[10.1rem] right-[5rem] h-[4.8rem] rotate-[145deg];
-      }
-    
-      .line-2{
-        @apply top-[14.9rem] right-[8.4rem] h-[5rem] rotate-[110deg];
-      }
-    
-      .line-3{
-        @apply top-[19.5rem] right-[8.3rem] h-[5rem] rotate-[70deg];
-      }
-      
-      .line-4 {
-        @apply top-[24.25rem] right-[5rem] h-[5.5rem] rotate-[35deg];
-      }
+  .line-2{
+    @apply top-[14.9rem] right-[8.4rem] h-[5rem] rotate-[110deg];
+  }
 
-    }
+  .line-3{
+    @apply top-[19.5rem] right-[8.3rem] h-[5rem] rotate-[70deg];
+  }
+  
+  .line-4 {
+    @apply top-[24.25rem] right-[5rem] h-[5.5rem] rotate-[35deg];
+  }
 
-      @media(max-height: 800px) and (min-width: 415px) {
-        .line-1 {
-          @apply top-[10.1rem] right-[5.4rem] h-[5.1rem] rotate-[145deg];
-        }
-      
-        .line-2{
-          @apply top-[14.7rem] right-[8.7rem] h-[5.6rem] rotate-[110deg];
-        }
-      
-        .line-3{
-          @apply top-[19.1rem] right-[8.6rem] h-[5.6rem] rotate-[70deg];
-        }
-        
-        .line-4 {
-          @apply top-[23.9rem] right-[5.5rem] h-[5.8rem] rotate-[35deg];
-        }
+}
+
+@media(max-height: 800px) and (min-width: 415px) {
+  .line-1 {
+    @apply top-[10.1rem] right-[5.4rem] h-[5.1rem] rotate-[145deg];
+  }
+
+  .line-2{
+    @apply top-[14.7rem] right-[8.7rem] h-[5.6rem] rotate-[110deg];
+  }
+
+  .line-3{
+    @apply top-[19.1rem] right-[8.6rem] h-[5.6rem] rotate-[70deg];
+  }
+  
+  .line-4 {
+    @apply top-[23.9rem] right-[5.5rem] h-[5.8rem] rotate-[35deg];
+  }
+}
+
+@media(max-height:640px) and (max-width:320px){
+
+  .line-2{
+    @apply top-[14rem] right-[7.6rem] h-[4.4rem]
+  }
+
+  .line-3{
+    @apply top-[18.9rem] h-[3.5rem] rotate-[85deg]
+  }
+
+  .line-4{
+    @apply top-[24.2rem] rotate-[50deg] h-[2.4rem] right-[4.7rem]
+  }
 }
