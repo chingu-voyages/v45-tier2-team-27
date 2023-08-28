@@ -35,6 +35,8 @@ export default function Landing(){
       ];
 
     return(
+        <>
+        <BorderImages />
         <div className="landing-container">
             <h1 className="landing-title">SKYFALL</h1>
             <div className="asteroid-container">
@@ -124,7 +126,9 @@ export default function Landing(){
                     <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
                 </div>
             </div>
-            <BorderImages />
+            
         </div>
+        
+        </>
     )
 }

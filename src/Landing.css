@@ -127,19 +127,19 @@
 
 @media(min-width:600px){
     .asteroid-container{
-        @apply fixed top-40 left-7
+        @apply absolute top-40 left-7
     }
 
     .composition-select-container{
-        @apply fixed top-[10.5rem] right-7 mt-1
+        @apply absolute top-[10.5rem] right-7 mt-1
     }
 
     .year-select-container{
-        @apply fixed top-[35.3rem] right-[-105px]
+        @apply absolute top-[35.3rem] right-[-105px]
     }
 
     .mass-select-container{
-        @apply fixed top-[35rem] left-7
+        @apply absolute top-[35rem] left-7
     }
     
     .landing-btn-container{
@@ -174,24 +174,35 @@
         @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
         border-radius: 100%;
     }
+
+    .search-btn,
+    .small-black-border{
+        @apply mt-[-200px]
+    }
+
+    .clear-btn,
+    .small-gray-border{
+        @apply mt-[-100px]
+    }
+
+
 }
 
 @media(min-width:766px){
-
     .asteroid-container{
-        @apply absolute top-40 left-16
+        @apply absolute top-40 left-7
     }
 
     .composition-select-container{
-        @apply absolute top-[10.5rem] right-[75px] mt-1
+        @apply absolute top-[10.5rem] right-7 mt-1
     }
 
     .year-select-container{
-        @apply absolute top-[35.3rem] right-[-65px]
+        @apply absolute top-[35.3rem] right-[-105px]
     }
 
     .mass-select-container{
-        @apply absolute top-[35rem] left-16
+        @apply absolute top-[35rem] left-7
     }
     
     .landing-btn-container{
@@ -218,75 +229,61 @@
     }
 
     .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-40 border border-black;
+        @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
         border-radius: 100%
     }
 
     .globe-border{
-        @apply border-black border absolute top-72 pointer-events-none bg-transparent;
+        @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
         border-radius: 100%;
+    }
+
+    .search-btn,
+    .small-black-border{
+        @apply mt-[-200px]
+    }
+
+    .clear-btn,
+    .small-gray-border{
+        @apply mt-[-100px]
     }
 }
 
 
 @media(min-width: 1280px){
-    .landing-container{
-        @apply w-[1100px] mx-auto
-    }
-
-    .asteroid-container{
-        @apply fixed left-[12rem] top-[18rem]
-    }
-
-    .asteroid-text{
-        @apply mt-0
-    }
-
-    .composition-select-container{
-        @apply fixed right-[12rem] top-[18rem]
+    .asteroid-container,
+    .mass-select-container{
+        @apply fixed left-60 mt-40
     }
 
     .year-select-container{
-        @apply fixed right-[3rem] top-[47rem]
+        @apply fixed right-24 mt-40
     }
 
-    .mass-select-container{
-        @apply fixed left-[12rem] top-[47rem]
-    }
-    
-    .landing-btn-container{
-        @apply mt-[40rem]
-    }
-
-    .composition-dropdown-text,
-    .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
-    }
-
-    .year-dropdown-text{
-        @apply left-[3.5rem]
-    }
-
-    .globe-container{
-        @apply hidden
-    }
-
-    .globe-gif-container{
-        @apply flex justify-center items-center ;   
-    }
-
-    .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-80 border border-black;
-        border-radius: 100%
+    .composition-select-container{
+        @apply fixed right-[15.5rem] mt-40
     }
 
     .globe-border{
-        @apply border-black border absolute top-[28rem] pointer-events-none bg-transparent;
-        border-radius: 100%;
+        @apply mt-40
+    }
+
+    .globe-gif{
+        @apply mt-40
+    }
+
+    .search-btn,
+    .small-black-border{
+        @apply bottom-0
+    }
+
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-0
     }
 }
 
-@media(max-height: 950px){
+@media(max-height: 950px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,
@@ -295,8 +292,8 @@
     }
 }
 
-@media(max-height: 900px){
-    .search-btn,
+@media(max-height: 900px) and (max-width:600px){
+    .search-btn, 
     .small-black-border,
     .clear-btn,
     .small-gray-border{
@@ -305,7 +302,7 @@
 }
 
    
-@media(max-height: 800px){
+@media(max-height: 800px) and (max-width:600px){
     .landing-title{
         @apply mt-16
     }
@@ -346,7 +343,7 @@
     }
 }
 
-@media(max-height: 750px){
+@media(max-height: 750px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,
@@ -356,7 +353,7 @@
 }
 
 
-@media(max-height: 700px){
+@media(max-height: 700px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,

@@ -10,6 +10,7 @@ import RadarChart from './components/RadarChart';
 import ScatterChart from './components/ScatterChart';
 import RadialChartComponent from "./components/RadioChart";
 import SearchResults from "./components/SearchResults";
+
 export const AuthContext = createContext();
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ meteoriteData, setMeteoriteData }}>
-      <div>
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/radar-chart" element={<RadarChart />} />
@@ -25,7 +26,8 @@ function App() {
           <Route path="/radio-chart" element={<RadialChartComponent />} />
           <Route path="/search-results" element={<SearchResults />} />
         </Routes>
-      </div>
+        </div>
+      
     </AuthContext.Provider>
   );
 }

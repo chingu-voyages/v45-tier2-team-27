@@ -67,7 +67,7 @@
   }
 }
 
-@media(min-width: 1280px){
+/* @media(min-width: 1280px){
     .upside-down-asteroid-trap,
     .asteroid-trap{
       @apply fixed left-[12rem]
@@ -76,5 +76,5 @@
     .asteroid-trap{
       @apply mt-[-6px]
     }
-}
+} */
 
