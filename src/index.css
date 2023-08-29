@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply font-custom-lexend-exa overflow-hidden p-0 m-0  bg-white;   
+  @apply font-custom-lexend-exa overflow-x-hidden p-0 m-0  bg-white;   
 }
 
 body.light-mode{
