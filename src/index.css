@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body{
-  @apply font-custom-lexend-exa overflow-x-hidden p-0 m-0  bg-white;   
+  @apply  overflow-x-hidden w-screen
+}
+
+body{
+  @apply font-custom-lexend-exa  p-0 m-0  bg-white;   
 }
 
 body.light-mode{
