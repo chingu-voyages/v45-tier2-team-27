@@ -6,38 +6,20 @@
     @apply flex justify-center
 }
 
-.go-back-border{
-    @apply mb-7 
-}
-
-.white-border{
-    @apply mb-6
-}
-
 .go-back-btn{
-    @apply absolute bottom-[6.8rem] text-xl font-semibold left-0 right-0 
+    @apply absolute  text-xl font-semibold left-0 right-0 
 }
 
-.go-back-btn.dark-mode{
-    @apply bottom-[6.8rem]
-}
 
 .about-title-container{
-    @apply mb-7
+    @apply mb-8
 }
 
 .team-member-container{
-    @apply mb-5
+    @apply mb-7
 }
 
 .team-member{
     @apply font-bold
 }
 
-@media(max-height: 950px){
-    .team-member-container{
-        @apply mb-5
-    }
-
-
-}

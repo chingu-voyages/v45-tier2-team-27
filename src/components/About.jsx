@@ -7,7 +7,7 @@ export default function About(){
     const { darkMode } = useContext(AuthContext)
     return(
         <div className="w-[100%] h-[100%] mb-20 text-center">
-            <h1 className="landing-title mt-16">SKYFALL</h1>
+            <h1 className="landing-title mt-24">SKYFALL</h1>
             <div className="about-title-container">
                 <h1 className="text-xl">Created for Chingu Voyage 45</h1>
                 <h2 className="text-lg">by Team 27</h2>
@@ -36,7 +36,7 @@ export default function About(){
                 <h1 className="team-member">Sarah Murphree</h1>
                 <p>Voyage Guide</p>
             </div>
-            <div className="team-member-container">
+            <div className="team-member-container mb-12">
                 <h1>Special Thanks To:</h1>
                 <p className="team-member">Jim Medlock at Chingu</p>
             </div>
