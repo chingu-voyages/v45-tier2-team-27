@@ -6,7 +6,7 @@
 /* LANDING */
 
 .landing-container{
-    @apply flex flex-col items-center 
+    @apply flex flex-col items-center overflow-x-hidden
 }
 
 .landing-title{
@@ -88,15 +88,15 @@
 }
 
 .landing-btn-container{
-    @apply flex flex-col 
+    @apply flex flex-col mt-20 items-center
 }
 
 .search-btn{
-    @apply relative bottom-20 right-16 text-[24px] font-bold mb-7
+    @apply relative bottom-[5.1rem] right-16 text-[24px] font-bold mb-7
 }
 
 .clear-btn{
-    @apply relative bottom-16 left-[5.2rem] text-[20px]
+    @apply relative bottom-16 left-[5.1rem] text-[20px]
 }
 
 .small-black-border{
@@ -112,14 +112,65 @@
     @apply flex justify-center items-center
 }
 
+.search-btn,
+.small-black-border,
+.small-white-border{
+    @apply  mr-3
+}
+
+
+.small-gray-border{
+    @apply mr-3
+}
+
+
+
+
 /* GLOBE */
 
 .globe-container{
-    @apply fixed top-[18rem] right-0 
+    @apply absolute top-[18rem] right-0 
+}
+
+.globe-gif {
+    @apply absolute top-[19rem] right-0 w-40 max-w-[100%];
+    transform: translateX(50%)
+  }  
+
+.globe-border{
+    @apply hidden
+}
+
+/* ICONS */
+
+.icon-container{
+    @apply flex mt-[-45px] mb-10 justify-center ml-7
+}
+
+.dark-mode-icon{
+    @apply mr-5 cursor-pointer
+}
+
+.about-icon{
+    @apply cursor-pointer
+}
+
+/* DARK MODE */
+
+body.dark-mode select{
+    
+}
+
+body.dark-mode text{
+    @apply bg-white
+}
+
+.dark-globe-img{
+    @apply relative right-[-6.4rem] top-[-2px]
 }
 
 .globe-gif{
-    @apply fixed top-[19rem] right-[-5.2rem] w-40 max-w-[100%]
+    
 }
 
 
@@ -127,19 +178,94 @@
 
 @media(min-width:600px){
     .asteroid-container{
-        @apply fixed top-40 left-7
+        @apply absolute top-40 left-7
     }
 
     .composition-select-container{
-        @apply fixed top-[10.5rem] right-7 mt-1
+        @apply absolute top-[10.5rem] right-7 mt-1
     }
 
     .year-select-container{
-        @apply fixed top-[35.3rem] right-[-105px]
+        @apply absolute top-[35.3rem] right-[-105px]
     }
 
     .mass-select-container{
-        @apply fixed top-[35rem] left-7
+        @apply absolute top-[35rem] left-7
+    }
+    
+    .landing-btn-container{
+        @apply mt-[37rem]
+    }
+
+    .composition-dropdown-text,
+    .year-dropdown-text{
+        @apply relative left-2 top-[0.4rem]
+    }
+
+    .year-dropdown-text{
+        @apply left-[3.5rem]
+    }
+
+    /* GLOBE */
+    .globe-container{
+        @apply hidden
+    }
+
+    .globe-border{
+        @apply flex
+    }
+
+    .globe-gif-container{
+        @apply flex justify-center items-center ;
+        
+    }
+
+    .globe-gif{
+        @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
+        border-radius: 100%;
+        transform: none
+    }
+
+    .globe-border{
+        @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
+        border-radius: 100%;
+    }
+
+    .search-btn,
+    .small-black-border,
+    .small-white-border{
+        @apply mt-[-200px] mr-3
+    }
+
+    .small-gray-border{
+        @apply mr-2
+    }
+
+    .clear-btn,
+    .small-gray-border{
+        @apply mt-[-100px]
+    }
+
+    .icon-container{
+        @apply mt-[-80px]
+    }
+}
+
+@media(min-width:766px){
+    .asteroid-container{
+        @apply absolute top-40 left-7
+    }
+
+    .composition-select-container{
+        @apply absolute top-[10.5rem] right-7 mt-1
+    }
+
+    .year-select-container{
+        @apply absolute top-[35.3rem] right-[-105px]
+    }
+
+    .mass-select-container{
+        @apply absolute top-[35rem] left-7
     }
     
     .landing-btn-container{
@@ -174,138 +300,60 @@
         @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
         border-radius: 100%;
     }
-}
 
-@media(min-width:766px){
-
-    .asteroid-container{
-        @apply absolute top-40 left-16
+    .search-btn,
+    .small-black-border{
+        @apply mt-[-200px]
     }
 
-    .composition-select-container{
-        @apply absolute top-[10.5rem] right-[75px] mt-1
-    }
-
-    .year-select-container{
-        @apply absolute top-[35.3rem] right-[-65px]
-    }
-
-    .mass-select-container{
-        @apply absolute top-[35rem] left-16
-    }
-    
-    .landing-btn-container{
-        @apply mt-[37rem]
-    }
-
-    .composition-dropdown-text,
-    .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
-    }
-
-    .year-dropdown-text{
-        @apply left-[3.5rem]
-    }
-
-    /* GLOBE */
-    .globe-container{
-        @apply hidden
-    }
-
-    .globe-gif-container{
-        @apply flex justify-center items-center ;
-        
-    }
-
-    .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-40 border border-black;
-        border-radius: 100%
-    }
-
-    .globe-border{
-        @apply border-black border absolute top-72 pointer-events-none bg-transparent;
-        border-radius: 100%;
+    .clear-btn,
+    .small-gray-border{
+        @apply mt-[-100px]
     }
 }
 
 
 @media(min-width: 1280px){
-    .landing-container{
-        @apply w-[1100px] mx-auto
-    }
-
-    .asteroid-container{
-        @apply fixed left-[12rem] top-[18rem]
-    }
-
-    .asteroid-text{
-        @apply mt-0
-    }
-
-    .composition-select-container{
-        @apply fixed right-[12rem] top-[18rem]
+    .asteroid-container,
+    .mass-select-container{
+        @apply fixed left-60 mt-40
     }
 
     .year-select-container{
-        @apply fixed right-[3rem] top-[47rem]
+        @apply fixed right-24 mt-40
     }
 
-    .mass-select-container{
-        @apply fixed left-[12rem] top-[47rem]
-    }
-    
-    .landing-btn-container{
-        @apply mt-[40rem]
-    }
-
-    .composition-dropdown-text,
-    .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
-    }
-
-    .year-dropdown-text{
-        @apply left-[3.5rem]
-    }
-
-    .globe-container{
-        @apply hidden
-    }
-
-    .globe-gif-container{
-        @apply flex justify-center items-center ;   
-    }
-
-    .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-80 border border-black;
-        border-radius: 100%
+    .composition-select-container{
+        @apply fixed right-[15.5rem] mt-40
     }
 
     .globe-border{
-        @apply border-black border absolute top-[28rem] pointer-events-none bg-transparent;
-        border-radius: 100%;
+        @apply mt-40
+    }
+
+    .globe-gif{
+        @apply mt-40
+    }
+
+    .search-btn,
+    .small-black-border{
+        @apply bottom-0
+    }
+
+    .clear-btn,
+    .small-gray-border{
+        @apply bottom-0
+    }
+
+    .icon-container{
+        @apply mt-0
     }
 }
 
-@media(max-height: 950px){
-    .search-btn,
-    .small-black-border,
-    .clear-btn,
-    .small-gray-border{
-        @apply bottom-[10rem]
-    }
-}
 
-@media(max-height: 900px){
-    .search-btn,
-    .small-black-border,
-    .clear-btn,
-    .small-gray-border{
-        @apply bottom-[10.5rem]
-    }
-}
 
    
-@media(max-height: 800px){
+@media(max-height: 800px) and (max-width:600px){
     .landing-title{
         @apply mt-16
     }
@@ -323,7 +371,7 @@
     }
 
     .mass-select-container{
-        @apply mb-0
+        @apply mb-44
     }
 
     .landing-btn-container{
@@ -346,22 +394,38 @@
     }
 }
 
-@media(max-height: 750px){
+@media(max-height: 750px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,
     .small-gray-border{
         @apply bottom-[3.5rem]
     }
+
+    .mass-select-container{
+        @apply mb-40
+    }
+
+    .icon-container{
+        @apply mt-[-30px] mb-16
+    }
 }
 
 
-@media(max-height: 700px){
+@media(max-height: 700px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,
     .small-gray-border{
         @apply bottom-[5.5rem]
+    }
+
+    .icon-container{
+        @apply mt-[-70px]
+    }
+
+    .landing-btn-container{
+        @apply mt-[-40px]
     }
 }
 
@@ -408,6 +472,10 @@
     .composition-select-container,
     .mass-select-container{
         @apply mb-10
+    }
+
+    .icon-container{
+        @apply mt-[-60px]
     }
 }
 

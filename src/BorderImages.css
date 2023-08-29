@@ -5,6 +5,10 @@
 
 /* Border images */
 
+.top-border-container{
+    @apply flex justify-between 
+}
+
 .top-left-border-img{
     @apply absolute top-8 left-4
 }
@@ -21,14 +25,25 @@
     @apply absolute left-4 bottom-[0.7rem]
 }
 
-.side-bar-img{
-    @apply absolute right-5 top-40
+.white-bottom-right-img{
+    @apply bottom-2.5 right-7
 }
 
+.white-bottom-left-img{
+    @apply bottom-3 left-0
+}
+
+.white-top-left-img{
+    @apply top-8 left-5
+}
+
+.white-top-right-img{
+    @apply top-5 right-4
+}
 /* Borders */
 
 .bottom-border-container{
-    @apply relative w-screen 
+    @apply w-screen 
 }
 
 .top-right-border{
@@ -49,47 +64,41 @@
 
 
 @media(min-width:1280px){
-    .border-container{
+    /* .border-container{
         @apply hidden
-    }
+    } */
 }
 
-@media(max-height: 950px){
-    .bottom-right-border,
+@media(min-width:766px){
+    .top-left-border,
     .bottom-left-border{
-        @apply  bottom-8 
+        @apply left-0
     }
-    
-    .bottom-left-border-img{
-        @apply bottom-[2.5rem]
+
+    .top-right-border,
+    .bottom-right-border{
+        @apply right-0
+    }
+
+    .top-right-border-img{
+        @apply right-1
     }
 
     .bottom-right-border-img{
-        @apply bottom-[2.2rem]
+        @apply right-4
     }
 
-    .side-bar-img{
-        @apply top-40
-    }
-}
-
-@media(max-height: 900px){
-    .bottom-right-border,
-    .bottom-left-border{
-        @apply  bottom-24 
-    }
-    
+    .top-left-border-img,
     .bottom-left-border-img{
-        @apply bottom-[6.5rem]
-    }
-
-    .bottom-right-border-img{
-        @apply bottom-[6.2rem]
+        @apply left-1
     }
 
 }
 
-@media(max-height: 800px){
+
+
+
+@media(max-height: 800px) and (max-width:600px){
     .bottom-left-border,
     .bottom-right-border{
         @apply bottom-8
@@ -107,7 +116,7 @@
     }
 }
 
-@media(max-height: 750px){
+@media(max-height: 750px) and (max-width:600px){
     .bottom-left-border,
     .bottom-right-border{
         @apply bottom-0
@@ -123,22 +132,22 @@
 
 }
 
-@media (max-height: 700px){
+@media (max-height: 700px) and (max-width:600px){
     .bottom-left-border,
     .bottom-right-border{
-        @apply bottom-10
+        @apply bottom-12
     }
 
     .bottom-right-border-img{
-        @apply bottom-11
+        @apply bottom-[3.2rem]
     }
 
     .bottom-left-border-img{
-        @apply bottom-12
+        @apply bottom-[3.4rem]
     }
 }
 
-@media (max-height: 640px){
+@media (max-height: 640px) and (max-width:600px){
     .top-left-border,
     .top-right-border,
     .top-left-border-img,
@@ -159,3 +168,4 @@
         @apply bottom-[4.4rem]
     }
 }
+

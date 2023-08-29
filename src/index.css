@@ -2,9 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body{
-  @apply font-custom-lexend-exa overflow-hidden p-0 m-0 w-screen;   
+  @apply  overflow-x-hidden 
 }
+
+body{
+  @apply font-custom-lexend-exa  p-0 m-0  bg-white;   
+}
+
+body.light-mode{
+  @apply bg-white
+}
+
+body.dark-mode{
+  @apply bg-[#232323] text-white
+}
+
+body.dark-mode select{
+  @apply bg-white text-black
+}
+
+body.dark-mode input{
+  @apply bg-white text-black
+}
+
+.app-container{
+  @apply absolute
+}
+
+
+
+@media(min-width: 600px){
+  .app-container {
+    @apply max-w-[600px] mt-[450px] left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    
+  }
+}
+
+@media(min-width: 1280px){
+  .app-container {
+    @apply max-w-[1280px] h-[90%] mt-[630px] 
+  }
+}
+
 
 
 
