@@ -222,7 +222,8 @@ body.dark-mode text{
 
     .globe-gif{
         @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
-        border-radius: 100%
+        border-radius: 100%;
+        transform: none
     }
 
     .globe-border{
