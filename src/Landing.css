@@ -335,7 +335,7 @@
     }
 }
 
-@media(max-height: 950px) and (max-width:600px){
+/* @media(max-height: 950px) and (max-width:600px){
     .search-btn,
     .small-black-border,
     .clear-btn,
@@ -458,5 +458,5 @@
     .mass-select-container{
         @apply mb-10
     }
-}
+} */
 

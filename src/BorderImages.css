@@ -95,7 +95,7 @@
 
 }
 
-@media(max-height: 950px) and (max-width:600px){
+/* @media(max-height: 950px) and (max-width:600px){
     .bottom-right-border,
     .bottom-left-border{
         @apply  bottom-8 
@@ -199,5 +199,5 @@
     .bottom-left-border-img{
         @apply bottom-[4.4rem]
     }
-}
+} */
 
