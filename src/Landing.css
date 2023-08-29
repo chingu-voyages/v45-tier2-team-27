@@ -6,7 +6,7 @@
 /* LANDING */
 
 .landing-container{
-    @apply flex flex-col items-center 
+    @apply flex flex-col items-center overflow-hidden
 }
 
 .landing-title{
@@ -133,7 +133,7 @@
 }
 
 .globe-gif{
-    @apply fixed top-[19rem] right-[-5.2rem] w-40 max-w-[100%]
+    @apply fixed top-[19rem] right-[-5.15rem] w-40 max-w-[100%]
 }
 
 .globe-border{
