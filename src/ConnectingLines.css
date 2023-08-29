@@ -9,6 +9,8 @@
     @apply absolute border-[1px] border-black;
     
   }
+
+
   
   .line-1 {
     @apply top-[11.4rem] right-[4.2rem] h-[7.6rem] rotate-[160deg];
@@ -192,7 +194,7 @@
 
 /* MEDIA HEIGHT */
 
-/* @media(max-height: 800px) and (min-width: 360px){
+@media(max-height: 800px) and (min-width: 360px){
   .line-1 {
     @apply top-[10.4rem] right-[4.5rem] h-[4.3rem] rotate-[155deg];
   }
@@ -301,5 +303,5 @@
   .line-4{
     @apply top-[24.2rem] rotate-[50deg] h-[2.4rem] right-[4.7rem]
   }
-} */
+}
 

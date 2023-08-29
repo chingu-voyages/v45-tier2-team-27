@@ -11,8 +11,16 @@ export default function Landing(){
 
     const handleDarkModeToggle = () => {
         setDarkMode(!darkMode);
-        
       };
+
+    const handleClear = () => {
+    // Clear input fields and selects
+    const inputFields = document.querySelectorAll('.asteroid-input');
+    inputFields.forEach(input => (input.value = ''));
+    
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => (select.selectedIndex = 0));
+    };
 
     const generateYearOptions = () => {
         const currentYear = new Date().getFullYear();
@@ -50,11 +58,11 @@ export default function Landing(){
             <h1 className="landing-title">SKYFALL</h1>
             <div className="asteroid-container">
                 <div className="asteroid-input-container">
-                    <div className="asteroid-trap">
+                    <div className={`asteroid-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>  
                     <input className="asteroid-input" type="text" />
-                    <div className="upside-down-asteroid-trap">
+                    <div className={`upside-down-asteroid-trap ${darkMode ? 'dark-mode-trap' : 'light-mode-trap'}`}>
                         <Trapezoid />
                     </div>
                 </div>
@@ -64,7 +72,7 @@ export default function Landing(){
 
             <div className="year-select-container">
                 <div className="year-dropdown-container">
-                    <div className="year-trap">
+                    <div className={`year-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                     <select name="year-select" id="year-select" className="year-select hover-show-trap">
@@ -72,7 +80,7 @@ export default function Landing(){
                         {generateYearOptions()}
                     </select>
                     
-                    <div className="upside-down-year-trap">
+                    <div className={`upside-down-year-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                 </div>
@@ -82,7 +90,7 @@ export default function Landing(){
             
             <div className="composition-select-container">
                 <div className="composition-dropdown-container">
-                    <div className="composition-trap">
+                    <div className={`composition-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                     <select name="Meteorite-composition" id="meteorite-composition" className="meteorite-composition">
@@ -93,7 +101,7 @@ export default function Landing(){
                         </option>
                         ))}
                     </select>
-                    <div className="upside-down-composition-trap">
+                    <div className={`upside-down-composition-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                 </div>
@@ -102,7 +110,7 @@ export default function Landing(){
             
             <div className="mass-select-container">
                 <div className="mass-dropdown-container">
-                    <div className="mass-trap">
+                    <div className={`mass-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                     <select name="Mass Range" id="mass-range" className="mass-range">
@@ -113,7 +121,7 @@ export default function Landing(){
                         </option>
                         ))}
                     </select>
-                    <div className="upside-down-mass-trap">
+                    <div className={`upside-down-mass-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
                 </div>
@@ -131,11 +139,11 @@ export default function Landing(){
                     <button className="search-btn">SEARCH</button>
                 </div>
                 <div className="clear-btn-container">
-                    <button className="clear-btn">CLEAR</button>
+                    <button onClick={handleClear} className="clear-btn">CLEAR</button>
                     <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
                 </div>
                 <div className="icon-container">
-                    <img onClick={handleDarkModeToggle} className="dark-mode-icon" src="/images/dark-mode-icon.png" alt="" />
+                    <img onClick={handleDarkModeToggle} className="dark-mode-icon" src={`${darkMode ? "/images/dark-dark-mode-icon.png" : "/images/dark-mode-icon.png"}`} alt="" />
                     <Link to="/about"><img className="about-icon" src={`${darkMode ? "/images/white-about-icon.png" : "/images/about-icon.png"}`} alt="" /></Link>
                 </div>
             </div>

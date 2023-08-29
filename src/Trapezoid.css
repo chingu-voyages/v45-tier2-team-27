@@ -78,3 +78,19 @@
     }
 } */
 
+/* .asteroid-trap,
+.upside-down-asteroid-trap,
+.year-trap,
+.upside-down-year-trap,
+.composition-trap,
+.upside-down-composition-trap,
+.mass-trap,
+.upside-down-mass-trap {
+  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+} */
+
+
+
+.dark-mode-trap{
+  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+}

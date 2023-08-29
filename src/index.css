@@ -10,6 +10,18 @@ body.light-mode{
   @apply bg-white
 }
 
+body.dark-mode{
+  @apply bg-[#232323] text-white
+}
+
+body.dark-mode select{
+  @apply bg-white text-black
+}
+
+body.dark-mode input{
+  @apply bg-white text-black
+}
+
 .app-container{
   @apply absolute
 }

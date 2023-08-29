@@ -26,11 +26,11 @@
 }
 
 .white-bottom-right-img{
-    @apply bottom-3 right-7
+    @apply bottom-2.5 right-7
 }
 
 .white-bottom-left-img{
-    @apply bottom-3 left-1
+    @apply bottom-3 left-0
 }
 
 .white-top-left-img{
@@ -95,7 +95,7 @@
 
 }
 
-/* @media(max-height: 950px) and (max-width:600px){
+@media(max-height: 950px) and (max-width:600px){
     .bottom-right-border,
     .bottom-left-border{
         @apply  bottom-8 
@@ -199,5 +199,5 @@
     .bottom-left-border-img{
         @apply bottom-[4.4rem]
     }
-} */
+}
 
