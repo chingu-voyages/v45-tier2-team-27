@@ -1,10 +1,18 @@
-
+import { useContext } from "react"
 import BorderImages from "./BorderImages";
 import ConnectingLines from "./ConnectingLines"
 import Globe from "./Globe";
 import Trapezoid from "./Trapezoid";
+import { AuthContext } from "../App"
+import { Link } from "react-router-dom";
 
 export default function Landing(){
+    const {darkMode, setDarkMode} = useContext(AuthContext);
+
+    const handleDarkModeToggle = () => {
+        setDarkMode(!darkMode);
+        
+      };
 
     const generateYearOptions = () => {
         const currentYear = new Date().getFullYear();
@@ -37,7 +45,8 @@ export default function Landing(){
     return(
         <>
         <BorderImages />
-        <div className="landing-container">
+        <html className={`${darkMode} ? "dark-mode" : ""`}>
+        <div className={`landing-container `}>
             <h1 className="landing-title">SKYFALL</h1>
             <div className="asteroid-container">
                 <div className="asteroid-input-container">
@@ -118,17 +127,21 @@ export default function Landing(){
 
             <div className="landing-btn-container">
                 <div className="search-btn-container">
-                    <img className="small-black-border" src="/images/small-black-border.png" alt="" />
+                    <img className="small-black-border" src={`${darkMode ? "/images/small-white-border.png" : "/images/small-black-border.png"} `} alt="" />
                     <button className="search-btn">SEARCH</button>
                 </div>
                 <div className="clear-btn-container">
                     <button className="clear-btn">CLEAR</button>
                     <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
                 </div>
+                <div className="icon-container">
+                    <img onClick={handleDarkModeToggle} className="dark-mode-icon" src="/images/dark-mode-icon.png" alt="" />
+                    <Link to="/about"><img className="about-icon" src={`${darkMode ? "/images/white-about-icon.png" : "/images/about-icon.png"}`} alt="" /></Link>
+                </div>
             </div>
             
         </div>
-        
+        </html>
         </>
     )
 }

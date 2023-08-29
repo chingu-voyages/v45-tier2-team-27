@@ -25,10 +25,21 @@
     @apply absolute left-4 bottom-[0.7rem]
 }
 
-.side-bar-img{
-    @apply absolute right-5 top-40
+.white-bottom-right-img{
+    @apply bottom-3 right-7
 }
 
+.white-bottom-left-img{
+    @apply bottom-3 left-1
+}
+
+.white-top-left-img{
+    @apply top-8 left-5
+}
+
+.white-top-right-img{
+    @apply top-5 right-4
+}
 /* Borders */
 
 .bottom-border-container{

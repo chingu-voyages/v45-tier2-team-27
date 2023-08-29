@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 body{
-  @apply font-custom-lexend-exa overflow-hidden p-0 m-0 w-screen;   
+  @apply font-custom-lexend-exa overflow-hidden p-0 m-0 w-screen bg-white;   
 }
 
+body.light-mode{
+  @apply bg-white
+}
 
 .app-container{
   @apply absolute

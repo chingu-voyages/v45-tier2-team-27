@@ -11,19 +11,19 @@
   }
   
   .line-1 {
-    @apply top-[11.5rem] right-[3.9rem] h-[6.2rem] rotate-[165deg];
+    @apply top-[11.4rem] right-[4.2rem] h-[7.6rem] rotate-[160deg];
   }
 
   .line-2{
-    @apply top-[19.45rem] right-[7.7rem] h-[3.2rem] rotate-[110deg];
+    @apply top-[19.2rem] right-[7.6rem] h-[4rem] rotate-[110deg];
   }
 
   .line-3{
-    @apply top-[25.5rem] right-[7.3rem] h-[4.4rem] rotate-[60deg];
+    @apply top-[25.4rem] right-[7.7rem] h-[4.6rem] rotate-[60deg];
   }
   
   .line-4 {
-    @apply top-[28.7rem] right-[3.8rem] h-[8.6rem] rotate-[15deg];
+    @apply top-[29.3rem] right-[4.4rem] h-[8rem] rotate-[15deg];
   }
 
   .dot{
@@ -38,23 +38,7 @@
 
   /* Media */
   
-  @media(min-width: 360px){
-      .line-1 {
-        @apply top-[11.4rem] right-[4.2rem] h-[7.6rem] rotate-[160deg];
-      }
-    
-      .line-2{
-        @apply top-[19.2rem] right-[7.6rem] h-[4rem] rotate-[110deg];
-      }
-    
-      .line-3{
-        @apply top-[25.4rem] right-[7.7rem] h-[4.6rem] rotate-[60deg];
-      }
-      
-      .line-4 {
-        @apply top-[29.3rem] right-[4.4rem] h-[8rem] rotate-[15deg];
-      }
-  }
+
 
   @media(min-width: 380px){
     .line-1 {

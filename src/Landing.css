@@ -88,15 +88,15 @@
 }
 
 .landing-btn-container{
-    @apply flex flex-col 
+    @apply flex flex-col mt-20 items-center
 }
 
 .search-btn{
-    @apply relative bottom-20 right-16 text-[24px] font-bold mb-7
+    @apply relative bottom-[5.1rem] right-16 text-[24px] font-bold mb-7
 }
 
 .clear-btn{
-    @apply relative bottom-16 left-[5.2rem] text-[20px]
+    @apply relative bottom-16 left-[5.1rem] text-[20px]
 }
 
 .small-black-border{
@@ -112,6 +112,20 @@
     @apply flex justify-center items-center
 }
 
+.search-btn,
+.small-black-border,
+.small-white-border{
+    @apply  mr-3
+}
+
+
+.small-gray-border{
+    @apply mr-3
+}
+
+
+
+
 /* GLOBE */
 
 .globe-container{
@@ -121,6 +135,29 @@
 .globe-gif{
     @apply fixed top-[19rem] right-[-5.2rem] w-40 max-w-[100%]
 }
+
+.globe-border{
+    @apply hidden
+}
+
+/* ICONS */
+
+.icon-container{
+    @apply flex mt-[-45px] mb-10 justify-center ml-7
+}
+
+.dark-mode-icon{
+    @apply mr-5 cursor-pointer
+}
+
+.about-icon{
+    @apply cursor-pointer
+}
+
+/* DARK MODE */
+
+
+
 
 
 
@@ -160,6 +197,10 @@
         @apply hidden
     }
 
+    .globe-border{
+        @apply flex
+    }
+
     .globe-gif-container{
         @apply flex justify-center items-center ;
         
@@ -176,8 +217,13 @@
     }
 
     .search-btn,
-    .small-black-border{
-        @apply mt-[-200px]
+    .small-black-border,
+    .small-white-border{
+        @apply mt-[-200px] mr-3
+    }
+
+    .small-gray-border{
+        @apply mr-2
     }
 
     .clear-btn,
@@ -185,7 +231,9 @@
         @apply mt-[-100px]
     }
 
-
+    .icon-container{
+        @apply mt-[-80px]
+    }
 }
 
 @media(min-width:766px){
@@ -280,6 +328,10 @@
     .clear-btn,
     .small-gray-border{
         @apply bottom-0
+    }
+
+    .icon-container{
+        @apply mt-0
     }
 }
 
