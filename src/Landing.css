@@ -348,39 +348,7 @@ body.dark-mode text{
     }
 }
 
-@media(max-height: 950px) and (max-width:600px){
-    .search-btn,
-    .small-black-border,
-    .clear-btn,
-    .small-gray-border{
-        @apply bottom-[10rem]
-    }
 
-    .mass-select-container{
-        @apply mb-32
-    }
-
-    .icon-container{
-        @apply mt-[-130px] mb-28
-    }
-}
-
-@media(max-height: 900px) and (max-width:600px){
-    .search-btn, 
-    .small-black-border,
-    .clear-btn,
-    .small-gray-border{
-        @apply bottom-[10.5rem]
-    }
-
-    .mass-select-container{
-        @apply mb-40
-    }
-
-    .icon-container{
-        @apply mt-[-140px] mb-28
-    }
-}
 
    
 @media(max-height: 800px) and (max-width:600px){

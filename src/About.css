@@ -15,21 +15,29 @@
 }
 
 .go-back-btn{
-    @apply absolute bottom-7 text-xl font-semibold left-0 right-0
+    @apply absolute bottom-[6.8rem] text-xl font-semibold left-0 right-0 
 }
 
 .go-back-btn.dark-mode{
-    @apply bottom-8
+    @apply bottom-[6.8rem]
 }
 
 .about-title-container{
-    @apply mb-12
+    @apply mb-7
 }
 
 .team-member-container{
-    @apply mb-10
+    @apply mb-5
 }
 
 .team-member{
     @apply font-bold
+}
+
+@media(max-height: 950px){
+    .team-member-container{
+        @apply mb-5
+    }
+
+
 }

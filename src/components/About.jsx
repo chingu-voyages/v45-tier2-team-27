@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 export default function About(){
     const { darkMode } = useContext(AuthContext)
     return(
-        <div className="w-[100%] h-[100%] text-center">
+        <div className="w-[100%] h-[100%] mb-20 text-center">
             <h1 className="landing-title mt-16">SKYFALL</h1>
             <div className="about-title-container">
                 <h1 className="text-xl">Created for Chingu Voyage 45</h1>
