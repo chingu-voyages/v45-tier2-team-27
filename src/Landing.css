@@ -57,11 +57,11 @@
 }
 
 .mass-select-container{
-    @apply  h-10  mb-8
+    @apply  mb-8
 }
 
 .mass-dropdown-container{
-    @apply w-[11.7rem] p-0 m-0 h-10
+    @apply w-[11.7rem] 
 }
 
 .year-dropdown-container{
