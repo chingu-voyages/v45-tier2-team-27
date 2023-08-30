@@ -112,6 +112,11 @@
     @apply flex justify-center items-center
 }
 
+.search-btn:hover,
+.clear-btn:hover{
+    transform: scale(1.05)
+}
+
 .search-btn,
 .small-black-border,
 .small-white-border{
@@ -144,15 +149,20 @@
 /* ICONS */
 
 .icon-container{
-    @apply flex mt-[-45px] mb-10 justify-center ml-7
+    @apply flex mt-[-45px] mb-10 justify-center ml-2
 }
 
 .dark-mode-icon{
-    @apply mr-5 cursor-pointer
+    @apply  cursor-pointer
 }
 
 .about-icon{
-    @apply cursor-pointer
+    @apply cursor-pointer ml-8
+}
+
+.about-icon:hover,
+.dark-mode-icon:hover{
+    transform: scale(1.05);
 }
 
 /* DARK MODE */
