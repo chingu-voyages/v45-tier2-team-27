@@ -1,6 +1,6 @@
 export default function NewSearchBtn() {
   return (
-    <div className="mx-10 my-12 py-1 relative">
+    <div className="mx-10 my-12 py-1 bottom-20 relative">
       <img
         src="/images/large-black-border.png"
         alt=""
