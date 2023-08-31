@@ -63,11 +63,11 @@
 }
 
 
-@media(min-width:1280px){
+/* @media(min-width:1280px){
     .border-container{
         @apply hidden
     }
-}
+} */
 
 @media(min-width:766px){
     .top-left-border,

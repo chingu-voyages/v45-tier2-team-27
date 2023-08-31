@@ -1,6 +1,5 @@
 import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
-import DesktopBorder from "./DesktopBorder";
 
 const data = [
   {
@@ -130,7 +129,6 @@ export default function SearchResults() {
       </div>
       <NewSearchBtn />
       <BorderImages />
-      <DesktopBorder />
     </div>
   );
 }
