@@ -6,11 +6,11 @@
 /* LANDING */
 
 .landing-container{
-    @apply flex flex-col items-center overflow-hidden
+    @apply flex flex-col items-center overflow-hidden mt-6
 }
 
 .landing-title{
-    @apply text-3xl mb-[1.85rem] mt-[5rem]
+    @apply text-3xl mb-[1.85rem] mt-[6rem]
 }
 
 .asteroid-container{
@@ -485,5 +485,7 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-60px]
     }
+
+
 }
 

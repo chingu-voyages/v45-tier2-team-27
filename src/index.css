@@ -28,7 +28,7 @@ body.dark-mode input{
 }
 
 .app-container{
-  @apply absolute 
+  @apply absolute
 }
 
 
