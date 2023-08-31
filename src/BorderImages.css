@@ -68,6 +68,7 @@
 }
 
 
+
 @media(min-width:1280px){
     .top-border-container{
         @apply invisible
