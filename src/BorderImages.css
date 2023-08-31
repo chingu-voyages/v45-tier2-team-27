@@ -62,11 +62,33 @@
     @apply  absolute left-3 bottom-1
 }
 
+.desktop-right-border,
+.desktop-left-border{
+    @apply hidden
+}
+
 
 @media(min-width:1280px){
-    /* .border-container{
-        @apply hidden
-    } */
+    .top-border-container{
+        @apply invisible
+    }
+
+    .bottom-border-container{
+        @apply invisible
+    }
+
+    .desktop-right-border{
+        @apply fixed top-0 right-0
+    }
+
+    .desktop-left-border{
+        @apply fixed top-0 left-0
+    }
+
+    .desktop-right-border,
+    .desktop-left-border{
+        @apply flex pointer-events-none
+    }
 }
 
 @media(min-width:766px){
@@ -135,15 +157,15 @@
 @media (max-height: 700px) and (max-width:600px){
     .bottom-left-border,
     .bottom-right-border{
-        @apply bottom-12
+        @apply bottom-2
     }
 
     .bottom-right-border-img{
-        @apply bottom-[3.2rem]
+        @apply bottom-[1rem]
     }
 
     .bottom-left-border-img{
-        @apply bottom-[3.4rem]
+        @apply bottom-[1rem]
     }
 }
 

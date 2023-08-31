@@ -52,7 +52,7 @@ export default function Landing(){
 
     return(
         <>
-        <BorderImages />
+        
         <html className={`${darkMode} ? "dark-mode" : ""`}>
         <div className={`landing-container `}>
             <h1 className="landing-title">SKYFALL</h1>
@@ -147,7 +147,7 @@ export default function Landing(){
                     <Link to="/about"><img className="about-icon" src={`${darkMode ? "/images/white-about-icon.png" : "/images/about-icon.png"}`} alt="" /></Link>
                 </div>
             </div>
-            
+            <BorderImages />
         </div>
         </html>
         </>

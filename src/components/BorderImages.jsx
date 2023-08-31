@@ -19,6 +19,11 @@ export default function BorderImages(){
                 <img className={`bottom-right-border-img ${darkMode ? "white-bottom-right-img" : ""}`} src={`${darkMode ? "/images/white-bottom-right-border-img.png" : "/images/bottom-right-border-img.png"}`} alt="" />
                 <img className={`bottom-left-border-img ${darkMode ? "white-bottom-left-img" : ""}`} src={`${darkMode ? "/images/white-bottom-left-border-img.png" : "/images/bottom-left-border-img.png"}`} alt="" />
             </div>
+
+            <div>
+                <img className="desktop-right-border" src="/images/desktop-right-border.png" alt="" />
+                <img className="desktop-left-border" src="/images/desktop-left-border.png" alt="" />
+            </div>
             
         </div>
     )
