@@ -10,7 +10,7 @@
 }
 
 .landing-title{
-    @apply text-3xl mb-[1.85rem] mt-[6rem]
+    @apply text-3xl mb-[1.85rem] mt-[3.5rem]
 }
 
 .asteroid-container{
@@ -413,6 +413,10 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-30px] mb-16
     }
+
+    .landing-container{
+        @apply mt-0
+    }
 }
 
 
@@ -434,6 +438,10 @@ body.dark-mode text{
 
     .landing-title{
         @apply pt-0 mt-10
+    }
+
+    .landing-container{
+        @apply mt-6
     }
 }
 
@@ -485,7 +493,5 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-60px]
     }
-
-
 }
 
