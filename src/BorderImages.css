@@ -115,6 +115,9 @@
         @apply left-1
     }
 
+    .white-bottom-left-img{
+        @apply left-[-0.8rem]
+    }
 }
 
 
