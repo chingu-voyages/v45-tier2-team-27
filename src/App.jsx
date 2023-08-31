@@ -5,7 +5,6 @@ import './ConnectingLines.css';
 import './Trapezoid.css';
 import './BorderImages.css';
 import './About.css';
-import "./DesktopBorder.css";
 import "./SearchResults.css"
 import Landing from './components/Landing';
 import { Route, Routes } from 'react-router-dom';
