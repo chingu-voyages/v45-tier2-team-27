@@ -12,12 +12,15 @@ import ScatterChart from './components/ScatterChart';
 import RadialChartComponent from "./components/RadioChart";
 import SearchResults from "./components/SearchResults";
 import About from "./components/About";
+import FetchApi from "./components/FetchApi";
 
 export const AuthContext = createContext();
 
 function App() {
   const [meteoriteData, setMeteoriteData] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [recclassList, setRecclassList] = useState([]);
+  
 
   useEffect(() => {
     darkMode ? 
@@ -27,8 +30,9 @@ function App() {
 
   return (
     <>
-    <AuthContext.Provider value={{ meteoriteData, setMeteoriteData, darkMode, setDarkMode }}>
+    <AuthContext.Provider value={{ meteoriteData, setMeteoriteData, darkMode, setDarkMode, recclassList, setRecclassList}}>
       <div className={`app-container `}>
+        <FetchApi />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/radar-chart" element={<RadarChart />} />
