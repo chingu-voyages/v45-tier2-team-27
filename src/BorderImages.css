@@ -64,9 +64,9 @@
 
 
 @media(min-width:1280px){
-    /* .border-container{
+    .border-container{
         @apply hidden
-    } */
+    }
 }
 
 @media(min-width:766px){
