@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.desktop-border-container {
+    @apply flex
+}
+
+.left-border-container {
+    @apply absolute bottom-1 right-[30rem] w-[400px]
+}
+.right-border-container {
+    @apply absolute bottom-1 left-[30rem] w-[400px]
+}
+
