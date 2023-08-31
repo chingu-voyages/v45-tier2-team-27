@@ -21,8 +21,8 @@ export default function BorderImages(){
             </div>
 
             <div>
-                <img className="desktop-right-border" src="/images/desktop-right-border.png" alt="" />
-                <img className="desktop-left-border" src="/images/desktop-left-border.png" alt="" />
+                <img className="desktop-right-border" src={`${darkMode ? "/images/white-desktop-right-border.png" : "/images/desktop-right-border.png"}`} alt="" />
+                <img className="desktop-left-border" src={`${darkMode ? "/images/white-desktop-left-border.png" : "/images/desktop-left-border.png"}`} alt="" />
             </div>
             
         </div>

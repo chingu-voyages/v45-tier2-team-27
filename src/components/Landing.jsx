@@ -136,7 +136,7 @@ export default function Landing(){
             <div className="landing-btn-container">
                 <div className="search-btn-container">
                     <img className="small-black-border" src={`${darkMode ? "/images/small-white-border.png" : "/images/small-black-border.png"} `} alt="" />
-                    <button className="search-btn">SEARCH</button>
+                    <button className={`search-btn ${darkMode ? "" : "right-[4.2rem]"}`}><Link to="/search-results">SEARCH</Link></button>
                 </div>
                 <div className="clear-btn-container">
                     <button onClick={handleClear} className="clear-btn">CLEAR</button>

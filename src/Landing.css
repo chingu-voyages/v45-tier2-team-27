@@ -350,7 +350,7 @@ body.dark-mode text{
     }
 
     .landing-btn-container{
-        @apply mt-[25rem]
+        @apply mt-[30rem]
     }
 }
 

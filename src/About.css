@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .go-back-container{
-    @apply flex justify-center
+    @apply flex justify-center mt-[-1.5rem]
 }
 
 .go-back-btn{
@@ -12,11 +12,11 @@
 
 
 .about-title-container{
-    @apply mb-8
+    @apply mb-5
 }
 
 .team-member-container{
-    @apply mb-7
+    @apply mb-4
 }
 
 .team-member{

@@ -48,7 +48,7 @@ body.dark-mode input{
 
 @media(min-width: 1280px){
   .app-container {
-    @apply max-w-[1280px] h-[90%] mt-[630px] 
+    @apply max-w-[1280px] h-[90%] mt-[730px] 
   }
 }
 
