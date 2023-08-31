@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 .go-back-container{
-    @apply flex justify-center
+    @apply flex justify-center mt-[-1.5rem]
 }
 
 .go-back-btn{
-    @apply absolute  text-xl font-semibold left-0 right-0 
+    @apply absolute  text-xl font-semibold left-0 right-0 mt-0.5
 }
 
 
 .about-title-container{
-    @apply mb-8
+    @apply mb-5
 }
 
 .team-member-container{
-    @apply mb-7
+    @apply mb-4
 }
 
 .team-member{

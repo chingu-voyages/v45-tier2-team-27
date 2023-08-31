@@ -7,7 +7,7 @@ import { AuthContext } from "../App"
 import { Link } from "react-router-dom";
 
 export default function Landing(){
-    const {darkMode, setDarkMode} = useContext(AuthContext);
+    const {darkMode, setDarkMode, recclassList} = useContext(AuthContext);
 
     const handleDarkModeToggle = () => {
         setDarkMode(!darkMode);
@@ -38,22 +38,25 @@ export default function Landing(){
         return yearOptions;
       };
 
-      const compositions = [
-        { value: 'iron', label: 'Iron' },
-        { value: 'stony', label: 'Stony' },
-        { value: 'chondrite', label: 'Chondrite' },
-      ];
-    
       const massRanges = [
-        { value: 'small', label: 'Small' },
-        { value: 'medium', label: 'Medium' },
-        { value: 'large', label: 'Large' },
+        { min: 0, max: 24, label: '0 - 25' },
+        { min: 25, max: 50, label: '26 - 50' },
+        { min: 50, max: 99, label: '51 - 100' },
+        { min: 100, max: 499, label: '101 - 500' },
+        { min: 500, max: 999, label: '501 - 1000' },
+        { min: 1000, max: 4999, label: '1001 - 5000' },
+        { min: 5000, max: 9999, label: '5001 - 10000' },
+        { min: 10000, max: 49999, label: '10001 - 50000' },
+        { min: 50000, max: 99999, label: '50001 - 100000' },
+        { min: 100000, max: 499999, label: '100001 - 500000' },
+        { min: 500000, max: 999999, label: '500001 - 999999' },
+        { min: 1000000, max: Infinity, label: '1000000+' },
       ];
 
     return(
         <>
-        <BorderImages />
-        <html className={`${darkMode} ? "dark-mode" : ""`}>
+        
+        
         <div className={`landing-container `}>
             <h1 className="landing-title">SKYFALL</h1>
             <div className="asteroid-container">
@@ -95,9 +98,9 @@ export default function Landing(){
                     </div>
                     <select name="Meteorite-composition" id="meteorite-composition" className="meteorite-composition">
                         <option value="" disabled selected></option>
-                        {compositions.map(option => (
-                        <option key={option.value} value={option.value}>
-                            {option.label}
+                        {recclassList.map((recclass, index) => (
+                        <option key={index} value={recclass}>
+                            {recclass}
                         </option>
                         ))}
                     </select>
@@ -136,7 +139,7 @@ export default function Landing(){
             <div className="landing-btn-container">
                 <div className="search-btn-container">
                     <img className="small-black-border" src={`${darkMode ? "/images/small-white-border.png" : "/images/small-black-border.png"} `} alt="" />
-                    <button className="search-btn">SEARCH</button>
+                    <button className={`search-btn ${darkMode ? "" : "right-[4.2rem]"}`}><Link to="/search-results">SEARCH</Link></button>
                 </div>
                 <div className="clear-btn-container">
                     <button onClick={handleClear} className="clear-btn">CLEAR</button>
@@ -147,9 +150,9 @@ export default function Landing(){
                     <Link to="/about"><img className="about-icon" src={`${darkMode ? "/images/white-about-icon.png" : "/images/about-icon.png"}`} alt="" /></Link>
                 </div>
             </div>
-            
+            <BorderImages />
         </div>
-        </html>
+        
         </>
     )
 }
