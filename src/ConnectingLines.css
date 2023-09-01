@@ -174,7 +174,7 @@
 
 @media(min-width: 1280px){
   .line-1 {
-    @apply top-[-8.1rem] h-[12rem] left-[-4.3rem] rotate-[139deg]
+    @apply top-[-8.4rem] h-[11.9rem] left-[-4.1rem] rotate-[135deg]
   }
 
   .line-2{
@@ -182,11 +182,11 @@
   }
 
   .line-3{
-    @apply top-[7.9rem] h-[12.1rem] left-[-3.8rem]  rotate-[50deg] 
+    @apply top-[7.8rem] h-[12.2rem] left-[-3.8rem]  rotate-[50deg] 
   }
 
   .line-4{
-    @apply top-[7.4rem] h-[12.3rem] left-[14.1rem] rotate-[-47deg] 
+    @apply top-[7.6rem] h-[12.3rem] left-[14rem] rotate-[-50deg] 
   }
 }
 
