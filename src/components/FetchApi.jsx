@@ -20,7 +20,6 @@ export default function FetchApi() {
         const recclassTypes = Array.from(new Set(responseData.map(meteorite => meteorite.recclass)));
         setRecclassList(recclassTypes);
 
-       
       } catch (error) {
         console.error('Error fetching meteorite data:', error);
       }

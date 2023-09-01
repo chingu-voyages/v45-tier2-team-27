@@ -92,19 +92,19 @@
 }
 
 .search-btn{
-    @apply relative bottom-[5.1rem] right-16 text-[24px] font-bold mb-7
+    @apply relative bottom-[5rem] right-[3.9rem] text-[24px] font-bold mb-7
 }
 
 .clear-btn{
-    @apply relative bottom-16 left-[5.1rem] text-[20px]
+    @apply relative bottom-16 left-[4.8rem] right-0 text-[20px]
 }
 
 .small-black-border{
-    @apply relative bottom-20 left-16 pointer-events-none mb-7
+    @apply relative bottom-20 left-[3.4rem] pointer-events-none mb-7
 }
 
 .small-gray-border{
-    @apply relative bottom-16 right-4 pointer-events-none 
+    @apply relative bottom-16 right-7 pointer-events-none 
 }
 
 .search-btn-container,
@@ -116,20 +116,6 @@
 .clear-btn:hover{
     transform: scale(1.05)
 }
-
-.search-btn,
-.small-black-border,
-.small-white-border{
-    @apply  mr-3
-}
-
-
-.small-gray-border{
-    @apply mr-3
-}
-
-
-
 
 /* GLOBE */
 
@@ -232,9 +218,8 @@ body.dark-mode text{
     }
 
     .search-btn,
-    .small-black-border,
-    .small-white-border{
-        @apply mt-[-200px] mr-3
+    .small-black-border{
+        @apply mt-[-200px]
     }
 
     .small-gray-border{

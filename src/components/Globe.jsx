@@ -9,7 +9,7 @@ export default function Globe(){
                 <img className={`${darkMode ? "dark-globe-img" : "globe-img"}`} src={`${darkMode ? "./images/dark-mode-globe.png" : "/images/globe.png"}`} alt="" />
             </div>
             <div className="globe-gif-container">
-                <img className="globe-gif z-50 " src="./images/globe.gif" alt="" />
+                <img className={`globe-gif z-50 ${darkMode ? "border-white" : ""}`} src="./images/globe.gif" alt="" />
                 <img className={`globe-border ${darkMode ? "border-white" : ""}`} src={`${darkMode ? "/images/dark-mode-full-globe.png" : "/images/globe-border.png"}`} alt="" />      
             </div>
             
