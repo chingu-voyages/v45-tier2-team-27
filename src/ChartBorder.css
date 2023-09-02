@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* filed border */
+
+.field-border {
+    @apply border mt-4 relative h-10;
+    border-color: black;
+    border-right-color: transparent;
+    width: 25rem;
+
+}
+
+.field-left-image {
+    @apply -ml-1 h-full;
+
+}
+
+.chart-top-left {
+    @apply absolute bottom-0 left-0;
+}
+
+.field-top-dot {
+    @apply absolute left-1/4;
+    z-index: 1;
+}
+
+.inner-text {
+    @apply absolute top-1/4;
+    z-index: 1;
+    left: 5%;
+}
+
+
+
+.chart-border {
+    @apply relative border;
+    border-color: black;
+    height: 30rem;
+    width: 25rem;
+}
+
+  

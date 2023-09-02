@@ -46,9 +46,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
-                <p className="recclass">{`Recclass: ${payload[0].payload.recclass}`}</p>
                 <p className="mass">{`Mass: ${payload[0].payload.mass}`}</p>
-                <p className="year">{`Year: ${payload[0].payload.year}`}</p>
             </div>
         );
     }
@@ -61,10 +59,10 @@ export default function Radarchart() {
         <div className="flex justify-center items-center">
             <RadarChart
                 cx={300}
-                cy={250}
-                outerRadius={150}
+                cy={300}
+                outerRadius={100}
                 width={600}
-                height={500}
+                height={700}
                 data={data}
             >
                 <PolarGrid />

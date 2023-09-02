@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title-border {
+    @apply border;
+    border-color: black;
+    border-bottom-color: transparent;
+    width: 40rem;
+    height: 3rem;
+}
+
+.main-content {
+    @apply flex;
+
+
+    width: 50rem;
+    height: 40rem;
+}
+
+.overlap-image {
+    position: absolute;
+    top: -4px;
+}
+
+.black-dot {
+    position: absolute;
+    top: -4px;
+    left: 123px;
+    transform: translateY(-10%);
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.side-bar {
+    @apply border;
+    flex-shrink: 0;
+    border-color: black;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    width: 6rem;
+}
+
+.vertical-line {
+    @apply border;
+    border-color: black;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    width: 1.8rem;
+}
+
+.bottom-black-dot {
+    position: absolute;
+    top: 39.8rem;
+    left: 92px;
+    transform: translateY(-10%);
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.main-content {
+    position: relative;
+}
+
+.main-content:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    clip-path: polygon(0 0, calc(100% - 60.00px) 0, 100% 60.00px, 100% calc(100% - 60.00px), calc(100% - 60.00px) 100%, 0 100%, 0 0, 1px 1px, 1px calc(100% - 1px), calc(100% - 60.00px - 0.41px) calc(100% - 1px), calc(100% - 1px) calc(100% - 60.00px - 0.41px), calc(100% - 1px) calc(60.00px + 0.41px), calc(100% - 60.00px - 0.41px) 1px, 1px 1px);
+
+}
+
+.vertical-line{
+    flex-shrink:0;
+}
