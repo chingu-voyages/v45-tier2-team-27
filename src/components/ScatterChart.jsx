@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     ScatterChart,
     Scatter,
@@ -7,8 +7,10 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
-    ZAxis
-} from "recharts";
+    ZAxis,
+    ResponsiveContainer
+}
+    from "recharts";
 const data = [
     {
         name: "Aachen",
@@ -39,6 +41,13 @@ const data = [
 
     },
     {
+        name: "Acapu",
+        recclass: "Acapulcoite",
+        mass: "1914",
+        year: "1976-01-01T00:00:00.000",
+
+    },
+    {
         name: "Achiras",
         recclass: "L6",
         mass: "780",
@@ -47,13 +56,28 @@ const data = [
     },
 
 ];
+
+const groupedData = data.reduce((acc, curr) => {
+    const year = new Date(curr.year).getFullYear();
+    if (!acc[year]) {
+        acc[year] = 0;
+    }
+    acc[year]++;
+    return acc;
+}, {});
+
+const plotData = Object.keys(groupedData).map(year => ({
+    year: parseInt(year, 10),
+    count: groupedData[year]
+}));
+
+
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
-                <p className="recclass">{`Recclass: ${payload[0].payload.recclass}`}</p>
-                <p className="mass">{`Mass: ${payload[0].payload.mass}`}</p>
                 <p className="year">{`Year: ${payload[0].payload.year}`}</p>
+                <p className="count">{`Meteorites: ${payload[0].payload.count}`}</p>
             </div>
         );
     }
@@ -63,11 +87,33 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 
 export default function Scatterchart() {
+    const [containerWidth, setContainerWidth] = useState(600);
+    useEffect(() => {
+        
+        const updateDimensions = () => {
+          const width = window.innerWidth;
+    
+          if (width <= 768) {  // breakpoint here
+            setContainerWidth(400);
+          } else {
+            setContainerWidth(600);
+          }
+        };
+    
+      
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+    
+        return () => {
+          window.removeEventListener('resize', updateDimensions);
+        };
+      }, []);  
+    
+    
+
     return (
-        <div className="flex justify-center items-center">
+        <ResponsiveContainer width={containerWidth} height="80%">
             <ScatterChart
-                width={800}
-                height={300}
                 margin={{
                     top: 65,
                     right: 60,
@@ -76,17 +122,18 @@ export default function Scatterchart() {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" name="Meteorite Name" />
-                <YAxis dataKey="mass" name="Mass" scale="log" domain={['auto', 'auto']} reversed={true} />
-                <ZAxis dataKey="recclass" name="Recclass" />
+                <XAxis dataKey="year" name="Year" />
+                <YAxis dataKey="count" name="Meteorite Count" />
+
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
                 <Scatter
                     name="Meteorites"
-                    data={data}
+                    data={plotData}
                     fill="#8884d8"
                 />
             </ScatterChart>
-        </div>
+        </ResponsiveContainer>
+
     );
 }
