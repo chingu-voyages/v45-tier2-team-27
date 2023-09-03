@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { AuthContext } from "../App";
+import { AuthContext } from "../App"
 
 
 const ConnectingLines = () => {
@@ -25,7 +25,7 @@ const { darkMode } = useContext(AuthContext)
       </div>
       
     </div>
-  );
-};
+  )
+}
 
-export default ConnectingLines;
+export default ConnectingLines
