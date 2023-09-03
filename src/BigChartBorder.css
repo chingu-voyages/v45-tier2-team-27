@@ -12,8 +12,6 @@
 
 .main-content {
     @apply flex;
-
-
     width: 50rem;
     height: 40rem;
 }
@@ -25,8 +23,8 @@
 
 .black-dot {
     position: absolute;
-    top: -4px;
-    left: 123px;
+    top: -3px;
+    left: 122px;
     transform: translateY(-10%);
     width: 7px;
     height: 7px;
@@ -45,13 +43,47 @@
 
 .vertical-line {
     @apply border;
+    position:relative;
     border-color: black;
     border-left-color: transparent;
     border-bottom-color: transparent;
     border-top-color: transparent;
     width: 1.8rem;
 }
+.empty-dot-1{
+    position: absolute;
+    top: 6.5rem;
+    left: -5px;
+    transform: translateY(-10%);
+    width: 7px;
+    height: 7px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50%;
+}
+.empty-dot-2{
+    position: absolute;
+    top: 19.5rem;
+    left: -5px;
+    transform: translateY(-10%);
+    width: 7px;
+    height: 7px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50%;
+}
 
+.empty-dot-3{
+    position: absolute;
+    top: 33rem;
+    left: -5px;
+    transform: translateY(-10%);
+    width: 7px;
+    height: 7px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50%;
+}
 .bottom-black-dot {
     position: absolute;
     top: 39.8rem;

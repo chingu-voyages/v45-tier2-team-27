@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import './App.css';
 import './Landing.css';
 import './ConnectingLines.css';
@@ -16,16 +16,34 @@ import Chart from './components/Chart'
 import BigChart from './components/BigChart'
 export const AuthContext = createContext();
 
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [matches, query]);
+
+  return matches;
+}
+
 function App() {
   const [meteoriteData, setMeteoriteData] = useState([]);
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');  
+
+
 
   return (
     <AuthContext.Provider value={{ meteoriteData, setMeteoriteData }}>
       <div>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/big-chart" element={<BigChart />} />
+          <Route path="/chart" element={isSmallScreen ? <Chart /> : <BigChart />} />
           <Route path="/radar-chart" element={<RadarChart />} />
           <Route path="/scatter-chart" element={<ScatterChart />} />
           <Route path="/radio-chart" element={<RadialChartComponent />} />

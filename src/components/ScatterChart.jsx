@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     ScatterChart,
     Scatter,
@@ -7,8 +7,10 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
-    ZAxis
-} from "recharts";
+    ZAxis,
+    ResponsiveContainer
+}
+    from "recharts";
 const data = [
     {
         name: "Aachen",
@@ -85,11 +87,33 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 
 export default function Scatterchart() {
+    const [containerWidth, setContainerWidth] = useState(600);
+    useEffect(() => {
+        
+        const updateDimensions = () => {
+          const width = window.innerWidth;
+    
+          if (width <= 768) {  // breakpoint here
+            setContainerWidth(400);
+          } else {
+            setContainerWidth(600);
+          }
+        };
+    
+      
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+    
+        return () => {
+          window.removeEventListener('resize', updateDimensions);
+        };
+      }, []);  
+    
+    
+
     return (
-        <div className="flex justify-center items-center">
+        <ResponsiveContainer width={containerWidth} height="80%">
             <ScatterChart
-                width={800}
-                height={300}
                 margin={{
                     top: 65,
                     right: 60,
@@ -109,6 +133,7 @@ export default function Scatterchart() {
                     fill="#8884d8"
                 />
             </ScatterChart>
-        </div>
+        </ResponsiveContainer>
+
     );
 }

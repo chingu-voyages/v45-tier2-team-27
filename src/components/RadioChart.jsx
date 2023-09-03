@@ -1,5 +1,5 @@
-import React from 'react';
-import { RadialBarChart, RadialBar, Legend, Tooltip, Cell } from 'recharts';
+import React, { useState, useEffect } from 'react';
+import { RadialBarChart, RadialBar, Legend, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 
 const data = [
     {
@@ -79,42 +79,64 @@ const CustomTooltip = ({ active, payload, label }) => {
     return null;
 };
 export default function RadioChart() {
-    return (
-        <RadialBarChart
-            width={730}
-            height={250}
-            innerRadius="10%"
-            outerRadius="80%"
-            data={plotData}
-            startAngle={180}
-            endAngle={0}
-        >
-            <RadialBar
-                minAngle={15}
-                label={{ fill: '#666', position: 'insideStart' }}
-                background
-                clockWise={true}
-                dataKey="count"
-            >
-                {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[entry.recclass]} />
-                ))}
-            </RadialBar>
-            <Legend
-                iconSize={10}
-                layout="vertical"
-                verticalAlign="middle"
-                align="right"
-                payload={
-                    Object.keys(COLORS).map(recclass => ({
-                        value: recclass,
-                        type: 'square',
-                        color: COLORS[recclass]
-                    }))
-                }
-            />
-            <Tooltip content={<CustomTooltip />} />
+    const [containerWidth, setContainerWidth] = useState(600);
 
-        </RadialBarChart>
+    useEffect(() => {
+        
+        const updateDimensions = () => {
+          const width = window.innerWidth;
+    
+          if (width <= 768) {  // breakpoint here
+            setContainerWidth(400);
+          } else {
+            setContainerWidth(600);
+          }
+        };
+    
+      
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+    
+        return () => {
+          window.removeEventListener('resize', updateDimensions);
+        };
+      }, []); 
+    return (
+        <ResponsiveContainer width="80%" height={containerWidth}>
+            <RadialBarChart
+                innerRadius="40%"
+                outerRadius="90%"
+                data={plotData}
+                startAngle={180}
+                endAngle={0}
+            >
+                <RadialBar
+                    minAngle={15}
+                    label={{ fill: '#666', position: 'insideStart' }}
+                    background
+                    clockWise={true}
+                    dataKey="count"
+                >
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[entry.recclass]} />
+                    ))}
+                </RadialBar>
+                <Legend
+                    iconSize={10}
+                    layout="vertical"
+                    verticalAlign="bottom"
+                    align="center"
+                    payload={
+                        Object.keys(COLORS).map(recclass => ({
+                            value: recclass,
+                            type: 'square',
+                            color: COLORS[recclass]
+                        }))
+                    }
+                />
+                <Tooltip content={<CustomTooltip />} />
+
+            </RadialBarChart>
+        </ResponsiveContainer>
     );
 }

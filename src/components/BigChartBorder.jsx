@@ -60,11 +60,15 @@ export default function BigChartBorder() {
                         alt="" />
                 </div>
 
-                <div className="vertical-line"></div>
-
-                <div className="chart">
-                    {renderChart()}
+                <div className="vertical-line">
+                    <div className={`${selectedImage === 'radar-menu' ? 'empty-dot-1' : ''}`}></div>
+                    <div className={`${selectedImage === 'radio-menu' ? 'empty-dot-2' : ''}`}></div>
+                    <div className={`${selectedImage === 'graph-menu' ? 'empty-dot-3' : ''}`}></div>
                 </div>
+
+                
+                    {renderChart()}
+                
 
                 <div className="bottom-black-dot"></div>
 
