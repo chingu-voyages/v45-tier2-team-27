@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.go-back-container{
+    @apply flex justify-center mt-[-1.5rem]
+}
+
+.go-back-btn{
+    @apply absolute  text-xl font-semibold left-0 right-0 
+}
+
+
+.about-title-container{
+    @apply mb-5
+}
+
+.team-member-container{
+    @apply mb-4
+}
+
+.team-member{
+    @apply font-bold
+}
+
+@media(max-width: 1280px){
+    .go-back-btn{
+        @apply bottom-10
+    }
+    
+    .go-back-border{
+        @apply absolute bottom-10
+    }
+    
+    .white-border{
+        @apply absolute bottom-9
+    }
+}

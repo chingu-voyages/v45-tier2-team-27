@@ -2,7 +2,8 @@ import { useEffect, useContext } from 'react';
 import { AuthContext } from "../App";
 
 export default function FetchApi() {
-  const {meteoriteData, setMeteoriteData} = useContext(AuthContext);
+  const { setMeteoriteData, setRecclassList } = useContext(AuthContext);
+  
 
   useEffect(() => {
     const fetchMeteoriteData = async () => {
@@ -16,12 +17,19 @@ export default function FetchApi() {
         const responseData = await response.json();
         setMeteoriteData(responseData);
        
+        const recclassTypes = Array.from(new Set(responseData.map(meteorite => meteorite.recclass)));
+        setRecclassList(recclassTypes);
+
       } catch (error) {
         console.error('Error fetching meteorite data:', error);
       }
     };
     fetchMeteoriteData();
-  }, [meteoriteData, setMeteoriteData]);
+  }, []);
+
+   
+
+ 
 
     return(
         <div>

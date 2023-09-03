@@ -3,43 +3,11 @@
 @tailwind utilities;
 
 
-.top-left-border-img{
-    @apply absolute top-[1.8rem] left-[1.3rem]
-}
+/* Border images */
 
 .top-border-container{
-    @apply mt-5 bg-blue-500
+    @apply flex justify-between 
 }
-
-.top-border-line{
-    @apply absolute top-[2.95rem] left-[7.5rem] w-[34%] bg-gray-500 h-[1.4px]
-}
-
-.bottom-border-line{
-    @apply absolute bottom-1 left-[5rem] h-[1.5px] w-[60%] bg-gray-500
-}
-
-.top-right-border-line{
-    @apply absolute top-[12rem] h-[1.5px] right-[-4.19rem] w-40 bg-gray-500 rotate-[90deg]
-}
-
-.bottom-right-border-line{
-    @apply absolute top-[38.95rem] h-[1.5px] right-[-8.96rem] w-[19.5rem] bg-gray-500 rotate-[90deg]
-}
-
-.left-border-line{
-    @apply absolute top-[27.5rem] left-[-20.39rem] h-[1.5px] w-[42.4rem] bg-gray-500 rotate-[90deg] 
-}
-
-.app-border{
-    @apply hidden
-}
-
-.border-container{
-    @apply flex
-}
-
-/* Border images */
 
 .top-left-border-img{
     @apply absolute top-8 left-4
@@ -57,14 +25,25 @@
     @apply absolute left-4 bottom-[0.7rem]
 }
 
-.side-bar-img{
-    @apply absolute right-5 top-40
+.white-bottom-right-img{
+    @apply bottom-2.5 right-7
 }
 
+.white-bottom-left-img{
+    @apply bottom-3 left-0
+}
+
+.white-top-left-img{
+    @apply top-8 left-5
+}
+
+.white-top-right-img{
+    @apply top-5 right-4
+}
 /* Borders */
 
 .bottom-border-container{
-    @apply relative w-screen 
+    @apply w-screen 
 }
 
 .top-right-border{
@@ -83,9 +62,136 @@
     @apply  absolute left-3 bottom-1
 }
 
+.desktop-right-border,
+.desktop-left-border{
+    @apply hidden
+}
+
+
 
 @media(min-width:1280px){
-    .border-container{
-        @apply hidden
+    .top-border-container{
+        @apply invisible
+    }
+
+    .bottom-border-container{
+        @apply invisible
+    }
+
+    .desktop-right-border{
+        @apply fixed top-0 right-0
+    }
+
+    .desktop-left-border{
+        @apply fixed top-0 left-0
+    }
+
+    .desktop-right-border,
+    .desktop-left-border{
+        @apply flex pointer-events-none
     }
 }
+
+@media(min-width:766px){
+    .top-left-border,
+    .bottom-left-border{
+        @apply left-0
+    }
+
+    .top-right-border,
+    .bottom-right-border{
+        @apply right-0
+    }
+
+    .top-right-border-img{
+        @apply right-1
+    }
+
+    .bottom-right-border-img{
+        @apply right-4
+    }
+
+    .top-left-border-img,
+    .bottom-left-border-img{
+        @apply left-1
+    }
+
+    .white-bottom-left-img{
+        @apply left-[-0.8rem]
+    }
+}
+
+
+
+
+@media(max-height: 800px) and (max-width:600px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-8
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-9
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-10
+    }
+    .side-bar-img{
+        @apply top-32
+    }
+}
+
+@media(max-height: 750px) and (max-width:600px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-0
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-1
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-2
+    }
+
+}
+
+@media (max-height: 700px) and (max-width:600px){
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-2
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[1rem]
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-[1rem]
+    }
+}
+
+@media (max-height: 640px) and (max-width:600px){
+    .top-left-border,
+    .top-right-border,
+    .top-left-border-img,
+    .top-right-border-img{
+        @apply mt-[-10px]
+    }
+
+    .bottom-left-border,
+    .bottom-right-border{
+        @apply bottom-16
+    }
+
+    .bottom-right-border-img{
+        @apply bottom-[4.2rem]
+    }
+
+    .bottom-left-border-img{
+        @apply bottom-[4.4rem]
+    }
+}
+
