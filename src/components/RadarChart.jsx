@@ -1,11 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     RadarChart,
     PolarGrid,
     PolarAngleAxis,
     PolarRadiusAxis,
     Radar,
-    Tooltip
+    Tooltip,
+    ResponsiveContainer
 } from "recharts";
 
 const data = [
@@ -46,9 +47,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
-                <p className="recclass">{`Recclass: ${payload[0].payload.recclass}`}</p>
                 <p className="mass">{`Mass: ${payload[0].payload.mass}`}</p>
-                <p className="year">{`Year: ${payload[0].payload.year}`}</p>
             </div>
         );
     }
@@ -57,14 +56,43 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 export default function Radarchart() {
+
+    const [containerWidth, setContainerWidth] = useState(600);
+    const [coordinateX, setCoordinateX] = useState(200);
+    const [coordinateY, setCoordinateY] = useState(200);
+
+    useEffect(() => {
+        
+        const updateDimensions = () => {
+          const width = window.innerWidth;
+    
+          if (width <= 768) {  // breakpoint here
+              setContainerWidth(400);
+              setCoordinateX(200)
+              setCoordinateY(200)
+          } else {
+              setContainerWidth(600);
+              setCoordinateX(300)
+              setCoordinateY(250)
+          }
+        };
+    
+      
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+    
+        return () => {
+          window.removeEventListener('resize', updateDimensions);
+        };
+      }, []); 
     return (
-        <div className="flex justify-center items-center">
+        <ResponsiveContainer width={containerWidth} height="80%">
             <RadarChart
-                cx={300}
-                cy={250}
-                outerRadius={150}
+                cx={coordinateX}
+                cy={coordinateY}
+                outerRadius={100}
                 width={600}
-                height={500}
+                height={700}
                 data={data}
             >
                 <PolarGrid />
@@ -73,7 +101,7 @@ export default function Radarchart() {
                 <Radar name="Mass" dataKey="mass" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
                 <Tooltip content={<CustomTooltip />} />
             </RadarChart>
-        </div>
+        </ResponsiveContainer>
     );
 }
 
