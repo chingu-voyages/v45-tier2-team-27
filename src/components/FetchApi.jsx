@@ -71,10 +71,6 @@ export default function FetchApi() {
     fetchMeteoriteData()
   }, [])
 
-   
-
- 
-
     return(
         <div>
           {loading ?? 

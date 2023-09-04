@@ -12,7 +12,6 @@ export default function BorderImages(){
                 <img className={`top-right-border-img ${darkMode ? "white-top-right-img" : ""}`} src={`${darkMode ? "/images/white-top-right-border-img.png" : "/images/top-right-border-img.png"}`} alt="" />
             </div>
 
-            
             <div className="bottom-border-container">
                 <img className="bottom-right-border" src={`${darkMode ? "/images/white-bottom-right-border.png" : "/images/bottom-right-border.png"}`} alt="" />
                 <img className="bottom-left-border" src={`${darkMode ? "/images/white-bottom-left-border.png" : "/images/bottom-left-border.png"}`} alt="" />
@@ -23,8 +22,7 @@ export default function BorderImages(){
             <div>
                 <img className="desktop-right-border" src={`${darkMode ? "/images/white-desktop-right-border.png" : "/images/desktop-right-border.png"}`} alt="" />
                 <img className="desktop-left-border" src={`${darkMode ? "/images/white-desktop-left-border.png" : "/images/desktop-left-border.png"}`} alt="" />
-            </div>
-            
+            </div>  
         </div>
     )
 }

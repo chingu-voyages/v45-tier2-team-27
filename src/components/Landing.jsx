@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 
 
 export default function Landing(){
+    
     const {
         darkMode, 
         setDarkMode,
@@ -25,7 +26,6 @@ export default function Landing(){
          setMinMass,
          maxMass,
          setMaxMass,
-
         } = useContext(AuthContext)
    
     const handleAsteroidNameChange = (e) => {
@@ -54,7 +54,6 @@ const handleMassRangeChange = (e) => {
     console.log("select mass", input);
   
     if (input === "1000000+") {
-      
       setMinMass(1000000);
       setMaxMass(Infinity);
     } else {
@@ -90,8 +89,6 @@ const handleMassRangeChange = (e) => {
             searchCriteria.minMass = minMass || ''
             searchCriteria.maxMass = maxMass || ''
           }
-
-        
     }
 
     const handleDarkModeToggle = () => {
@@ -150,8 +147,6 @@ const handleMassRangeChange = (e) => {
         { min: 1000000, max: Infinity, label: '1000000+' },
       ]
 
-
-
     return(
         <>
         <div className={`landing-container `}>
@@ -168,7 +163,6 @@ const handleMassRangeChange = (e) => {
                 </div>
                 <p className="asteroid-text">Asteroid Name</p>
             </div>
-
 
             <div className="year-select-container">
                 <div className="year-dropdown-container">
@@ -190,7 +184,6 @@ const handleMassRangeChange = (e) => {
                 </div>
                 <p className="year-dropdown-text">Year of Strike</p>
             </div>
-            
             
             <div className="composition-select-container">
                 <div className="composition-dropdown-container">
@@ -253,7 +246,6 @@ const handleMassRangeChange = (e) => {
             </div>
             <BorderImages />
         </div>
-        
         </>
     )
 }

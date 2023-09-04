@@ -67,8 +67,6 @@
     @apply hidden
 }
 
-
-
 @media(min-width:1280px){
     .top-border-container{
         @apply invisible
@@ -120,9 +118,6 @@
         @apply left-[-0.8rem]
     }
 }
-
-
-
 
 @media(max-height: 800px) and (max-width:600px){
     .bottom-left-border,

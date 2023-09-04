@@ -297,7 +297,6 @@ body.dark-mode text{
     }
 }
 
-
 @media(min-width: 1280px){
     .asteroid-container,
     .mass-select-container{
@@ -339,9 +338,6 @@ body.dark-mode text{
     }
 }
 
-
-
-   
 @media(max-height: 800px) and (max-width:600px){
     .landing-title{
         @apply mt-16

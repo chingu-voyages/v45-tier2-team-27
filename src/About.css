@@ -10,7 +10,6 @@
     @apply absolute  text-xl font-semibold left-0 right-0 
 }
 
-
 .about-title-container{
     @apply mb-5
 }

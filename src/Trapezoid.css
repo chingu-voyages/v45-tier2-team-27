@@ -3,47 +3,51 @@
 @tailwind utilities;
 
    
-   /* TRAPEZOIDS */
+/* TRAPEZOIDS */
 
-   .asteroid-trap,
-   .upside-down-asteroid-trap,
-   .year-trap,
-   .upside-down-year-trap,
-   .composition-trap,
-   .upside-down-composition-trap,
-   .mass-trap,
-   .upside-down-mass-trap {
-    @apply w-[55px] border-b-[6px] border-black border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
-   }
+.asteroid-trap,
+.upside-down-asteroid-trap,
+.year-trap,
+.upside-down-year-trap,
+.composition-trap,
+.upside-down-composition-trap,
+.mass-trap,
+.upside-down-mass-trap {
+  @apply w-[55px] border-b-[6px] border-black border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+}
 
-   .year-trap,
-   .composition-trap,
-   .mass-trap,
-   .asteroid-trap{
-    @apply invisible
-   }
+.year-trap,
+.composition-trap,
+.mass-trap,
+.asteroid-trap{
+  @apply invisible
+}
 
-   .upside-down-asteroid-trap,
-   .upside-down-composition-trap,
-   .upside-down-mass-trap,
-   .upside-down-year-trap {
-    @apply rotate-180;  
-   }
+.upside-down-asteroid-trap,
+.upside-down-composition-trap,
+.upside-down-mass-trap,
+.upside-down-year-trap {
+  @apply rotate-180;  
+}
 
-   .year-dropdown-container:hover .year-trap,
-   .composition-dropdown-container:hover .composition-trap,
-   .mass-dropdown-container:hover .mass-trap,
-   .asteroid-input-container:hover .asteroid-trap {
-    @apply visible;
-  }
+.year-dropdown-container:hover .year-trap,
+.composition-dropdown-container:hover .composition-trap,
+.mass-dropdown-container:hover .mass-trap,
+.asteroid-input-container:hover .asteroid-trap {
+  @apply visible;
+}
 
-   .upside-down-composition-trap{
-    @apply relative  mr-[16.8rem];
-   }
+.upside-down-composition-trap{
+  @apply relative  mr-[16.8rem];
+}
+
+.dark-mode-trap{
+  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+}
 
 /* MEDIA */
 
-  @media(min-width: 600px){
+@media(min-width: 600px){
   .upside-down-composition-trap,
   .upside-down-year-trap{
     @apply absolute left-[8.1rem] 
@@ -65,32 +69,4 @@
   .year-trap{
     @apply absolute left-[8.2rem] top-[-5px]
   }
-}
-
-/* @media(min-width: 1280px){
-    .upside-down-asteroid-trap,
-    .asteroid-trap{
-      @apply fixed left-[12rem]
-    }
-
-    .asteroid-trap{
-      @apply mt-[-6px]
-    }
-} */
-
-/* .asteroid-trap,
-.upside-down-asteroid-trap,
-.year-trap,
-.upside-down-year-trap,
-.composition-trap,
-.upside-down-composition-trap,
-.mass-trap,
-.upside-down-mass-trap {
-  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
-} */
-
-
-
-.dark-mode-trap{
-  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
 }
