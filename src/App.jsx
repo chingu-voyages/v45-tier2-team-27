@@ -18,6 +18,8 @@ import Chart from './components/Chart'
 import BigChart from './components/BigChart'
 import About from "./components/About";
 import FetchApi from "./components/FetchApi";
+import Map from "./components/Map";
+
 
 
 export const AuthContext = createContext();
@@ -49,6 +51,7 @@ function App() {
   const [minMass, setMinMass] = useState(null)
   const [maxMass, setMaxMass] = useState(null)
   const [composition, setComposition] = useState("")
+  const [selectedMeteorite, setSelectedMeteorite] = useState(null)
   const isSmallScreen = useMediaQuery('(max-width: 768px)');  
 
   useEffect(() => {
@@ -78,6 +81,8 @@ function App() {
       setMaxMass,
       composition,
       setComposition,
+      selectedMeteorite,
+      setSelectedMeteorite
       }}>
       <div className={`app-container `}>
         <FetchApi />
@@ -89,6 +94,7 @@ function App() {
           <Route path="/radio-chart" element={<RadialChartComponent />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/about" element={<About />} />
+          <Route path="/map" element={<Map />} />
         </Routes>
         </div>   
     </AuthContext.Provider>

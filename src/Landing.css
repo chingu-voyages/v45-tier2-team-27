@@ -480,3 +480,11 @@ body.dark-mode text{
     }
 }
 
+.full-height-map{
+    @apply h-[30rem] w-[34.5rem] bg-gray-500 flex justify-center items-center mb-[-50px]
+}
+
+.back-to-results{
+    @apply absolute bottom-16 right-0 left-0
+}
+
