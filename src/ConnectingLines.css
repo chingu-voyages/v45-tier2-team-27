@@ -194,6 +194,25 @@
 
 /* MEDIA HEIGHT */
 
+@media(max-height: 800px) and (min-width: 220px){
+  .line-1 {
+    @apply top-[10.4rem] right-[4.5rem] h-[4.3rem] rotate-[155deg];
+  }
+
+  .line-2{
+    @apply top-[15.2rem] right-[7.8rem] h-[4rem] rotate-[110deg];
+  }
+
+  .line-3{
+    @apply top-[20rem] right-[7.9rem] h-[4.2rem] rotate-[70deg];
+  }
+  
+  .line-4 {
+    @apply top-[24.6rem] right-[4.3rem] h-[4.9rem] rotate-[30deg];
+  }
+
+}
+
 @media(max-height: 800px) and (min-width: 360px){
   .line-1 {
     @apply top-[10.4rem] right-[4.5rem] h-[4.3rem] rotate-[155deg];

@@ -49,19 +49,26 @@ export default function Landing(){
     }
 }
     
-    const handleMassRangeChange = (e) => {
-        const input = e.target.value
-        console.log("select mass", input)
-        const [minMassInput, maxMassInput] = input.split('-').map(mass => mass.trim())
-
-        const minMassValue = parseInt(minMassInput)
-        const maxMassValue = parseInt(maxMassInput)
-
-        if (!isNaN(minMassValue) && !isNaN(maxMassValue)) {
-            setMinMass(minMassValue)
-            setMaxMass(maxMassValue)
+const handleMassRangeChange = (e) => {
+    const input = e.target.value;
+    console.log("select mass", input);
+  
+    if (input === "1000000+") {
+      
+      setMinMass(1000000);
+      setMaxMass(Infinity);
+    } else {
+      const [minMassInput, maxMassInput] = input.split('-').map(mass => mass.trim());
+  
+      const minMassValue = parseInt(minMassInput);
+      const maxMassValue = parseInt(maxMassInput);
+  
+      if (!isNaN(minMassValue) && !isNaN(maxMassValue)) {
+        setMinMass(minMassValue);
+        setMaxMass(maxMassValue);
+      }
     }
-}
+  }
 
     const handleSearch = () => {
         const searchCriteria = {}
@@ -100,6 +107,18 @@ export default function Landing(){
     }
 
     const yearRanges = [
+        { min: 1, max: 1399, label: '1-1400' },
+        { min: 1400, max: 1499, label: '1400 - 1499' },
+        { min: 1500, max: 1599, label: '1500 - 1599' },
+        { min: 1600, max: 1699, label: '1600 - 1699' },
+        { min: 1700, max: 1724, label: '1700 - 1724' },
+        { min: 1725, max: 1749, label: '1725 - 1750' },
+        { min: 1750, max: 1774, label: '1750 - 1774' },
+        { min: 1775, max: 1799, label: '1900 - 1909' },
+        { min: 1800, max: 1824, label: '1800 - 1824' },
+        { min: 1825, max: 1849, label: '1825 - 1849' },
+        { min: 1850, max: 1874, label: '1850 - 1874' },
+        { min: 1875, max: 1899, label: '1875 - 1899' },
         { min: 1900, max: 1909, label: '1900 - 1909' },
         { min: 1910, max: 1919, label: '1910 - 1919' },
         { min: 1920, max: 1929, label: '1920 - 1929' },
@@ -198,7 +217,7 @@ export default function Landing(){
                     <div className={`mass-trap ${darkMode ? 'dark-mode-trap' : 'light-mode'}`}>
                         <Trapezoid />
                     </div>
-                    <select name="Mass Range" id="mass-range" className="mass-range" onClick={handleMassRangeChange}>
+                    <select name="Mass Range" id="mass-range" className="mass-range" onChange={handleMassRangeChange} >
                         <option value="" disabled selected></option>
                         {massRanges.map(option => (
                         <option key={option.value} value={option.value}>

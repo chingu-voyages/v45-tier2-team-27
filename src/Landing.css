@@ -381,6 +381,10 @@ body.dark-mode text{
     .small-gray-border{
         @apply bottom-[5rem]
     }
+
+    .landing-container{
+        @apply mt-0
+    }
 }
 
 @media(max-height: 750px) and (max-width:600px){
