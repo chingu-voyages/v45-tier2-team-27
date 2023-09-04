@@ -39,12 +39,17 @@ function useMediaQuery(query) {
 }
 
 function App() {
-  const [meteoriteData, setMeteoriteData] = useState([]);
-  const isSmallScreen = useMediaQuery('(max-width: 768px)');  
 
-  const [darkMode, setDarkMode] = useState(false);
-  const [recclassList, setRecclassList] = useState([]);
-  
+  const [meteoriteData, setMeteoriteData] = useState([])
+  const [darkMode, setDarkMode] = useState(false)
+  const [recclassList, setRecclassList] = useState([])
+  const [asteroidName, setAsteroidName] = useState("")
+  const [fromYear, setFromYear] = useState(null)
+  const [toYear, setToYear] = useState(null)
+  const [minMass, setMinMass] = useState(null)
+  const [maxMass, setMaxMass] = useState(null)
+  const [composition, setComposition] = useState("")
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');  
 
   useEffect(() => {
     darkMode ? 
@@ -54,7 +59,26 @@ function App() {
 
   return (
     <>
-    <AuthContext.Provider value={{ meteoriteData, setMeteoriteData, darkMode, setDarkMode, recclassList, setRecclassList}}>
+    <AuthContext.Provider value={{ 
+      meteoriteData, 
+      setMeteoriteData, 
+      darkMode, 
+      setDarkMode, 
+      recclassList, 
+      setRecclassList,
+      asteroidName,
+      setAsteroidName,
+      fromYear,
+      setFromYear,
+      toYear,
+      setToYear,
+      minMass,
+      setMinMass,
+      maxMass,
+      setMaxMass,
+      composition,
+      setComposition,
+      }}>
       <div className={`app-container `}>
         <FetchApi />
         <Routes>
@@ -69,8 +93,8 @@ function App() {
         </div>   
     </AuthContext.Provider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
 
