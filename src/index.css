@@ -28,25 +28,25 @@ body.dark-mode input{
 }
 
 .app-container{
-  @apply absolute top-[50%]
+  @apply absolute
 }
 
 @media(min-width: 600px){
   .app-container {
-    @apply max-w-[600px] left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    @apply max-w-[600px] mt-[550px] left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     
   }
 }
 
 @media(min-width: 766px){
   .app-container{
-    @apply max-w-[600px] 
+    @apply max-w-[600px] mt-[500px]
   }
 }
 
 @media(min-width: 1280px){
   .app-container {
-    @apply max-w-[1280px] h-[90%] 
+    @apply max-w-[1280px] h-[90%] mt-[730px] 
   }
 }
 
