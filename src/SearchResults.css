@@ -32,4 +32,8 @@ td {
     .table-container {
         height: 400px;
     }
+
+    .results-icon-container{
+        @apply absolute top-[47.5rem]
+    }
 }

@@ -135,7 +135,7 @@ export default function SearchResults() {
         </div>          
         <NewSearchBtn />
         <BorderImages />
-        <div className="absolute bottom-[-2rem] right-0 left-0">
+        <div className="results-icon-container absolute bottom-[-2rem] right-0 left-0">
           <DarkMode />
         </div>
       </div>
