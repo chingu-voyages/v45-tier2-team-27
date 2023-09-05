@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.full-height-map{
+    @apply h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+}
+
+
+.back-to-results{
+    @apply absolute right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
+}
+
+.back-to-results-border{
+    @apply absolute bottom-[4.1rem] left-0 right-0 mx-auto 
+}
+
+
+@media(min-width: 600px) {
+    .full-height-map{
+        @apply h-[25rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+    }
+    
+    .back-to-results{
+        @apply absolute bottom-16 right-0 left-0
+    }
+}
+
+@media(min-width: 1280px) {
+    .full-height-map{
+        @apply h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+    }
+    
+    .back-to-results{
+        @apply absolute top-[42.3rem] right-0 left-0
+    }
+
+    .back-to-results-border{
+        @apply absolute top-[18rem] left-0 right-0 m-auto
+    }
+}

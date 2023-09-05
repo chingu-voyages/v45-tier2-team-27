@@ -17,6 +17,7 @@ export default function SearchResults() {
     maxMass,
     setSelectedMeteorite,
     asteroidInput,
+    darkMode
   } = useContext(AuthContext)
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -72,12 +73,17 @@ export default function SearchResults() {
             {mapClicked ?
           <div className="map-container">
           <Map />
-          <img
-          src="/images/large-black-border.png"
-          alt=""
-          className="large-black-border absolute bottom-[3.5rem] right-[10.7rem]"
-        />
-          <button className="back-to-results uppercase" onClick={backToResults}>Back to results</button>
+          
+            <img
+              src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
+              alt=""
+              className=" back-to-results-border"
+            />
+            <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
+                Back to results
+            </a>
+          
+          
           </div>
           :
           <div className="table-container">
@@ -118,7 +124,7 @@ export default function SearchResults() {
                     <td className="search-results-data ">
                       <a
                         
-                        className="uppercase underline text-sky-600"
+                        className="uppercase underline text-sky-600 cursor-pointer"
                         aria-label="View map"
                         onClick={() => handleMapLinkClick(item)}
                       >
@@ -135,7 +141,10 @@ export default function SearchResults() {
               
         <NewSearchBtn />
         <BorderImages />
-        <DarkMode />
+        <div className="absolute bottom-[-2rem] right-0 left-0">
+          <DarkMode />
+        </div>
+        
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ import DarkMode from "./DarkMode"
 export default function Landing() {
   const {
     darkMode,
-    setDarkMode,
     recclassList,
     asteroidName,
     setAsteroidName,
@@ -91,10 +90,6 @@ const handleMassRangeChange = (e) => {
       searchCriteria.minMass = minMass || "";
       searchCriteria.maxMass = maxMass || "";
     }
-  };
-
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
   };
 
   const handleClear = () => {
@@ -311,29 +306,7 @@ const handleMassRangeChange = (e) => {
               alt=""
             />
           </div>
-          <div className="icon-container">
-            <img
-              onClick={handleDarkModeToggle}
-              className="dark-mode-icon"
-              src={`${
-                darkMode
-                  ? "/images/dark-dark-mode-icon.png"
-                  : "/images/dark-mode-icon.png"
-              }`}
-              alt=""
-            />
-            <Link to="/about">
-              <img
-                className="about-icon"
-                src={`${
-                  darkMode
-                    ? "/images/white-about-icon.png"
-                    : "/images/about-icon.png"
-                }`}
-                alt=""
-              />
-            </Link>
-          </div>
+          <DarkMode />
         </div>
         <BorderImages />
       </div>
