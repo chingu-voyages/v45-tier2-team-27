@@ -158,7 +158,7 @@ const handleMassRangeChange = (e) => {
               <Trapezoid />
             </div>
             <input
-              className="asteroid-input"
+              className="asteroid-input py-0"
               type="text"
               onChange={handleAsteroidNameChange}
             />

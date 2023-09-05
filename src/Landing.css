@@ -18,7 +18,7 @@
 }
 
 .asteroid-input{
-    @apply px-2
+    @apply px-2 mt-2
 }
 
 .year-select,
@@ -338,7 +338,7 @@ body.dark-mode text{
     }
 }
 
-@media(max-height: 800px) and (max-width:600px){
+/* @media(max-height: 800px) and (max-width:600px){
     .landing-title{
         @apply mt-16
     }
@@ -478,6 +478,6 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-60px]
     }
-}
+} */
 
 

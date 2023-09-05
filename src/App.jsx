@@ -87,7 +87,7 @@ function App() {
           setAsteroidInput,
         }}
       >
-        <div className={`app-container `}>
+        <div className={`app-container`}>
           <FetchApi />
           <Routes>
             <Route path="/" element={<Landing />} />
