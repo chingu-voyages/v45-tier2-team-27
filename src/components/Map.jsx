@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 
 export default function Map() {
-  const { selectedMeteorite } = useContext(AuthContext)
+  const { selectedMeteorite, darkMode } = useContext(AuthContext)
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function Map() {
   scrollWheelZoom={true}
   >
   <TileLayer
-    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+    url={`${darkMode ? "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" : 'https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png'}`}
   />
 
       {/* Display a marker and popup when a meteorite is selected */}

@@ -3,6 +3,7 @@ import { AuthContext } from "../App";
 import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
+import DarkMode from "./DarkMode";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
@@ -124,6 +125,7 @@ export default function SearchResults() {
       </div>
       <NewSearchBtn />
       <BorderImages />
+      <DarkMode />
     </div>
   );
 }

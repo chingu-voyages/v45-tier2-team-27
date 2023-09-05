@@ -5,6 +5,7 @@ import Globe from "./Globe"
 import Trapezoid from "./Trapezoid"
 import { AuthContext } from "../App"
 import { Link } from "react-router-dom"
+import DarkMode from "./DarkMode"
 
 
 
@@ -12,20 +13,19 @@ export default function Landing(){
     
     const {
         darkMode, 
-        setDarkMode,
-         recclassList,
-         asteroidName, 
-         setAsteroidName, 
-         composition, 
-         setComposition,
-         fromYear,
-         setFromYear,
-         toYear,
-         setToYear,
-         minMass,
-         setMinMass,
-         maxMass,
-         setMaxMass,
+        recclassList,
+        asteroidName, 
+        setAsteroidName, 
+        composition, 
+        setComposition,
+        fromYear,
+        setFromYear,
+        toYear,
+        setToYear,
+        minMass,
+        setMinMass,
+        maxMass,
+        setMaxMass,
         } = useContext(AuthContext)
    
     const handleAsteroidNameChange = (e) => {
@@ -91,9 +91,7 @@ const handleMassRangeChange = (e) => {
           }
     }
 
-    const handleDarkModeToggle = () => {
-        setDarkMode(!darkMode)
-      }
+
 
     const handleClear = () => {
         const inputFields = document.querySelectorAll('.asteroid-input')
@@ -239,10 +237,7 @@ const handleMassRangeChange = (e) => {
                     <button onClick={handleClear} className="clear-btn">CLEAR</button>
                     <img className="small-gray-border" src="/images/small-gray-border.png" alt="" />
                 </div>
-                <div className="icon-container">
-                    <img onClick={handleDarkModeToggle} className="dark-mode-icon" src={`${darkMode ? "/images/dark-dark-mode-icon.png" : "/images/dark-mode-icon.png"}`} alt="" />
-                    <Link to="/about"><img className="about-icon" src={`${darkMode ? "/images/white-about-icon.png" : "/images/about-icon.png"}`} alt="" /></Link>
-                </div>
+                <DarkMode />
             </div>
             <BorderImages />
         </div>
