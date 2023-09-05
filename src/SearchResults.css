@@ -21,7 +21,15 @@ td {
 
 
 @media(min-width:1280px) {
-    .search-container {
-        width: 700px;
+    .search-outer-container {
+        width: 1280px;
+    }
+
+    .search-inner-container {
+        width: 800px;
+    }
+
+    .table-container {
+        height: 400px;
     }
 }
