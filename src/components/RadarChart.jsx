@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../App";
 import {
     RadarChart,
     PolarGrid,
@@ -8,39 +10,6 @@ import {
     Tooltip,
     ResponsiveContainer
 } from "recharts";
-
-const data = [
-    {
-        name: "Aachen",
-        recclass: "L5",
-        mass: "21",
-        year: "1880-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Aarhus",
-        recclass: "H6",
-        mass: "720",
-        year: "1951-01-01T00:00:00.000",
-
-    },
-
-    {
-        name: "Achiras",
-        recclass: "L6",
-        mass: "780",
-        year: "1902-01-01T00:00:00.000",
-
-    },
-    {
-        name: "A",
-        recclass: "L6",
-        mass: "78",
-        year: "1902-01-01T00:00:00.000",
-    }
-
-];
-
 
 
 const CustomTooltip = ({ active, payload, label }) => {
@@ -60,6 +29,7 @@ export default function Radarchart() {
     const [containerWidth, setContainerWidth] = useState(600);
     const [coordinateX, setCoordinateX] = useState(200);
     const [coordinateY, setCoordinateY] = useState(200);
+    const { fakeData } = useContext(AuthContext);
 
     useEffect(() => {
         
@@ -93,7 +63,7 @@ export default function Radarchart() {
                 outerRadius={100}
                 width={600}
                 height={700}
-                data={data}
+                data={fakeData}
             >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="name" />

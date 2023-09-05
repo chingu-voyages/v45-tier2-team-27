@@ -1,71 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../App";
 import { RadialBarChart, RadialBar, Legend, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 
-const data = [
-    {
-        name: "Aachen",
-        recclass: "L5",
-        mass: "21",
-        year: "1880-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Aachen",
-        recclass: "L5",
-        mass: "21",
-        year: "1880-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Aarhus",
-        recclass: "H6",
-        mass: "720",
-        year: "1951-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Abee",
-        recclass: "EH4",
-        mass: "107000",
-        year: "1952-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Acapulco",
-        recclass: "Acapulcoite",
-        mass: "1914",
-        year: "1976-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Achiras",
-        recclass: "L6",
-        mass: "780",
-        year: "1902-01-01T00:00:00.000",
-
-    },
-
-];
 const COLORS = {
     "L5": "#8884d8",
     "H6": "#82ca9d",
     "EH4": "#ffc658",
     "Acapulcoite": "#a4de6c",
     "L6": "#d0ed57",
-};
+}
 
-const groupedData = data.reduce((acc, curr) => {
-    if (!acc[curr.recclass]) {
-        acc[curr.recclass] = 0;
-    }
-    acc[curr.recclass]++;
-    return acc;
-}, {});
-
-const plotData = Object.keys(groupedData).map(recclass => ({
-    recclass,
-    count: groupedData[recclass]
-}));
 
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -80,27 +25,42 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 export default function RadioChart() {
     const [containerWidth, setContainerWidth] = useState(600);
+    const { fakeData } = useContext(AuthContext);
+
+    const groupedData = fakeData.reduce((acc, curr) => {
+        if (!acc[curr.recclass]) {
+            acc[curr.recclass] = 0;
+        }
+        acc[curr.recclass]++;
+        return acc;
+    }, {});
+
+    const plotData = Object.keys(groupedData).map(recclass => ({
+        recclass,
+        count: groupedData[recclass]
+    }));
+    console.log("here is plot data", plotData)
 
     useEffect(() => {
-        
+
         const updateDimensions = () => {
-          const width = window.innerWidth;
-    
-          if (width <= 768) {  // breakpoint here
-            setContainerWidth(400);
-          } else {
-            setContainerWidth(600);
-          }
+            const width = window.innerWidth;
+
+            if (width <= 768) {  // breakpoint here
+                setContainerWidth(400);
+            } else {
+                setContainerWidth(600);
+            }
         };
-    
-      
+
+
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
-    
+
         return () => {
-          window.removeEventListener('resize', updateDimensions);
+            window.removeEventListener('resize', updateDimensions);
         };
-      }, []); 
+    }, []);
     return (
         <ResponsiveContainer width="80%" height={containerWidth}>
             <RadialBarChart
@@ -117,7 +77,7 @@ export default function RadioChart() {
                     clockWise={true}
                     dataKey="count"
                 >
-                    {data.map((entry, index) => (
+                    {fakeData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[entry.recclass]} />
                     ))}
                 </RadialBar>

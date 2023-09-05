@@ -39,6 +39,44 @@ function useMediaQuery(query) {
   return matches;
 }
 
+const fakeData = [
+  {
+    name: "Aachen",
+    recclass: "L5",
+    mass: "21",
+    year: "1880-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Abee",
+    recclass: "EH4",
+    mass: "107000",
+    year: "1952-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Acapulco",
+    recclass: "Acapulcoite",
+    mass: "1914",
+    year: "1976-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Acapu",
+    recclass: "Acapulcoite",
+    mass: "1914",
+    year: "1976-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Achiras",
+    recclass: "L6",
+    mass: "780",
+    year: "1902-01-01T00:00:00.000",
+
+  },
+
+];
 function App() {
   const [meteoriteData, setMeteoriteData] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
@@ -97,6 +135,7 @@ function App() {
           setSelectedMeteorite,
           asteroidInput,
           setAsteroidInput,
+          fakeData
         }}
       >
         <div className={`app-container`}>

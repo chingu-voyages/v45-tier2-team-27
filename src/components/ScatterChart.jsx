@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../App";
 import {
     ScatterChart,
     Scatter,
@@ -11,65 +13,6 @@ import {
     ResponsiveContainer
 }
     from "recharts";
-const data = [
-    {
-        name: "Aachen",
-        recclass: "L5",
-        mass: "21",
-        year: "1880-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Aarhus",
-        recclass: "H6",
-        mass: "720",
-        year: "1951-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Abee",
-        recclass: "EH4",
-        mass: "107000",
-        year: "1952-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Acapulco",
-        recclass: "Acapulcoite",
-        mass: "1914",
-        year: "1976-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Acapu",
-        recclass: "Acapulcoite",
-        mass: "1914",
-        year: "1976-01-01T00:00:00.000",
-
-    },
-    {
-        name: "Achiras",
-        recclass: "L6",
-        mass: "780",
-        year: "1902-01-01T00:00:00.000",
-
-    },
-
-];
-
-const groupedData = data.reduce((acc, curr) => {
-    const year = new Date(curr.year).getFullYear();
-    if (!acc[year]) {
-        acc[year] = 0;
-    }
-    acc[year]++;
-    return acc;
-}, {});
-
-const plotData = Object.keys(groupedData).map(year => ({
-    year: parseInt(year, 10),
-    count: groupedData[year]
-}));
 
 
 const CustomTooltip = ({ active, payload, label }) => {
@@ -87,37 +30,54 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 
 export default function Scatterchart() {
+    const { fakeData } = useContext(AuthContext);
+ 
+    const groupedData = fakeData.reduce((acc, curr) => {
+        const year = new Date(curr.year).getFullYear();
+        if (!acc[year]) {
+            acc[year] = 0;
+        }
+        acc[year]++;
+        return acc;
+    }, {});
+
+    const plotData = Object.keys(groupedData).map(year => ({
+        year: parseInt(year, 10),
+        count: groupedData[year]
+    }));
+
+
     const [containerWidth, setContainerWidth] = useState(600);
     useEffect(() => {
-        
+
         const updateDimensions = () => {
-          const width = window.innerWidth;
-    
-          if (width <= 768) {  // breakpoint here
-            setContainerWidth(400);
-          } else {
-            setContainerWidth(600);
-          }
+            const width = window.innerWidth;
+
+            if (width <= 768) {  // breakpoint here
+                setContainerWidth(400);
+            } else {
+                setContainerWidth(600);
+            }
         };
-    
-      
+
+
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
-    
+
         return () => {
-          window.removeEventListener('resize', updateDimensions);
+            window.removeEventListener('resize', updateDimensions);
         };
-      }, []);  
-    
-    
+    }, []);
+
+
 
     return (
         <ResponsiveContainer width={containerWidth} height="80%">
             <ScatterChart
                 margin={{
                     top: 65,
-                    right: 60,
-                    left: 60,
+                    right: 50,
+                    left: 10,
                     bottom: -20
                 }}
             >
