@@ -69,11 +69,9 @@ export default function SearchResults() {
               {minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}
             </p>
           </div>
-
-            {mapClicked ?
+          {mapClicked ?
           <div className="map-container">
           <Map />
-          
             <img
               src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
               alt=""
@@ -82,8 +80,6 @@ export default function SearchResults() {
             <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
                 Back to results
             </a>
-          
-          
           </div>
           :
           <div className="table-container">
@@ -109,7 +105,7 @@ export default function SearchResults() {
                   <th></th>
                 </tr>
               </thead>
-              {/*  */}
+              
               <tbody className="search-results">
                 {filteredMeteoriteData.map((item) => (
                   <tr key={item.id}>
@@ -123,7 +119,6 @@ export default function SearchResults() {
 
                     <td className="search-results-data ">
                       <a
-                        
                         className="uppercase underline text-sky-600 cursor-pointer"
                         aria-label="View map"
                         onClick={() => handleMapLinkClick(item)}
@@ -136,15 +131,13 @@ export default function SearchResults() {
               </tbody>
             </table>
           </div>
-}
-        </div>
-              
+          }
+        </div>          
         <NewSearchBtn />
         <BorderImages />
         <div className="absolute bottom-[-2rem] right-0 left-0">
           <DarkMode />
         </div>
-        
       </div>
     </div>
   );
