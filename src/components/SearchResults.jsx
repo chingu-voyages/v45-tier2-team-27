@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../App";
 import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
+import Map from "./Map";
+import DarkMode from "./DarkMode";
 
 export default function SearchResults() {
+  const [mapClicked, setMapClicked] = useState(false);
   const {
     meteoriteData,
     asteroidName,
@@ -12,17 +15,26 @@ export default function SearchResults() {
     toYear,
     minMass,
     maxMass,
+    setSelectedMeteorite,
     asteroidInput,
-  } = useContext(AuthContext);
+    darkMode
+  } = useContext(AuthContext)
+
+  const handleMapLinkClick = (selectedMeteorite) => {
+    setSelectedMeteorite(selectedMeteorite);
+    setMapClicked(true);
+  };
+
+  const backToResults = () => {
+    setMapClicked(false)
+  }
 
   const filteredMeteoriteData = meteoriteData.filter((item) => {
-    const isMassInRange =
-      (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
+    const isMassInRange = (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
     const isYearInRange =
-      !fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear));
+      (!fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear)));
     const isAsteroidNameMatch =
-      !asteroidName ||
-      item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
+      !asteroidName || item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
     const isCompositionMatch =
       !composition || composition.toLowerCase() === item.recclass.toLowerCase();
 
@@ -57,7 +69,19 @@ export default function SearchResults() {
               {minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}
             </p>
           </div>
-
+          {mapClicked ?
+          <div className="map-container">
+          <Map />
+            <img
+              src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
+              alt=""
+              className=" back-to-results-border"
+            />
+            <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
+                Back to results
+            </a>
+          </div>
+          :
           <div className="table-container">
             <table className=" w-full border border-1 border-solid border-black lg:m-auto">
               <thead className="bg-gray-300 sticky top-0">
@@ -81,7 +105,7 @@ export default function SearchResults() {
                   <th></th>
                 </tr>
               </thead>
-              {/*  */}
+              
               <tbody className="search-results">
                 {filteredMeteoriteData.map((item) => (
                   <tr key={item.id}>
@@ -95,9 +119,9 @@ export default function SearchResults() {
 
                     <td className="search-results-data ">
                       <a
-                        href="/"
-                        className="uppercase underline text-sky-600"
+                        className="uppercase underline text-sky-600 cursor-pointer"
                         aria-label="View map"
+                        onClick={() => handleMapLinkClick(item)}
                       >
                         Map
                       </a>
@@ -107,9 +131,13 @@ export default function SearchResults() {
               </tbody>
             </table>
           </div>
-        </div>
+          }
+        </div>          
         <NewSearchBtn />
         <BorderImages />
+        <div className="results-icon-container absolute bottom-[-2rem] right-0 left-0">
+          <DarkMode />
+        </div>
       </div>
     </div>
   );

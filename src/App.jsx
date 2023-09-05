@@ -8,6 +8,7 @@ import "./Trapezoid.css";
 import "./BorderImages.css";
 import "./About.css";
 import "./SearchResults.css";
+import "./Map.css";
 import Landing from "./components/Landing";
 import { Route, Routes } from "react-router-dom";
 import RadarChart from "./components/RadarChart";
@@ -18,6 +19,7 @@ import Chart from "./components/Chart";
 import BigChart from "./components/BigChart";
 import About from "./components/About";
 import FetchApi from "./components/FetchApi";
+
 
 export const AuthContext = createContext();
 
@@ -47,6 +49,7 @@ function App() {
   const [minMass, setMinMass] = useState(null);
   const [maxMass, setMaxMass] = useState(null);
   const [composition, setComposition] = useState("");
+  const [selectedMeteorite, setSelectedMeteorite] = useState(null);
   const [asteroidInput, setAsteroidInput] = useState("");
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
@@ -78,11 +81,13 @@ function App() {
           setMaxMass,
           composition,
           setComposition,
+          selectedMeteorite,
+          setSelectedMeteorite,
           asteroidInput,
           setAsteroidInput,
         }}
       >
-        <div className={`app-container `}>
+        <div className={`app-container`}>
           <FetchApi />
           <Routes>
             <Route path="/" element={<Landing />} />

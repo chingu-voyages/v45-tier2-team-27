@@ -6,7 +6,7 @@
 /* LANDING */
 
 .landing-container{
-    @apply flex flex-col items-center overflow-hidden mt-6
+    @apply flex flex-col items-center overflow-hidden mt-5
 }
 
 .landing-title{
@@ -14,11 +14,11 @@
 }
 
 .asteroid-container{
-    @apply flex flex-col mb-[6.5rem] text-center 
+    @apply flex flex-col mb-[6.5rem] text-center mt-1
 }
 
 .asteroid-input{
-    @apply px-2
+    @apply px-2 mt-2
 }
 
 .year-select,
@@ -31,18 +31,16 @@
  
 }
 
-.year-select,
-.meteorite-composition,
-.mass-range,
-.asteroid-input{
-    @apply py-1
-}
-
 .year-dropdown-container:hover .year-select,
 .composition-dropdown-container:hover .meteorite-composition,
-.mass-dropdown-container:hover .mass-range,
+.mass-dropdown-container:hover .mass-range{
+    @apply bg-white border pb-0.5 pt-1;
+    -webkit-appearance: menulist; 
+    -moz-appearance: menulist; 
+}
+
 .asteroid-input-container:hover .asteroid-input{
-    @apply bg-white border rounded-sm py-1;
+    @apply bg-white border pb-0.5;
     -webkit-appearance: menulist; 
     -moz-appearance: menulist; 
 }
@@ -163,20 +161,24 @@ body.dark-mode text{
 
 
 @media(min-width:600px){
+    .landing-container{
+        @apply mt-6
+    }
+
     .asteroid-container{
-        @apply absolute top-40 left-7
+        @apply absolute top-[9.5rem] left-[1.6rem]
     }
 
     .composition-select-container{
-        @apply absolute top-[10.5rem] right-7 mt-1
+        @apply absolute top-[10.4rem] -right-[7.1rem]
     }
 
     .year-select-container{
-        @apply absolute top-[35.3rem] right-[-105px]
+        @apply absolute top-[35rem] right-[-110px]
     }
 
     .mass-select-container{
-        @apply absolute top-[35rem] left-7
+        @apply absolute top-[34.9rem] left-[1.6rem]
     }
     
     .landing-btn-container{
@@ -202,7 +204,7 @@ body.dark-mode text{
     }
 
     .globe-gif-container{
-        @apply flex justify-center items-center ;
+        @apply flex justify-center items-center;
         
     }
 
@@ -238,19 +240,19 @@ body.dark-mode text{
 
 @media(min-width:766px){
     .asteroid-container{
-        @apply absolute top-40 left-7
+        @apply top-[9.6rem]
     }
 
     .composition-select-container{
-        @apply absolute top-[10.5rem] right-7 mt-1
+        @apply -right-[7rem]
     }
 
     .year-select-container{
-        @apply absolute top-[35.3rem] right-[-105px]
+        @apply absolute -right-[109px]
     }
 
     .mass-select-container{
-        @apply absolute top-[35rem] left-7
+        @apply absolute top-[35rem] left-[1.56rem]
     }
     
     .landing-btn-container{
@@ -259,11 +261,11 @@ body.dark-mode text{
 
     .composition-dropdown-text,
     .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
+        @apply relative left-2 top-[0.4rem] top-0
     }
 
     .year-dropdown-text{
-        @apply left-[3.5rem]
+        @apply left-[3.5rem] top-0
     }
 
     /* GLOBE */
@@ -297,11 +299,10 @@ body.dark-mode text{
     }
 }
 
-
 @media(min-width: 1280px){
     .asteroid-container,
     .mass-select-container{
-        @apply fixed left-60 mt-0
+        @apply fixed left-60 
     }
 
     .year-select-container{
@@ -309,7 +310,7 @@ body.dark-mode text{
     }
 
     .composition-select-container{
-        @apply fixed right-[15.5rem] mt-0
+        @apply fixed right-[6.55rem] top-[10.05rem]
     }
 
     .globe-border{
@@ -339,10 +340,7 @@ body.dark-mode text{
     }
 }
 
-
-
-   
-@media(max-height: 800px) and (max-width:600px){
+/* @media(max-height: 800px) and (max-width:600px){
     .landing-title{
         @apply mt-16
     }
@@ -380,6 +378,10 @@ body.dark-mode text{
     .clear-btn,
     .small-gray-border{
         @apply bottom-[5rem]
+    }
+
+    .landing-container{
+        @apply mt-0
     }
 }
 
@@ -478,5 +480,6 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-60px]
     }
-}
+} */
+
 

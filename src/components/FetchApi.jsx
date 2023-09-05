@@ -54,6 +54,8 @@ export default function FetchApi() {
           ...meteorite,
           year: parseInt(meteorite.year), 
           mass: parseFloat(meteorite.mass),
+          lat: parseFloat(meteorite.reclat), 
+          lng: parseFloat(meteorite.reclong)
         }))
 
         setMeteoriteData(parsedData)
@@ -71,16 +73,11 @@ export default function FetchApi() {
     fetchMeteoriteData()
   }, [])
 
-   
-
- 
-
     return(
         <div>
           {loading ?? 
             <h1>loading...</h1>
           }
-          
         </div>
     )
 }
