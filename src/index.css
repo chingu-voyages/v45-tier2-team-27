@@ -27,28 +27,28 @@ body.dark-mode input{
   @apply bg-white text-black
 }
 
-.app-container{
-  @apply absolute 
+.app-container {
+  @apply absolute left-1/2 transform -translate-x-1/2;
 }
 
-@media(min-width: 600px){
+@media (min-width: 600px) {
   .app-container {
-    @apply max-w-[600px] top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-    
+    @apply max-w-[600px] top-[35%] -translate-y-1/2 inset-y-0;
   }
 }
 
-@media(min-width: 766px){
-  .app-container{
-    @apply max-w-[600px] top-[45%]
-  }
-}
-
-@media(min-width: 1280px){
+@media (min-width: 766px) {
   .app-container {
-    @apply max-w-[1280px] h-[90%] top-[50%]
+    @apply max-w-[600px] 
   }
 }
+
+@media (min-width: 1280px) {
+  .app-container {
+    @apply max-w-[1280px] top-[35%];
+  }
+}
+
 
 
 

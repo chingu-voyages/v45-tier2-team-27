@@ -19,6 +19,16 @@ td {
     border-bottom: 1px solid black;
 }
 
+.results-icon-container{
+    @apply absolute top-[52rem]
+}
+
+@media(min-width:600px){
+    .results-icon-container{
+        @apply absolute top-[59rem]
+    }
+    
+}
 
 @media(min-width:1280px) {
     .search-outer-container {
@@ -36,4 +46,5 @@ td {
     .results-icon-container{
         @apply absolute top-[47.5rem]
     }
+    
 }
