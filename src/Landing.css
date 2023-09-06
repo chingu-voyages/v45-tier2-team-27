@@ -234,7 +234,7 @@ body.dark-mode text{
     }
 
     .icon-container{
-        @apply mt-[-80px]
+        @apply mt-[-200px]
     }
 }
 

@@ -16,9 +16,7 @@
   @apply w-[55px] border-b-[6px] border-black border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
 }
 
-.dark-mode-trap{
-  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
-}
+
 
 .year-trap,
 .composition-trap,
@@ -52,8 +50,13 @@
 .mass-trap,
 .composition-trap,
 .year-trap{
-  @apply relative top-[1px]
+  @apply relative
 }
+
+.asteroid-trap{
+  @apply ml-[-1px]
+}
+
 
 .upside-down-asteroid-trap,
 .upside-down-mass-trap,
@@ -62,36 +65,87 @@
   @apply relative top-[-0.6px]
 }
 
+/* Dark Mode */
+
+.dark-mode-trap{
+  @apply w-[55px] border-b-[6px] border-white border-l-[10px] border-r-[10px] border-l-transparent border-r-transparent;
+}
+
+body.dark-mode .year-select,
+body.dark-mode .composition-dropdown-container .meteorite-composition,
+body.dark-mode .mass-dropdown-container .mass-range,
+body.dark-mode .asteroid-input-container .asteroid-input {
+  @apply w-[186px] py-0.5 border-b-2 border-white border-b bg-transparent mt-[-2px];
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+body.dark-mode .year-select:hover,
+body.dark-mode .composition-dropdown-container:hover .meteorite-composition,
+body.dark-mode .mass-dropdown-container:hover .mass-range,
+body.dark-mode .asteroid-input-container:hover .asteroid-input {
+  @apply bg-white border pb-0.5;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+}
+
+body.dark-mode .composition-dropdown-container{
+  @apply mt-[-3px]
+}
+
+body.dark-mode .asteroid-input-container{
+  @apply mt-1.5
+}
+
+body.dark-mode .mass-dropdown-container,
+body.dark-mode .year-dropdown-container{
+  @apply mt-[-3px]
+}
+
+body.dark-mode .asteroid-trap{
+  @apply left-0 -top-[1.4px]
+}
+
+body.dark-mode .upside-down-year-trap,
+body.dark-mode .upside-down-asteroid-trap,
+body.dark-mode .upside-down-composition-trap,
+body.dark-mode .upside-down-mass-trap{
+  @apply top-0
+}
+
+body.dark-mode .upside-down-year-trap,
+body.dark-mode .upside-down-composition-trap{
+  @apply right-0
+}
+
+body.dark-mode .year-trap,
+body.dark-mode .composition-trap{
+  @apply left-[8.15rem] -top-[1px]
+}
+
+body.dark-mode .composition-trap{
+  @apply top-0
+}
+
 
 /* MEDIA */
 
 @media(min-width: 600px){
   .upside-down-composition-trap,
   .upside-down-year-trap{
-    @apply relative left-[8.1rem] -top-[1.6px]
-  }
-
-  .upside-down-asteroid-trap{
-    @apply -top-[1.6px]
-  }
-
-  .upside-down-mass-trap,
-  .upside-down-composition-trap{
-    @apply -top-[1.95px]
+    @apply relative left-[8.1rem]
   }
 
   .composition-trap,
   .year-trap{
-    @apply relative left-[8.2rem] top-0.5
+    @apply relative left-[8.2rem] 
   }
 
-  .mass-trap{
-    @apply top-0.5
-  }
 }
 
-@media(min-width: 766px){
-  .asteroid-trap{
-    @apply top-[0.62rem]
+@media(min-width: 1280px){
+  body.dark-mode .composition-dropdown-container{
+    @apply mt-[-2px]
   }
+  
 }
