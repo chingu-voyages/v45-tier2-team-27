@@ -53,6 +53,18 @@ function App() {
   const [asteroidInput, setAsteroidInput] = useState("");
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
+  const getCurrentPage = () => {
+    const storedPage = localStorage.getItem("currentPage");
+    return storedPage || "/";
+  };
+  
+  const currentPage = getCurrentPage();
+  
+  useEffect(() => {
+    localStorage.setItem("currentPage", currentPage);
+  }, [currentPage]);
+  
+
   useEffect(() => {
     darkMode
       ? (document.body.className = "dark-mode")
