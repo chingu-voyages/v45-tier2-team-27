@@ -31,7 +31,7 @@
 }
 
 .circle {
-  @apply absolute w-1.5 h-1.5 bg-white border-2 border-black rounded-full top-[-5px] right-[-3px]
+  @apply absolute w-1.5 h-1.5 bg-black border border-white rounded-full top-[-5px] right-[-3px]
   
 
 }
@@ -170,19 +170,19 @@
 
 @media(min-width: 1280px){
   .line-1 {
-    @apply top-[-8.4rem] h-[11.9rem] left-[-4.1rem] rotate-[135deg]
+    @apply top-[-8.4rem] h-[11.7rem] left-[-4rem] rotate-[135deg]
   }
 
   .line-2{
-    @apply  top-[-8.5rem] h-[12rem] right-[-14.1rem] rotate-[221deg]
+    @apply  top-[-8.4rem] h-[11.7rem] right-[-14rem] rotate-[225deg]
   }
 
   .line-3{
-    @apply top-[7.8rem] h-[12.2rem] left-[-3.8rem]  rotate-[50deg] 
+    @apply top-[7.6rem] h-[11.7rem] left-[-4rem]  rotate-[45deg] 
   }
 
   .line-4{
-    @apply top-[7.6rem] h-[12.3rem] left-[14rem] rotate-[-50deg] 
+    @apply top-[7.6rem] h-[11.7rem] left-[13.9rem] rotate-[315deg] 
   }
 }
 

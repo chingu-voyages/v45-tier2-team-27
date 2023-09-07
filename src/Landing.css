@@ -35,22 +35,16 @@
   -webkit-appearance: none;
  
 }
-
+.year-dropdown-container:hover .year-select,
 .composition-dropdown-container:hover .meteorite-composition,
 .mass-dropdown-container:hover .mass-range{
-    @apply  border py-0.5  ;
-    -webkit-appearance: menulist; 
-    -moz-appearance: menulist; 
-}
-
-.year-dropdown-container:hover .year-select{
-    @apply  border py-1;
+    @apply  border py-1  ;
     -webkit-appearance: menulist; 
     -moz-appearance: menulist; 
 }
 
 .asteroid-input-container:hover .asteroid-input{
-    @apply border-l border-r border-t 
+    @apply border 
 }
 
 .year-select-container{
@@ -67,11 +61,11 @@
 }
 
 .mass-dropdown-container{
-    @apply w-[11.7rem] 
+    @apply w-[11.7rem] ml-[-2px] mt-[1px]
 }
 
 .year-dropdown-container{
-    @apply w-[11.7rem] mr-[8.5rem]
+    @apply w-[11.7rem] mr-[8.4rem] mt-1
   }
 
 .year-dropdown-text,
@@ -195,7 +189,7 @@ body.dark-mode text{
     }
 
     .composition-select-container{
-        @apply absolute top-[10.4rem] -right-[7.1rem]
+        @apply absolute top-[10rem] -right-[7.1rem]
     }
 
     .year-select-container{
@@ -225,16 +219,17 @@ body.dark-mode text{
     }
 
     .globe-border{
-        @apply flex
+        @apply flex h-[12.2rem]
     }
 
+
     .globe-gif-container{
-        @apply flex justify-center items-center;
+        @apply flex justify-center ;
         
     }
 
     .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
+        @apply relative w-40 right-0 left-0 top-[10.5rem] border border-black;
         border-radius: 100%;
         transform: none
     }
@@ -249,10 +244,6 @@ body.dark-mode text{
         @apply mt-[-200px]
     }
 
-    .small-gray-border{
-        @apply mr-2
-    }
-
     .clear-btn,
     .small-gray-border{
         @apply mt-[-100px]
@@ -263,79 +254,24 @@ body.dark-mode text{
     }
 }
 
-@media(min-width:766px){
-    .asteroid-container{
-        @apply top-[9.6rem]
-    }
 
-    .composition-select-container{
-        @apply -right-[7rem]
-    }
-
-    .year-select-container{
-        @apply absolute -right-[109px]
-    }
-
-    .mass-select-container{
-        @apply absolute top-[35rem] left-[1.56rem]
-    }
-    
-    .landing-btn-container{
-        @apply mt-[37rem]
-    }
-
-    .composition-dropdown-text,
-    .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
-    }
-
-    .year-dropdown-text{
-        @apply left-[3.5rem] top-0
-    }
-
-    /* GLOBE */
-    .globe-container{
-        @apply hidden
-    }
-
-    .globe-gif-container{
-        @apply flex justify-center items-center ;
-        
-    }
-
-    .globe-gif{
-        @apply relative w-40 flex right-0 left-0 top-[10.5rem] border border-black;
-        border-radius: 100%
-    }
-
-    .globe-border{
-        @apply border-black border absolute top-[18.5rem] pointer-events-none bg-transparent;
-        border-radius: 100%;
-    }
-
-    .search-btn,
-    .small-black-border{
-        @apply mt-[-200px]
-    }
-
-    .clear-btn,
-    .small-gray-border{
-        @apply mt-[-100px]
-    }
-}
 
 @media(min-width: 1280px){
     .asteroid-container,
     .mass-select-container{
-        @apply fixed left-60 
+        @apply fixed left-[14.9rem] 
+    }
+
+    .mass-select-container{
+        @apply mt-[-3px] 
     }
 
     .year-select-container{
-        @apply fixed right-24 mt-0
+        @apply fixed right-[6.3rem] mt-[-7px]
     }
 
     .composition-select-container{
-        @apply fixed right-[6.55rem] top-[10.05rem]
+        @apply fixed right-[6.3rem] top-[10.05rem]
     }
 
     .globe-border{
