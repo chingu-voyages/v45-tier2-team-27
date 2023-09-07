@@ -9,8 +9,8 @@ export default function Map() {
   return (
     <>
     <h1 className='text-2xl border'>
-  Geolocation Coordinates
-</h1>
+      Geolocation Coordinates
+    </h1>
 <MapContainer
   className="full-height-map"
   center={[selectedMeteorite.geolocation.latitude, selectedMeteorite.geolocation.longitude]}
@@ -31,9 +31,9 @@ export default function Map() {
         >
           <Popup>
             Meteorite Location: {selectedMeteorite.name}
-            <br />
+          <br />
             Latitude: {selectedMeteorite.geolocation.latitude}
-            <br />
+          <br />
             Longitude: {selectedMeteorite.geolocation.longitude}
           </Popup>
         </Marker>

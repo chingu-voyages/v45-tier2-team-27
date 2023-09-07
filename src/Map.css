@@ -4,42 +4,89 @@
 
 
 .full-height-map{
-    @apply relative h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+    @apply relative h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-100px] 
 }
 
 .back-to-results{
     @apply relative top-[12rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
 }
 
+.back-to-results:hover{
+    transform: scale(1.05)
+}
 .back-to-results-border{
     @apply relative top-[13.6rem] left-0 right-0 mx-auto 
 }
 
+.map-icon-container{
+    @apply relative -top-16
+}
+
+.map-search-results{
+    @apply mx-6 mt-4 mb-40
+}
 
 @media(min-width: 600px) {
     .full-height-map{
-        @apply h-[25rem]  
+        @apply h-[25rem]  mb-5 mx-1 mb-5
     }
 
     .icon-container{
-        @apply relative top-32
+        @apply relative top-48
     }
+
+    .map-icon-container{
+        @apply relative -top-28
+    }
+
+    .map-search-btn{
+        @apply absolute top-[45.5rem] h-0 right-0 left-0 
+    }
+
+    .back-to-results{
+        @apply  top-20
+    }
+
+    .back-to-results-border{
+        @apply top-[6.6rem] 
+    }
+
+
 }
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[25rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-90px] 
+        @apply rounded-3xl h-[36.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[7.7rem];
     }
 
-    .icon-container{
-        @apply relative top-16
+    /* .overlay {
+        @apply rounded-3xl h-[37.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[6.7rem];
+ 
+        background-color: rgba(255, 255, 255, 0.7); 
+        
+      } */
+
+    .map-search-results{
+        @apply absolute -top-14 right-0 left-0 w-[390px] mx-auto
+    }
+
+    .map-icon-container{
+        @apply relative top-[45.5rem]
     }
 
     .back-to-results{
-        @apply relative top-[11rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
+        @apply  top-[40.45rem]
     }
     
     .back-to-results-border{
-        @apply relative top-[12.6rem] left-0 right-0 mx-auto 
+        @apply top-[42.1rem]  
+    }
+
+    .map-search-btn{
+        @apply absolute top-[47.5rem] h-0 right-0 left-0 
+    }
+
+    .icon-container{
+        @apply top-[5rem]
     }
 }

@@ -48,13 +48,12 @@
 }
 
 .year-select-container{
-    @apply mt-[-4px] mb-[5.3rem]
+    @apply mt-[-8px] mb-[5.3rem]
 }
 
 .composition-select-container{
     @apply mb-[5.3rem] 
 }
-
 
 .mass-select-container{
     @apply  mb-8
@@ -152,7 +151,11 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
 /* ICONS */
 
 .icon-container{
-    @apply flex mt-[-45px] mb-10 justify-center ml-2
+    @apply flex justify-center ml-2
+}
+
+.landing-container .icon-container{
+    @apply mt-[-30px]
 }
 
 .dark-mode-icon{
@@ -185,7 +188,7 @@ body.dark-mode text{
     }
 
     .asteroid-container{
-        @apply absolute top-[9.5rem] left-[1.6rem]
+        @apply absolute top-[9.5rem] left-[1.5rem]
     }
 
     .composition-select-container{
@@ -193,11 +196,11 @@ body.dark-mode text{
     }
 
     .year-select-container{
-        @apply absolute top-[35rem] right-[-110px]
+        @apply absolute top-[35.1rem] -right-[7rem]
     }
 
     .mass-select-container{
-        @apply absolute top-[34.9rem] left-[1.6rem]
+        @apply absolute top-[34.8rem] left-[1.5rem]
     }
     
     .landing-btn-container{
@@ -252,6 +255,10 @@ body.dark-mode text{
     .icon-container{
         @apply mt-[-200px]
     }
+
+    .landing-container .icon-container{
+        @apply mt-[-250px]
+    }
 }
 
 
@@ -262,12 +269,8 @@ body.dark-mode text{
         @apply fixed left-[14.9rem] 
     }
 
-    .mass-select-container{
-        @apply mt-[-3px] 
-    }
-
     .year-select-container{
-        @apply fixed right-[6.3rem] mt-[-7px]
+        @apply fixed right-[6.3rem] 
     }
 
     .composition-select-container{
@@ -292,8 +295,12 @@ body.dark-mode text{
         @apply bottom-0
     }
 
+    .landing-container .icon-container{
+        @apply mt-[-80px]
+    }
+
     .icon-container{
-        @apply mt-[-20px]
+        @apply mt-[-80px]
     }
 
     .landing-btn-container{
