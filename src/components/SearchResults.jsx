@@ -50,7 +50,7 @@ export default function SearchResults() {
     <div className="search-outer-container">
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
         <div className={`${mapClicked ? "map-search-results" : "mx-6 mt-4 mb-40"} `}>
-          <h1 className="uppercase text-3xl md:text-3xl py-4">Skyfall</h1>
+          <h1 className={`${mapClicked ? "uppercase text-3xl md:text-3xl map-title" : "uppercase text-3xl md:text-3xl py-4"}`}>Skyfall</h1>
           <h2 className={`${mapClicked ? "text-left text-xs uppercase pb-1" : "uppercase pb-2 md:text-left"}`}>You Searched:</h2>
           <div className="search-field flex justify-evenly lg:m-auto py-2 mb-2">
             <p className="capitalize font-semibold">

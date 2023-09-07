@@ -36,7 +36,7 @@
     }
 
     .map-icon-container{
-        @apply relative -top-28
+        @apply relative -top-20
     }
 
     .map-search-btn{
@@ -44,11 +44,11 @@
     }
 
     .back-to-results{
-        @apply  top-20
+        @apply  top-28
     }
 
     .back-to-results-border{
-        @apply top-[6.6rem] 
+        @apply top-[8.6rem] 
     }
 
 
@@ -56,7 +56,7 @@
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply rounded-3xl h-[36.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[7.7rem];
+        @apply rounded-3xl h-[37.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[6.7rem];
     }
 
     /* .overlay {
@@ -67,11 +67,11 @@
       } */
 
     .map-search-results{
-        @apply absolute -top-14 right-0 left-0 w-[390px] mx-auto
+        @apply absolute -top-[4.55rem] right-0 left-0 w-[390px] mx-auto 
     }
 
     .map-icon-container{
-        @apply relative top-[45.5rem]
+        @apply relative top-[44rem]
     }
 
     .back-to-results{
@@ -88,5 +88,9 @@
 
     .icon-container{
         @apply top-[5rem]
+    }
+
+    .map-title{
+        @apply mt-8
     }
 }
