@@ -76,16 +76,6 @@ body.dark-mode .upside-down-mass-trap{
   @apply top-0
 }
 
-
-
-body.dark-mode .year-trap,
-body.dark-mode .composition-trap{
-  
-}
-
-
-
-
 /* MEDIA */
 
 @media(min-width: 600px){
