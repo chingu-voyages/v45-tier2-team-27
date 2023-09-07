@@ -158,7 +158,7 @@ const handleMassRangeChange = (e) => {
               <Trapezoid />
             </div>
             <input
-              className="asteroid-input py-0"
+              className="asteroid-input"
               type="text"
               onChange={handleAsteroidNameChange}
             />
@@ -185,7 +185,7 @@ const handleMassRangeChange = (e) => {
             <select
               name="year-select"
               id="year-select"
-              className="year-select hover-show-trap"
+              className="year-select"
               onChange={handleYearRangeChange}
             >
               <option value="" disabled selected></option>

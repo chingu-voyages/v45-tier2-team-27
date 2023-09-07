@@ -14,44 +14,54 @@
 }
 
 .asteroid-container{
-    @apply flex flex-col mb-[6.5rem] text-center mt-1
+    @apply flex flex-col mb-[6.5rem] text-center 
+}
+
+.asteroid-input-container{
+    @apply h-8
 }
 
 .asteroid-input{
     @apply px-2 mt-2
 }
 
+
 .year-select,
 .meteorite-composition,
 .mass-range,
 .asteroid-input{
-  @apply focus:outline-none w-[186px] py-0.5 border-b-2 border-black border-b border-black bg-transparent;
+  @apply focus:outline-none w-[186px] py-0.5  border-b border-black bg-transparent;
   -moz-appearance: none;
   -webkit-appearance: none;
  
 }
 
-.year-dropdown-container:hover .year-select,
 .composition-dropdown-container:hover .meteorite-composition,
 .mass-dropdown-container:hover .mass-range{
-    @apply bg-white border pb-0.5 pt-1;
+    @apply  border py-0.5  ;
+    -webkit-appearance: menulist; 
+    -moz-appearance: menulist; 
+}
+
+.year-dropdown-container:hover .year-select{
+    @apply  border py-1;
     -webkit-appearance: menulist; 
     -moz-appearance: menulist; 
 }
 
 .asteroid-input-container:hover .asteroid-input{
-    @apply bg-white border pb-0.5;
-    -webkit-appearance: menulist; 
-    -moz-appearance: menulist; 
+    @apply border-l border-r border-t 
 }
 
-.year-select{
-    @apply my-0 py-0 
+
+
+.year-select-container{
+    @apply mt-[-4px]
 }
 
 .year-select-container,
 .composition-select-container {
-    @apply mb-[5.5rem] py-0 ;
+    @apply mb-[5.5rem]  ;
 }
 
 .mass-select-container{
@@ -73,11 +83,11 @@
 }
 
 .asteroid-text{
-    @apply relative text-xs mt-[-7px] mb-[-7px]
+    @apply relative text-xs mt-[10px] mb-[-7px]
 }
 
 .mass-dropdown-text{
-    @apply mt-[-13px] py-1
+    @apply mt-[-11px] py-1
 }
 
 .meteorite-composition,
@@ -113,6 +123,36 @@
 .search-btn:hover,
 .clear-btn:hover{
     transform: scale(1.05)
+}
+
+/* LANDING DARK MODE */
+
+body.dark-mode .year-select,
+body.dark-mode .meteorite-composition,
+body.dark-mode .mass-range,
+body.dark-mode .asteroid-input {
+   @apply focus:outline-none w-[186px] py-0.5  border-b border-white bg-transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+body.dark-mode .asteroid-input-container:hover .asteroid-input,
+body.dark-mode .year-dropdown-container:hover .year-select {
+  @apply bg-white;
+
+}
+
+body.dark-mode .composition-dropdown-container:hover .meteorite-composition,
+body.dark-mode .mass-dropdown-container:hover .mass-range{
+  @apply py-1 bg-white
+}
+
+body.dark-mode .mass-dropdown-container{
+  @apply mt-[-5px]
+}
+
+.composition-dropdown-container{
+  @apply mt-[-3px]
 }
 
 /* GLOBE */
@@ -261,7 +301,7 @@ body.dark-mode text{
 
     .composition-dropdown-text,
     .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem] top-0
+        @apply relative left-2 top-[0.4rem]
     }
 
     .year-dropdown-text{

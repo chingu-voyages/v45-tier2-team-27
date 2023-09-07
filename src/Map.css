@@ -28,11 +28,11 @@
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+        @apply h-[25rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-90px] 
     }
 
     .icon-container{
-        @apply relative top-6
+        @apply relative top-16
     }
 
     .back-to-results{
