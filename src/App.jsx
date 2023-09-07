@@ -109,6 +109,7 @@ function App() {
       : (document.body.className = "light-mode");
   }, [darkMode]);
 
+  console.log("here is meteoriteData", meteoriteData)
   return (
     <>
       <AuthContext.Provider
@@ -138,14 +139,21 @@ function App() {
           fakeData
         }}
       >
-        <div className={`app-container`}>
+        
+
+        
+        <div className={`app-container `}>
           <FetchApi />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route
               path="/chart"
               element={isSmallScreen ? <Chart /> : <BigChart />}
-            />
+            >
+              <Route path="/chart/radar" index element={<Radar />} />
+              <Route path="/chart/radio" element={<RadioChart />} />
+              <Route path="/chart/scatter" element={<Scatter />} />
+            </Route>
             <Route path="/radar-chart" element={<RadarChart />} />
             <Route path="/scatter-chart" element={<ScatterChart />} />
             <Route path="/radio-chart" element={<RadialChartComponent />} />

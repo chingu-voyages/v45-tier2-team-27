@@ -39,7 +39,7 @@ export default function RadioChart() {
         recclass,
         count: groupedData[recclass]
     }));
-    console.log("here is plot data", plotData)
+    
 
     useEffect(() => {
 

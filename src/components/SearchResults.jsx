@@ -46,6 +46,7 @@ export default function SearchResults() {
     );
   });
 
+
   return (
     <div className="search-outer-container">
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
@@ -88,17 +89,17 @@ export default function SearchResults() {
                 <tr>
                   <th className="search-table-header uppercase">Name</th>
                   <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View year of strike summary ">
+                    <a href="/chart/scatter" aria-label="View year of strike summary ">
                       Year
                     </a>
                   </th>
                   <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View composition materials summary">
+                    <a href="/chart/radio" aria-label="View composition materials summary">
                       Comp
                     </a>
                   </th>
                   <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View mass value summary">
+                    <a href="/chart/radar" aria-label="View mass value summary">
                       Mass
                     </a>
                   </th>

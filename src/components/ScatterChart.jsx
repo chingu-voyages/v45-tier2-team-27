@@ -30,8 +30,11 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 
 export default function Scatterchart() {
+
+
     const { fakeData } = useContext(AuthContext);
- 
+      
+
     const groupedData = fakeData.reduce((acc, curr) => {
         const year = new Date(curr.year).getFullYear();
         if (!acc[year]) {
