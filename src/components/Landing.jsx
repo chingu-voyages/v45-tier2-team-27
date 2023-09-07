@@ -52,7 +52,6 @@ export default function Landing() {
     
 const handleMassRangeChange = (e) => {
     const input = e.target.value;
-    console.log("select mass", input);
   
     if (input === "1000000+") {
       setMinMass(1000000);
@@ -187,10 +186,11 @@ const handleMassRangeChange = (e) => {
               id="year-select"
               className="year-select"
               onChange={handleYearRangeChange}
+              defaultValue=""
             >
-              <option value="" disabled selected></option>
+              <option defaultValue="" disabled onChange={handleYearRangeChange}></option>
               {yearRanges.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option key={option.min} value={`${option.min}-${option.max}`}>
                   {option.label}
                 </option>
               ))}
@@ -221,8 +221,9 @@ const handleMassRangeChange = (e) => {
               id="meteorite-composition"
               className="meteorite-composition"
               onChange={handleCompositionChange}
+              defaultValue=""
             >
-              <option value="" disabled selected></option>
+              <option defaultValue="" disabled onChange={handleCompositionChange}></option>
               {recclassList.map((recclass, index) => (
                 <option key={index} value={recclass}>
                   {recclass}
@@ -254,10 +255,11 @@ const handleMassRangeChange = (e) => {
               id="mass-range"
               className="mass-range"
               onClick={handleMassRangeChange}
+              defaultValue=""
             >
-              <option value="" disabled selected></option>
+              <option defaultValue="" disabled onChange={handleMassRangeChange}></option>
               {massRanges.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option key={`${option.min}-${option.max}`} value={`${option.min}-${option.max}`}>
                   {option.label}
                 </option>
               ))}

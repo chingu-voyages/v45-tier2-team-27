@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { AuthContext } from '../App';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
+import 'leaflet/dist/leaflet.css';
+import { Icon } from 'leaflet';
 
 export default function Map() {
   const { selectedMeteorite, darkMode } = useContext(AuthContext)
@@ -28,6 +29,11 @@ export default function Map() {
             selectedMeteorite.geolocation.latitude,
             selectedMeteorite.geolocation.longitude,
           ]}
+          icon={new Icon({
+            iconUrl: "./images/target.png", // Replace with the path to your custom marker icon
+            iconSize: [20, 20], // Set the size of your custom marker icon
+            
+          })}
         >
           <Popup>
             Meteorite Location: {selectedMeteorite.name}

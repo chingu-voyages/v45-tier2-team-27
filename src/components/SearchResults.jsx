@@ -115,13 +115,13 @@ export default function SearchResults() {
               <tbody className="search-results">
                 {filteredMeteoriteData.map((item) => (
                   <tr key={item.id}>
-                    <td className="search-results-data">{item.name}</td>
+                    <td className="search-results-data">{item.name.toString()}</td>
 
-                    <td className="search-results-data">{item.year}</td>
+                    <td className="search-results-data">{item.year.toString()}</td>
 
-                    <td className="search-results-data">{item.recclass}</td>
+                    <td className="search-results-data">{item.recclass.toString()}</td>
 
-                    <td className="search-results-data">{item.mass}</td>
+                    <td className="search-results-data">{item.mass.toString()}</td>
 
                     <td className="search-results-data ">
                       <a

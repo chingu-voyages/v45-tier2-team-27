@@ -151,11 +151,11 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
 /* ICONS */
 
 .icon-container{
-    @apply flex justify-center ml-2
+    @apply flex  gap-9 justify-center items-center
 }
 
 .landing-container .icon-container{
-    @apply mt-[-30px]
+    @apply  mt-[-30px]
 }
 
 .dark-mode-icon{
@@ -163,7 +163,7 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
 }
 
 .about-icon{
-    @apply cursor-pointer ml-8
+    @apply cursor-pointer 
 }
 
 .about-icon:hover,
