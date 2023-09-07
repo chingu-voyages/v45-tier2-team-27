@@ -31,26 +31,56 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function Scatterchart() {
 
-
-    const { fakeData } = useContext(AuthContext);
-      
-
-    const groupedData = fakeData.reduce((acc, curr) => {
-        const year = new Date(curr.year).getFullYear();
-        if (!acc[year]) {
-            acc[year] = 0;
-        }
-        acc[year]++;
-        return acc;
-    }, {});
-
-    const plotData = Object.keys(groupedData).map(year => ({
-        year: parseInt(year, 10),
-        count: groupedData[year]
-    }));
-
-
+    const { filteredMeteoriteData } = useContext(AuthContext)
+    const [plotData, setPlotData] = useState([]);
     const [containerWidth, setContainerWidth] = useState(600);
+
+
+
+    useEffect(() => {
+
+        if (!Array.isArray(filteredMeteoriteData) || filteredMeteoriteData.length === 0) {
+            console.log('Invalid or empty filteredMeteoriteData');
+            return;
+        }
+        const groupedData = filteredMeteoriteData.reduce((acc, curr) => {
+            if (!curr.year) {
+                console.log('Year not found in current item', curr);
+                return acc;
+            }
+            console.log("Current year raw value:", curr.year);
+            const year = parseInt(curr.year, 10);
+            console.log("Parsed year:", year);
+
+            return {
+                ...acc,
+                [year]: (acc[year] || 0) + 1,
+            };
+        }, {});
+
+    
+
+        const newPlotData = Object.keys(groupedData).map(year => ({
+            year: parseInt(year, 10),
+            count: groupedData[year]
+        }));
+
+        console.log("New plot data: ", newPlotData);
+
+        setPlotData(prevPlotData => {
+            if (JSON.stringify(prevPlotData) !== JSON.stringify(newPlotData)) {
+                return newPlotData;
+            }
+            return prevPlotData;
+        });
+
+
+
+    }, [filteredMeteoriteData]);
+
+
+
+
     useEffect(() => {
 
         const updateDimensions = () => {

@@ -29,41 +29,42 @@ export default function Radarchart() {
     const [containerWidth, setContainerWidth] = useState(600);
     const [coordinateX, setCoordinateX] = useState(200);
     const [coordinateY, setCoordinateY] = useState(200);
-    const { fakeData } = useContext(AuthContext);
+    const { filteredMeteoriteData } = useContext(AuthContext)
+
 
     useEffect(() => {
-        
+
         const updateDimensions = () => {
-          const width = window.innerWidth;
-    
-          if (width <= 768) {  // breakpoint here
-              setContainerWidth(400);
-              setCoordinateX(200)
-              setCoordinateY(200)
-          } else {
-              setContainerWidth(600);
-              setCoordinateX(300)
-              setCoordinateY(250)
-          }
+            const width = window.innerWidth;
+
+            if (width <= 768) {  // breakpoint here
+                setContainerWidth(400);
+                setCoordinateX(200)
+                setCoordinateY(200)
+            } else {
+                setContainerWidth(600);
+                setCoordinateX(300)
+                setCoordinateY(250)
+            }
         };
-    
-      
+
+
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
-    
+
         return () => {
-          window.removeEventListener('resize', updateDimensions);
+            window.removeEventListener('resize', updateDimensions);
         };
-      }, []); 
+    }, []);
     return (
         <ResponsiveContainer width={containerWidth} height="80%">
             <RadarChart
                 cx={coordinateX}
                 cy={coordinateY}
-                outerRadius={100}
-                width={600}
-                height={700}
-                data={fakeData}
+                outerRadius={150}
+                width={800}
+                height={800}
+                data={filteredMeteoriteData}
             >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="name" />

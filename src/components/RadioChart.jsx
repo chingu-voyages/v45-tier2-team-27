@@ -3,14 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../App";
 import { RadialBarChart, RadialBar, Legend, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 
-const COLORS = {
-    "L5": "#8884d8",
-    "H6": "#82ca9d",
-    "EH4": "#ffc658",
-    "Acapulcoite": "#a4de6c",
-    "L6": "#d0ed57",
-}
-
 
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -25,9 +17,12 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 export default function RadioChart() {
     const [containerWidth, setContainerWidth] = useState(600);
-    const { fakeData } = useContext(AuthContext);
+    const { filteredMeteoriteData } = useContext(AuthContext)
 
-    const groupedData = fakeData.reduce((acc, curr) => {
+    const colorArray = ["#000000", "#404040", "#808080", "#bfbfbf", "#d0ed57"];
+    const COLORS = {};
+
+    const groupedData = filteredMeteoriteData.reduce((acc, curr) => {
         if (!acc[curr.recclass]) {
             acc[curr.recclass] = 0;
         }
@@ -35,11 +30,17 @@ export default function RadioChart() {
         return acc;
     }, {});
 
+    let i = 0;
+    for (const recclass in groupedData) {
+        COLORS[recclass] = colorArray[i % colorArray.length];
+        i++;
+    }
+
     const plotData = Object.keys(groupedData).map(recclass => ({
         recclass,
         count: groupedData[recclass]
     }));
-    
+
 
     useEffect(() => {
 
@@ -77,7 +78,7 @@ export default function RadioChart() {
                     clockWise={true}
                     dataKey="count"
                 >
-                    {fakeData.map((entry, index) => (
+                    {filteredMeteoriteData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[entry.recclass]} />
                     ))}
                 </RadialBar>

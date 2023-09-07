@@ -13,12 +13,13 @@ import Landing from "./components/Landing";
 import { Route, Routes } from "react-router-dom";
 import RadarChart from "./components/RadarChart";
 import ScatterChart from "./components/ScatterChart";
-import RadialChartComponent from "./components/RadioChart";
+import RadioChart from "./components/RadioChart";
 import SearchResults from "./components/SearchResults";
 import Chart from "./components/Chart";
 import BigChart from "./components/BigChart";
 import About from "./components/About";
 import FetchApi from "./components/FetchApi";
+
 
 
 export const AuthContext = createContext();
@@ -89,19 +90,21 @@ function App() {
   const [composition, setComposition] = useState("");
   const [selectedMeteorite, setSelectedMeteorite] = useState(null);
   const [asteroidInput, setAsteroidInput] = useState("");
+  const [filteredMeteoriteData, setFilteredMeteoriteData] = useState([])
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
+
 
   const getCurrentPage = () => {
     const storedPage = localStorage.getItem("currentPage");
     return storedPage || "/";
   };
-  
+
   const currentPage = getCurrentPage();
-  
+
   useEffect(() => {
     localStorage.setItem("currentPage", currentPage);
   }, [currentPage]);
-  
+
 
   useEffect(() => {
     darkMode
@@ -109,7 +112,7 @@ function App() {
       : (document.body.className = "light-mode");
   }, [darkMode]);
 
-  console.log("here is meteoriteData", meteoriteData)
+
   return (
     <>
       <AuthContext.Provider
@@ -136,12 +139,14 @@ function App() {
           setSelectedMeteorite,
           asteroidInput,
           setAsteroidInput,
-          fakeData
+          fakeData,
+          filteredMeteoriteData,
+          setFilteredMeteoriteData
         }}
       >
-        
 
-        
+
+
         <div className={`app-container `}>
           <FetchApi />
           <Routes>
@@ -150,13 +155,11 @@ function App() {
               path="/chart"
               element={isSmallScreen ? <Chart /> : <BigChart />}
             >
-              <Route path="/chart/radar" index element={<Radar />} />
+              <Route path="/chart/radar" index element={<RadarChart />} />
               <Route path="/chart/radio" element={<RadioChart />} />
-              <Route path="/chart/scatter" element={<Scatter />} />
+              <Route path="/chart/scatter" element={<ScatterChart />} />
             </Route>
-            <Route path="/radar-chart" element={<RadarChart />} />
-            <Route path="/scatter-chart" element={<ScatterChart />} />
-            <Route path="/radio-chart" element={<RadialChartComponent />} />
+
             <Route
               path="/search-results"
               element={<SearchResults asteroidInput={asteroidInput} />}
