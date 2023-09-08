@@ -4,6 +4,7 @@ import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
+import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
@@ -17,7 +18,8 @@ export default function SearchResults() {
     maxMass,
     setSelectedMeteorite,
     asteroidInput,
-    darkMode
+    darkMode,
+    setFilteredMeteoriteData
   } = useContext(AuthContext)
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -28,6 +30,8 @@ export default function SearchResults() {
   const backToResults = () => {
     setMapClicked(false)
   }
+
+
 
   const filteredMeteoriteData = meteoriteData.filter((item) => {
     const isMassInRange = (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
@@ -45,6 +49,10 @@ export default function SearchResults() {
       isMassInRange
     );
   });
+
+  function handleClick(filteredMeteoriteData) {
+    setFilteredMeteoriteData(filteredMeteoriteData);
+  }
 
   return (
     <div className="search-outer-container">
@@ -70,69 +78,69 @@ export default function SearchResults() {
             </p>
           </div>
           {mapClicked ?
-          <div className="map-container">
-          <Map />
-            <img
-              src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
-              alt=""
-              className=" back-to-results-border"
-            />
-            <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
+            <div className="map-container">
+              <Map />
+              <img
+                src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
+                alt=""
+                className=" back-to-results-border"
+              />
+              <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
                 Back to results
-            </a>
-          </div>
-          :
-          <div className="table-container">
-            <table className=" w-full border border-1 border-solid border-black lg:m-auto">
-              <thead className="bg-gray-300 sticky top-0">
-                <tr>
-                  <th className="search-table-header uppercase">Name</th>
-                  <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View year of strike summary ">
-                      Year
-                    </a>
-                  </th>
-                  <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View composition materials summary">
-                      Comp
-                    </a>
-                  </th>
-                  <th className="search-table-header uppercase underline">
-                    <a href="/" aria-label="View mass value summary">
-                      Mass
-                    </a>
-                  </th>
-                  <th></th>
-                </tr>
-              </thead>
-              
-              <tbody className="search-results">
-                {filteredMeteoriteData.map((item) => (
-                  <tr key={item.id}>
-                    <td className="search-results-data">{item.name}</td>
-
-                    <td className="search-results-data">{item.year}</td>
-
-                    <td className="search-results-data">{item.recclass}</td>
-
-                    <td className="search-results-data">{item.mass}</td>
-
-                    <td className="search-results-data ">
-                      <a
-                        className="uppercase underline text-sky-600 cursor-pointer"
-                        aria-label="View map"
-                        onClick={() => handleMapLinkClick(item)}
-                      >
-                        Map
-                      </a>
-                    </td>
+              </a>
+            </div>
+            :
+            <div className="table-container">
+              <table className=" w-full border border-1 border-solid border-black lg:m-auto">
+                <thead className="bg-gray-300 sticky top-0">
+                  <tr>
+                    <th className="search-table-header uppercase">Name</th>
+                    <th className="search-table-header uppercase underline">
+                      <Link to="/chart/scatter" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View year of strike summary ">
+                        Year
+                      </Link>
+                    </th>
+                    <th className="search-table-header uppercase underline">
+                      <Link to="/chart/radio" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View composition materials summary">
+                        Comp
+                      </Link>
+                    </th>
+                    <th className="search-table-header uppercase underline">
+                      <Link to="/chart/radar" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View mass value summary">
+                        Mass
+                      </Link>
+                    </th>
+                    <th></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+
+                <tbody className="search-results">
+                  {filteredMeteoriteData.map((item) => (
+                    <tr key={item.id}>
+                      <td className="search-results-data">{item.name}</td>
+
+                      <td className="search-results-data">{item.year}</td>
+
+                      <td className="search-results-data">{item.recclass}</td>
+
+                      <td className="search-results-data">{item.mass}</td>
+
+                      <td className="search-results-data ">
+                        <a
+                          className="uppercase underline text-sky-600 cursor-pointer"
+                          aria-label="View map"
+                          onClick={() => handleMapLinkClick(item)}
+                        >
+                          Map
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           }
-        </div>          
+        </div>
         <NewSearchBtn />
         <BorderImages />
         <div className="results-icon-container absolute bottom-[-2rem] right-0 left-0">
