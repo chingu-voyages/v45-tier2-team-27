@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 .go-back-container{
-    @apply flex justify-center mt-[-1.5rem]
+    @apply flex justify-center relative bottom-0  h-0
 }
 
 .go-back-btn{
-    @apply absolute  text-xl font-semibold left-0 right-0 
+    @apply absolute text-xl font-semibold left-0 right-0 w-32 mx-auto z-50
+}
+
+.go-back-border{
+    @apply absolute
 }
 
 .about-title-container{
-    @apply mb-5
+    @apply mb-12
 }
 
 .team-member-container{
@@ -22,16 +26,3 @@
     @apply font-bold
 }
 
-@media(max-width: 1280px){
-    .go-back-btn{
-        @apply bottom-10
-    }
-    
-    .go-back-border{
-        @apply absolute bottom-10
-    }
-    
-    .white-border{
-        @apply absolute bottom-9
-    }
-}

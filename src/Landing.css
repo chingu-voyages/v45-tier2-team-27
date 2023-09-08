@@ -65,7 +65,7 @@
 
 .year-dropdown-container{
     @apply w-[11.7rem] mr-[8.4rem] mt-1
-  }
+}
 
 .year-dropdown-text,
 .mass-dropdown-text,
@@ -82,19 +82,19 @@
 }
 
 .search-btn{
-    @apply relative bottom-[5rem] right-[3.9rem] text-[24px] font-bold mb-7
+    @apply relative bottom-[4.9rem] text-[24px] font-bold  left-0 right-0
 }
 
 .clear-btn{
-    @apply relative bottom-16 left-[4.8rem] right-0 text-[20px]
+    @apply absolute bottom-20 text-[20px] 
 }
 
 .small-black-border{
-    @apply relative bottom-20 left-[3.4rem] pointer-events-none mb-7
+    @apply absolute bottom-28 left-0 right-0 mx-auto  pointer-events-none mb-7
 }
 
 .small-gray-border{
-    @apply relative bottom-16 right-7 pointer-events-none 
+    @apply absolute bottom-20 right-0 left-0 mx-auto pointer-events-none
 }
 
 .search-btn-container,
@@ -129,10 +129,6 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
   @apply py-1 bg-white
 }
 
-
-
-
-
 /* GLOBE */
 
 .globe-container{
@@ -155,7 +151,7 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
 }
 
 .landing-container .icon-container{
-    @apply  mt-[-30px]
+    @apply  mt-[-30px] relative -bottom-8 z-50
 }
 
 .dark-mode-icon{
@@ -209,7 +205,7 @@ body.dark-mode text{
 
     .composition-dropdown-text,
     .year-dropdown-text{
-        @apply relative left-2 top-[0.4rem]
+        @apply relative left-2 
     }
 
     .year-dropdown-text{
@@ -242,14 +238,17 @@ body.dark-mode text{
         border-radius: 100%;
     }
 
-    .search-btn,
+    .search-btn{
+        @apply bottom-[9.5rem]
+    }
+    
     .small-black-border{
-        @apply mt-[-200px]
+        @apply bottom-0
     }
 
     .clear-btn,
     .small-gray-border{
-        @apply mt-[-100px]
+        @apply -bottom-10
     }
 
     .icon-container{
@@ -285,18 +284,22 @@ body.dark-mode text{
         @apply mt-0
     }
 
-    .search-btn,
+    .search-btn{
+        @apply bottom-32
+    }
+
+    
     .small-black-border{
-        @apply bottom-0
+        @apply bottom-[5.5rem]
     }
 
     .clear-btn,
     .small-gray-border{
-        @apply bottom-0
+        @apply bottom-16
     }
 
     .landing-container .icon-container{
-        @apply mt-[-80px]
+        @apply mt-[-150px]
     }
 
     .icon-container{

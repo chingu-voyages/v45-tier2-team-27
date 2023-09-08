@@ -10,7 +10,7 @@ export default function About(){
             <h1 className="landing-title mt-20 mb-6">SKYFALL</h1>
             <div className="about-title-container">
                 <h1 className="text-xl">Created for Chingu Voyage 45</h1>
-                <h2 className="text-lg">by Team 27</h2>
+                <h2 className="text-lg mb-[-16px]">by Team 27</h2>
             </div>
             <div className="team-member-container">
                 <h1 className="team-member">Alexandra Akinyemi</h1>
@@ -22,10 +22,6 @@ export default function About(){
             </div>
             <div className="team-member-container">
                 <h1 className="team-member">David Riley</h1>
-                <p>Programmer</p>
-            </div>
-            <div className="team-member-container">
-                <h1 className="team-member">Pavu</h1>
                 <p>Programmer</p>
             </div>
             <div className="team-member-container">
@@ -41,7 +37,7 @@ export default function About(){
                 <p className="team-member">Jim Medlock at Chingu</p>
             </div>
             <div className="go-back-container">
-                <img className={`go-back-border ${darkMode ? "white-border" : ""}`} src={`${darkMode ? "/images/small-white-border.png" : "/images/small-black-border.png"} `} alt="" />
+                <img className={`go-back-border ${darkMode ? "white-border mb-0.5" : ""}`} src={`${darkMode ? "/images/small-white-border.png" : "/images/small-black-border.png"} `} alt="" />
                 <Link to="/"><button className="go-back-btn">Go Back</button></Link>
             </div>
 

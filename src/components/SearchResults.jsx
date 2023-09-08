@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../App";
 import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
-import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
+  const [filteredData, setFilteredData] = useState([])
   const {
     meteoriteData,
     asteroidName,
+    setAsteroidName,
     composition,
     fromYear,
     toYear,
@@ -19,7 +20,6 @@ export default function SearchResults() {
     setSelectedMeteorite,
     asteroidInput,
     darkMode,
-    setFilteredMeteoriteData
   } = useContext(AuthContext)
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -31,28 +31,57 @@ export default function SearchResults() {
     setMapClicked(false)
   }
 
-
-
-  const filteredMeteoriteData = meteoriteData.filter((item) => {
-    const isMassInRange = (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
-    const isYearInRange =
-      (!fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear)));
-    const isAsteroidNameMatch =
-      !asteroidName || item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
-    const isCompositionMatch =
-      !composition || composition.toLowerCase() === item.recclass.toLowerCase();
-
-    return (
-      isAsteroidNameMatch &&
-      isYearInRange &&
-      isCompositionMatch &&
-      isMassInRange
-    );
-  });
-
-  function handleClick(filteredMeteoriteData) {
-    setFilteredMeteoriteData(filteredMeteoriteData);
-  }
+  useEffect(() => {
+    try {
+      const storedSearchCriteria = localStorage.getItem("searchCriteria");
+    
+      if (storedSearchCriteria) {
+        const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
+    
+        let newFilteredData = meteoriteData.filter((item) => {
+          // Check if parsedSearchCriteria.asteroidName is a string
+          if (parsedSearchCriteria.asteroidName) {
+            setAsteroidName(parsedSearchCriteria.asteroidName);
+          }
+    
+          const isYearInRange =
+            (!parsedSearchCriteria.fromYear || item.year >= parsedSearchCriteria.fromYear) &&
+            (!parsedSearchCriteria.toYear || item.year <= parsedSearchCriteria.toYear);
+    
+          const isMassInRange =
+            (!parsedSearchCriteria.minMass || item.mass >= parsedSearchCriteria.minMass) &&
+            (!parsedSearchCriteria.maxMass || item.mass <= parsedSearchCriteria.maxMass);
+    
+          const isCompositionMatch =
+            !parsedSearchCriteria.composition || item.recclass.toLowerCase() === parsedSearchCriteria.composition.toLowerCase();
+    
+          return  isYearInRange && isMassInRange && isCompositionMatch;
+        });
+    
+        newFilteredData = newFilteredData.filter((item) => {
+          const isMassInRange =
+            (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
+          const isYearInRange =
+            (!fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear)));
+            const isAsteroidNameMatch =
+            !asteroidName || item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
+          const isCompositionMatch =
+            !composition || item.recclass.toLowerCase() === composition.toLowerCase();
+    
+          return (
+            isAsteroidNameMatch &&
+            isYearInRange &&
+            isCompositionMatch &&
+            isMassInRange
+          );
+        });
+    
+        setFilteredData(newFilteredData);
+      }
+    } catch (error) {
+      console.error("Error retrieving data from localStorage:", error);
+    }
+  }, [meteoriteData, asteroidName, setAsteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   return (
     <div className="search-outer-container">
@@ -121,7 +150,7 @@ export default function SearchResults() {
               </thead>
               
               <tbody className="search-results">
-                {filteredMeteoriteData.map((item) => (
+                {filteredData.map((item) => (
                   <tr key={item.id}>
                     <td className="search-results-data">{item.name.toString()}</td>
 
