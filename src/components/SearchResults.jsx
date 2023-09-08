@@ -4,6 +4,7 @@ import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
+import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
@@ -17,7 +18,8 @@ export default function SearchResults() {
     maxMass,
     setSelectedMeteorite,
     asteroidInput,
-    darkMode
+    darkMode,
+    setFilteredMeteoriteData
   } = useContext(AuthContext)
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -28,6 +30,8 @@ export default function SearchResults() {
   const backToResults = () => {
     setMapClicked(false)
   }
+
+
 
   const filteredMeteoriteData = meteoriteData.filter((item) => {
     const isMassInRange = (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
@@ -45,6 +49,10 @@ export default function SearchResults() {
       isMassInRange
     );
   });
+
+  function handleClick(filteredMeteoriteData) {
+    setFilteredMeteoriteData(filteredMeteoriteData);
+  }
 
   return (
     <div className="search-outer-container">
@@ -123,20 +131,20 @@ export default function SearchResults() {
 
                     <td className="search-results-data">{item.mass.toString()}</td>
 
-                    <td className="search-results-data ">
-                      <a
-                        className="uppercase underline text-sky-600 cursor-pointer"
-                        aria-label="View map"
-                        onClick={() => handleMapLinkClick(item)}
-                      >
-                        Map
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                      <td className="search-results-data ">
+                        <a
+                          className="uppercase underline text-sky-600 cursor-pointer"
+                          aria-label="View map"
+                          onClick={() => handleMapLinkClick(item)}
+                        >
+                          Map
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           }
         </div>
         <div className={`${mapClicked ? "map-search-btn" : ""}`}> 

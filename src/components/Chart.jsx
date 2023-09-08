@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Radar from './RadarChart'
 import Radio from './RadioChart'
 import Scatter from './ScatterChart'
+import { Outlet, useMatch } from "react-router-dom";
 
 
 export default function Chart() {
@@ -80,7 +81,7 @@ export default function Chart() {
             </div>
             <div className="flex justify-center">
                 <div className='small-screen-box'>
-                    {renderChart()}
+                    <Outlet />
                 </div>
             </div>
 
