@@ -2,25 +2,23 @@ import React, { useState } from 'react';
 import Radar from './RadarChart'
 import Radio from './RadioChart'
 import Scatter from './ScatterChart'
+import { Outlet, useMatch } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function BigChartBorder() {
-    const [currentChart, setCurrentChart] = useState('Radar');
-    const [selectedImage, setSelectedImage] = useState('radar-menu');
+    const matchScatter = useMatch("/chart/scatter");
+    const matchRadar = useMatch("/chart/radar");
+    const matchRadio = useMatch("/chart/radio");
 
-    const renderChart = () => {
-        if (currentChart === 'Radar') {
-            return <Radar />;
-        } else if (currentChart === 'Radio') {
-            return <Radio />;
-        } else if (currentChart === 'Scatter') {
-            return <Scatter />;
-        }
-    };
+    let selectedImage = '';
+    if (matchRadar) {
+        selectedImage = 'radar-menu';
+    } else if (matchRadio) {
+        selectedImage = 'radio-menu';
+    } else if (matchScatter) {
+        selectedImage = 'graph-menu';
+    }
 
-    const handleClick = (chartName, imageName) => {
-        setCurrentChart(chartName);
-        setSelectedImage(imageName);
-    };
 
     return (
         <div>
@@ -46,18 +44,20 @@ export default function BigChartBorder() {
                 <div className="black-dot"></div>
 
                 <div className="side-bar flex flex-col justify-around items-center">
-                    <img className={`w-16 h-16 ${selectedImage === 'radar-menu' ? 'border-2 border-black' : ''}`}
-                        src="/images/radar-menu.svg"
-                        onClick={() => handleClick('Radar', 'radar-menu')}
-                        alt="" />
-                    <img className={`w-16 h-16 ${selectedImage === 'radio-menu' ? 'border-2 border-black' : ''}`}
-                        src="/images/radio-menu.png"
-                        onClick={() => handleClick('Radio', 'radio-menu')}
-                        alt="" />
-                    <img className={`w-16 h-16 ${selectedImage === 'graph-menu' ? 'border-2 border-black' : ''}`}
-                        src="/images/graph-menu.svg"
-                        onClick={() => handleClick('Scatter', 'graph-menu')}
-                        alt="" />
+                    <Link to={'/chart/radar'}>
+                        <img className={`w-16 h-16 ${selectedImage === 'radar-menu' ? 'border-2 border-black' : ''}`}
+                            src="/images/radar-menu.svg"
+                            alt="" /></Link>
+                    <Link to={'/chart/radio'}>
+                        <img className={`w-16 h-16 ${selectedImage === 'radio-menu' ? 'border-2 border-black' : ''}`}
+                            src="/images/radio-menu.png"
+                            alt="" /></Link>
+
+                    <Link to={'/chart/scatter'}>
+                        <img className={`w-16 h-16 ${selectedImage === 'graph-menu' ? 'border-2 border-black' : ''}`}
+                            src="/images/graph-menu.svg"
+                            alt="" /></Link>
+
                 </div>
 
                 <div className="vertical-line">
@@ -66,9 +66,9 @@ export default function BigChartBorder() {
                     <div className={`${selectedImage === 'graph-menu' ? 'empty-dot-3' : ''}`}></div>
                 </div>
 
-                
-                    {renderChart()}
-                
+
+                <Outlet />
+
 
                 <div className="bottom-black-dot"></div>
 

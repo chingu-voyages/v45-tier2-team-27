@@ -4,6 +4,7 @@ import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
+import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
@@ -18,6 +19,7 @@ export default function SearchResults() {
     setSelectedMeteorite,
     asteroidInput,
     darkMode,
+    setFilteredMeteoriteData,
   } = useContext(AuthContext);
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -48,6 +50,10 @@ export default function SearchResults() {
     );
   });
 
+  function handleClick(filteredMeteoriteData) {
+    setFilteredMeteoriteData(filteredMeteoriteData);
+  }
+
   const tableDataBorder = `border-y ${
     darkMode ? "border-white" : "border-black"
   }`;
@@ -55,9 +61,29 @@ export default function SearchResults() {
   return (
     <div className="search-outer-container">
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
-        <div className="mx-6 mt-4 mb-40">
-          <h1 className="uppercase text-3xl md:text-3xl py-4">Skyfall</h1>
-          <h2 className="uppercase pb-2 md:text-left">You Searched:</h2>
+        <div
+          className={`${
+            mapClicked ? "map-search-results" : "mx-6 mt-4 mb-40"
+          } `}
+        >
+          <h1
+            className={`${
+              mapClicked
+                ? "uppercase text-3xl md:text-3xl map-title"
+                : "uppercase text-3xl md:text-3xl py-4"
+            }`}
+          >
+            Skyfall
+          </h1>
+          <h2
+            className={`${
+              mapClicked
+                ? "text-left text-xs uppercase pb-1"
+                : "uppercase pb-2 md:text-left"
+            }`}
+          >
+            You Searched:
+          </h2>
           <div
             className={`search-field ${
               darkMode ? "border-slate-50" : "border-black"
@@ -79,26 +105,29 @@ export default function SearchResults() {
               {minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}
             </p>
           </div>
+
           {mapClicked ? (
-            <div className="map-container">
-              <Map />
-              <img
-                src={`${
-                  darkMode
-                    ? "/images/white-back-to-results-border.png"
-                    : "/images/back-to-results-border.png"
-                }`}
-                alt=""
-                className=" back-to-results-border"
-              />
-              <a
-                className="back-to-results bottom-[4.5rem]"
-                onClick={backToResults}
-              >
-                Back to results
-              </a>
-            </div>
-          ) : (
+            <>
+              <div className="map-container">
+                <div className="overlay"></div>
+                <Map />
+              </div>
+              <div onClick={backToResults}>
+                <img
+                  src={`${
+                    darkMode
+                      ? "/images/white-back-to-results-border.png"
+                      : "/images/back-to-results-border.png"
+                  }`}
+                  alt=""
+                  className=" back-to-results-border"
+                />
+                <button className="back-to-results" onClick={backToResults}>
+                  Back to results
+                </button>
+              </div>
+            </>
+          ): (
             <div className="table-container">
               <table className=" w-full border border border-black lg:m-auto">
                 <thead
@@ -134,21 +163,16 @@ export default function SearchResults() {
 
                 <tbody className="search-results">
                   {filteredMeteoriteData.map((item) => (
-                    <tr
-                      key={item.id}
-                      className={
-                        darkMode
-                          ? "border border-white"
-                          : " border border-black"
-                      }
-                    >
-                      <td className={tableDataBorder}>{item.name}</td>
+                    <tr key={item.id}>
+                      <td className={tableDataBorder}>
+                        {item.name.toString()}
+                      </td>
 
-                      <td className={tableDataBorder}>{item.year}</td>
+                      <td className={tableDataBorder}>{item.year.toString()}</td>
 
-                      <td className={tableDataBorder}>{item.recclass}</td>
+                      <td className={tableDataBorder}>{item.recclass.toString()}</td>
 
-                      <td className={tableDataBorder}>{item.mass}</td>
+                      <td className={tableDataBorder}>{item.mass.toString()}</td>
 
                       <td className={tableDataBorder}>
                         <a
@@ -166,9 +190,17 @@ export default function SearchResults() {
             </div>
           )}
         </div>
-        <NewSearchBtn />
+        <div className={`${mapClicked ? "map-search-btn" : ""}`}> 
+          <NewSearchBtn />
+        </div>
         <BorderImages />
-        <div className="results-icon-container absolute bottom-[-2rem] right-0 left-0">
+        <div
+          className={`${
+            mapClicked
+              ? "relative bottom-24 map-icon-container"
+              : "relative bottom-40"
+          }`}
+        >
           <DarkMode />
         </div>
       </div>

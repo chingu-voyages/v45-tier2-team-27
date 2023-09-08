@@ -4,42 +4,110 @@
 
 
 .full-height-map{
-    @apply relative h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+    @apply relative h-[20rem] w-[20rem] mx-auto bg-gray-500 flex justify-center items-center mb-[-100px];
+    border-radius: 100% 100% 100% 100% 
 }
 
 .back-to-results{
     @apply relative top-[12rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
 }
 
+.back-to-results:hover{
+    transform: scale(1.05)
+}
 .back-to-results-border{
     @apply relative top-[13.6rem] left-0 right-0 mx-auto 
 }
 
+.map-icon-container{
+    @apply relative -top-16
+}
+
+.map-search-results{
+    @apply mx-6 mt-4 mb-40
+}
+
+.map-selected-container{
+    @apply flex justify-between border px-5 border-black mt-0 h-9 items-center
+}
+
+@media(min-width:450px){
+    .full-height-map{
+        @apply w-[22rem]
+    }
+    
+}
 
 @media(min-width: 600px) {
     .full-height-map{
-        @apply h-[25rem]  
+        @apply h-[32rem] w-[32rem] mb-[-24px] mt-2
     }
 
     .icon-container{
-        @apply relative top-32
+        @apply relative top-48
     }
+
+    .map-icon-container{
+        @apply relative -top-16
+    }
+
+    .map-search-btn{
+        @apply absolute top-[50rem] h-0 right-0 left-0 
+    }
+
+    .back-to-results{
+        @apply  top-28
+    }
+
+    .back-to-results-border{
+        @apply top-[8.6rem] 
+    }
+
+
 }
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-50px] 
+        @apply h-[37.5rem] w-[620px] fixed right-0 left-0 mx-auto top-[6.75rem] shadow-md ;
+        border-radius: 100% 100% 100% 100% ;
+        
+        
     }
 
-    .icon-container{
-        @apply relative top-6
+    /* .overlay {
+        @apply rounded-3xl h-[37.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[6.7rem];
+ 
+        background-color: rgba(255, 255, 255, 0.7); 
+        
+      } */
+
+    .map-search-results{
+        @apply absolute -top-[4.5rem] right-0 left-0 w-[390px] mx-auto 
+    }
+
+    .map-icon-container{
+        @apply relative top-[44rem]
     }
 
     .back-to-results{
-        @apply relative top-[11rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
+        @apply  top-[41.45rem]
     }
     
     .back-to-results-border{
-        @apply relative top-[12.6rem] left-0 right-0 mx-auto 
+        @apply top-[43.1rem]  
     }
+
+    .map-search-btn{
+        @apply absolute top-[48.5rem] h-0 right-0 left-0 
+    }
+
+    .icon-container{
+        @apply top-[6rem]
+    }
+
+    .map-title{
+        @apply mt-8
+    }
+
+
 }

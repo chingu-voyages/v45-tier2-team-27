@@ -13,12 +13,13 @@ import Landing from "./components/Landing";
 import { Route, Routes } from "react-router-dom";
 import RadarChart from "./components/RadarChart";
 import ScatterChart from "./components/ScatterChart";
-import RadialChartComponent from "./components/RadioChart";
+import RadioChart from "./components/RadioChart";
 import SearchResults from "./components/SearchResults";
 import Chart from "./components/Chart";
 import BigChart from "./components/BigChart";
 import About from "./components/About";
 import FetchApi from "./components/FetchApi";
+
 
 
 export const AuthContext = createContext();
@@ -39,9 +40,48 @@ function useMediaQuery(query) {
   return matches;
 }
 
+const fakeData = [
+  {
+    name: "Aachen",
+    recclass: "L5",
+    mass: "21",
+    year: "1880-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Abee",
+    recclass: "EH4",
+    mass: "107000",
+    year: "1952-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Acapulco",
+    recclass: "Acapulcoite",
+    mass: "1914",
+    year: "1976-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Acapu",
+    recclass: "Acapulcoite",
+    mass: "1914",
+    year: "1976-01-01T00:00:00.000",
+
+  },
+  {
+    name: "Achiras",
+    recclass: "L6",
+    mass: "780",
+    year: "1902-01-01T00:00:00.000",
+
+  },
+
+];
 function App() {
   const [meteoriteData, setMeteoriteData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const initialDarkMode = localStorage.getItem("darkMode") === "true"
+  const [darkMode, setDarkMode] = useState(initialDarkMode);
   const [recclassList, setRecclassList] = useState([]);
   const [asteroidName, setAsteroidName] = useState("");
   const [fromYear, setFromYear] = useState(null);
@@ -51,26 +91,27 @@ function App() {
   const [composition, setComposition] = useState("");
   const [selectedMeteorite, setSelectedMeteorite] = useState(null);
   const [asteroidInput, setAsteroidInput] = useState("");
+  const [filteredMeteoriteData, setFilteredMeteoriteData] = useState([])
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
+
 
   const getCurrentPage = () => {
     const storedPage = localStorage.getItem("currentPage");
     return storedPage || "/";
   };
-  
+
   const currentPage = getCurrentPage();
-  
+
   useEffect(() => {
     localStorage.setItem("currentPage", currentPage);
   }, [currentPage]);
-  
+
 
   useEffect(() => {
-    darkMode
-      ? (document.body.className = "dark-mode")
-      : (document.body.className = "light-mode");
+    localStorage.setItem("darkMode", darkMode.toString()); 
+    document.body.className = darkMode ? "dark-mode" : "light-mode";
   }, [darkMode]);
-
+  
   return (
     <>
       <AuthContext.Provider
@@ -97,19 +138,27 @@ function App() {
           setSelectedMeteorite,
           asteroidInput,
           setAsteroidInput,
+          fakeData,
+          filteredMeteoriteData,
+          setFilteredMeteoriteData
         }}
       >
-        <div className={`app-container`}>
+
+
+
+        <div className={`app-container `}>
           <FetchApi />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route
               path="/chart"
               element={isSmallScreen ? <Chart /> : <BigChart />}
-            />
-            <Route path="/radar-chart" element={<RadarChart />} />
-            <Route path="/scatter-chart" element={<ScatterChart />} />
-            <Route path="/radio-chart" element={<RadialChartComponent />} />
+            >
+              <Route path="/chart/radar" index element={<RadarChart />} />
+              <Route path="/chart/radio" element={<RadioChart />} />
+              <Route path="/chart/scatter" element={<ScatterChart />} />
+            </Route>
+
             <Route
               path="/search-results"
               element={<SearchResults asteroidInput={asteroidInput} />}
