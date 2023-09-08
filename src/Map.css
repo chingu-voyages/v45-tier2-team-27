@@ -26,9 +26,13 @@
     @apply mx-6 mt-4 mb-40
 }
 
+.map-selected-container{
+    @apply flex justify-evenly border border-black mt-0 h-9 items-center
+}
+
 @media(min-width: 600px) {
     .full-height-map{
-        @apply h-[25rem] mx-1 mb-5
+        @apply h-[25rem] mb-5
     }
 
     .icon-container{
@@ -56,7 +60,7 @@
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[37.5rem] w-[620px] fixed right-0 left-0 mx-auto top-[6.7rem] shadow-md ;
+        @apply h-[37.5rem] w-[620px] fixed right-0 left-0 mx-auto top-[6.75rem] shadow-md ;
         border-radius: 100% 100% 100% 100% ;
         
         
@@ -70,7 +74,7 @@
       } */
 
     .map-search-results{
-        @apply absolute -top-[4.55rem] right-0 left-0 w-[390px] mx-auto 
+        @apply absolute -top-[4.5rem] right-0 left-0 w-[390px] mx-auto 
     }
 
     .map-icon-container{
@@ -96,4 +100,6 @@
     .map-title{
         @apply mt-8
     }
+
+
 }

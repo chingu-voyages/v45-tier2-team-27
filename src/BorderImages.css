@@ -130,27 +130,25 @@
 
 @media(min-width: 600px){
 
-.bottom-border-container{
-    @apply w-[600px]
-}
+    .bottom-border-container{
+        @apply w-[600px]
+    }
 
-.bottom-left-border{
-    @apply absolute 
-}
+    .bottom-left-border{
+        @apply absolute 
+    }
 
-.bottom-right-border {
-    @apply absolute 
-}
+    .bottom-right-border {
+        @apply absolute 
+    }
 
-.bottom-left-border-img{
-    @apply absolute 
-}
+    .bottom-left-border-img{
+        @apply absolute 
+    }
 
-.bottom-right-border-img{
-    @apply absolute 
-}
-
-   
+    .bottom-right-border-img{
+        @apply absolute 
+    }
 }
 
 /* @media(max-height: 800px) and (max-width:600px){
