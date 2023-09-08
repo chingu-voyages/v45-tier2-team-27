@@ -27,7 +27,7 @@
 }
 
 .map-selected-container{
-    @apply flex justify-evenly border border-black mt-0 h-9 items-center
+    @apply flex justify-between border px-5 border-black mt-0 h-9 items-center
 }
 
 @media(min-width: 600px) {
