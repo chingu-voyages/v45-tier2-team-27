@@ -57,9 +57,9 @@ export default function SearchResults() {
   return (
     <div className="search-outer-container">
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
-        <div className="mx-6 mt-4 mb-40">
-          <h1 className="uppercase text-3xl md:text-3xl py-4">Skyfall</h1>
-          <h2 className="uppercase pb-2 md:text-left">You Searched:</h2>
+        <div className={`${mapClicked ? "map-search-results" : "mx-6 mt-4 mb-40"} `}>
+          <h1 className={`${mapClicked ? "uppercase text-3xl md:text-3xl map-title" : "uppercase text-3xl md:text-3xl py-4"}`}>Skyfall</h1>
+          <h2 className={`${mapClicked ? "text-left text-xs uppercase pb-1" : "uppercase pb-2 md:text-left"}`}>You Searched:</h2>
           <div className="search-field flex justify-evenly lg:m-auto py-2 mb-2">
             <p className="capitalize font-semibold">
               <q>{asteroidInput}</q>
@@ -77,53 +77,59 @@ export default function SearchResults() {
               {minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}
             </p>
           </div>
+          
           {mapClicked ?
+          <>
             <div className="map-container">
+              <div className="overlay"></div>
               <Map />
+            </div>
+            <div onClick={backToResults}>
               <img
                 src={`${darkMode ? "/images/white-back-to-results-border.png" : "/images/back-to-results-border.png"}`}
                 alt=""
                 className=" back-to-results-border"
               />
-              <a className="back-to-results bottom-[4.5rem]" onClick={backToResults}>
-                Back to results
-              </a>
-            </div>
-            :
-            <div className="table-container">
-              <table className=" w-full border border-1 border-solid border-black lg:m-auto">
-                <thead className="bg-gray-300 sticky top-0">
-                  <tr>
-                    <th className="search-table-header uppercase">Name</th>
-                    <th className="search-table-header uppercase underline">
-                      <Link to="/chart/scatter" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View year of strike summary ">
-                        Year
-                      </Link>
-                    </th>
-                    <th className="search-table-header uppercase underline">
-                      <Link to="/chart/radio" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View composition materials summary">
-                        Comp
-                      </Link>
-                    </th>
-                    <th className="search-table-header uppercase underline">
-                      <Link to="/chart/radar" onClick={() => handleClick(filteredMeteoriteData)} aria-label="View mass value summary">
-                        Mass
-                      </Link>
-                    </th>
-                    <th></th>
-                  </tr>
-                </thead>
+              <button className="back-to-results" onClick={backToResults}>
+                  Back to results
+              </button>
+            </div >
+          </>
+          :
+          <div className="table-container">
+            <table className=" w-full border border-1 border-solid border-black lg:m-auto">
+              <thead className="bg-gray-300 sticky top-0">
+                <tr>
+                  <th className="search-table-header uppercase">Name</th>
+                  <th className="search-table-header uppercase underline">
+                    <a href="/" aria-label="View year of strike summary ">
+                      Year
+                    </a>
+                  </th>
+                  <th className="search-table-header uppercase underline">
+                    <a href="/" aria-label="View composition materials summary">
+                      Comp
+                    </a>
+                  </th>
+                  <th className="search-table-header uppercase underline">
+                    <a href="/" aria-label="View mass value summary">
+                      Mass
+                    </a>
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              
+              <tbody className="search-results">
+                {filteredMeteoriteData.map((item) => (
+                  <tr key={item.id}>
+                    <td className="search-results-data">{item.name.toString()}</td>
 
-                <tbody className="search-results">
-                  {filteredMeteoriteData.map((item) => (
-                    <tr key={item.id}>
-                      <td className="search-results-data">{item.name}</td>
+                    <td className="search-results-data">{item.year.toString()}</td>
 
-                      <td className="search-results-data">{item.year}</td>
+                    <td className="search-results-data">{item.recclass.toString()}</td>
 
-                      <td className="search-results-data">{item.recclass}</td>
-
-                      <td className="search-results-data">{item.mass}</td>
+                    <td className="search-results-data">{item.mass.toString()}</td>
 
                       <td className="search-results-data ">
                         <a
@@ -141,9 +147,12 @@ export default function SearchResults() {
             </div>
           }
         </div>
-        <NewSearchBtn />
+        <div className={`${mapClicked ? "map-search-btn" : ""}`}> 
+          <NewSearchBtn />
+        </div>          
+        
         <BorderImages />
-        <div className="results-icon-container absolute bottom-[-2rem] right-0 left-0">
+        <div className={`${mapClicked ? "relative bottom-24 map-icon-container" : "relative bottom-40"}`}>
           <DarkMode />
         </div>
       </div>

@@ -80,7 +80,8 @@ const fakeData = [
 ];
 function App() {
   const [meteoriteData, setMeteoriteData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const initialDarkMode = localStorage.getItem("darkMode") === "true"
+  const [darkMode, setDarkMode] = useState(initialDarkMode);
   const [recclassList, setRecclassList] = useState([]);
   const [asteroidName, setAsteroidName] = useState("");
   const [fromYear, setFromYear] = useState(null);
@@ -107,12 +108,10 @@ function App() {
 
 
   useEffect(() => {
-    darkMode
-      ? (document.body.className = "dark-mode")
-      : (document.body.className = "light-mode");
+    localStorage.setItem("darkMode", darkMode.toString()); 
+    document.body.className = darkMode ? "dark-mode" : "light-mode";
   }, [darkMode]);
-
-
+  
   return (
     <>
       <AuthContext.Provider
