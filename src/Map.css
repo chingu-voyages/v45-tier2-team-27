@@ -4,9 +4,13 @@
 
 
 .full-height-map{
-    @apply relative h-[20rem] w-[20rem] mx-auto bg-gray-500 flex justify-center items-center mb-[-100px];
+    @apply relative h-[20rem] w-[20rem] mx-auto bg-gray-500 flex justify-center items-center mt-2 mb-[-100px] z-40;
     border-radius: 100% 100% 100% 100% 
 }
+
+.overlay {
+    @apply h-[22.1rem] w-[23rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-50 pointer-events-none;  
+  }
 
 .back-to-results{
     @apply relative top-[12rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
@@ -27,21 +31,32 @@
     @apply mx-6 mt-4 mb-40
 }
 
+body.dark-mode .map-selected-container{
+    @apply border-white
+}
+
 .map-selected-container{
     @apply flex justify-between border px-5 border-black mt-0 h-9 items-center
 }
+
+
 
 @media(min-width:450px){
     .full-height-map{
         @apply w-[22rem]
     }
     
+
 }
 
 @media(min-width: 600px) {
     .full-height-map{
-        @apply h-[32rem] w-[32rem] mb-[-24px] mt-2
+        @apply h-[32rem] w-[32rem] mb-[-24px] mt-3 z-40
     }
+
+    .overlay {
+        @apply h-[34.2rem] w-[40rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-50 pointer-events-none;  
+      }
 
     .icon-container{
         @apply relative top-48
@@ -74,36 +89,34 @@
         
     }
 
-    /* .overlay {
-        @apply rounded-3xl h-[37.5rem] w-[1140px] fixed right-0 left-0 mx-auto top-[6.7rem];
+    .overlay {
+        @apply rounded-3xl h-[38.5rem] w-[630px] fixed right-0 left-0 mx-auto top-[7rem] z-50 pointer-events-none;
  
-        background-color: rgba(255, 255, 255, 0.7); 
         
-      } */
+        
+      }
 
     .map-search-results{
         @apply absolute -top-[4.5rem] right-0 left-0 w-[390px] mx-auto 
     }
 
     .map-icon-container{
-        @apply relative top-[44rem]
+        @apply relative top-[48rem]
     }
 
     .back-to-results{
-        @apply  top-[41.45rem]
+        @apply  top-[43.45rem]
     }
     
     .back-to-results-border{
-        @apply top-[43.1rem]  
+        @apply top-[45.1rem]  
     }
 
     .map-search-btn{
-        @apply absolute top-[48.5rem] h-0 right-0 left-0 
+        @apply  w-96 mx-auto  
     }
 
-    .icon-container{
-        @apply top-[6rem]
-    }
+
 
     .map-title{
         @apply mt-8

@@ -298,12 +298,8 @@ body.dark-mode text{
         @apply bottom-16
     }
 
-    .landing-container .icon-container{
-        @apply mt-[-150px]
-    }
-
-    .icon-container{
-        @apply mt-[-80px]
+    .landing-container- .icon-container{
+        @apply mt-[-200px]
     }
 
     .landing-btn-container{

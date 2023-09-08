@@ -72,6 +72,11 @@
     @apply hidden
 }
 
+.desktop-left-line,
+.desktop-right-line{
+    @apply hidden
+}
+
 @media(min-width:1280px){
     .bottom-border-container{
         @apply min-w-[1280px]
@@ -96,6 +101,14 @@
     .desktop-right-border,
     .desktop-left-border{
         @apply flex pointer-events-none
+    }
+
+    .desktop-right-line{
+        @apply flex absolute right-16 top-9 h-[45rem]
+    }
+
+    .desktop-left-line{
+        @apply flex absolute left-16 top-9 h-[45rem]
     }
 }
 

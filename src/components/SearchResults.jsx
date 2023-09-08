@@ -39,7 +39,7 @@ export default function SearchResults() {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
         let newFilteredData = meteoriteData.filter((item) => {
-          // Check if parsedSearchCriteria.asteroidName is a string
+  
           if (parsedSearchCriteria.asteroidName) {
             setAsteroidName(parsedSearchCriteria.asteroidName);
           }
@@ -110,7 +110,7 @@ export default function SearchResults() {
           {mapClicked ?
           <>
             <div className="map-container">
-              <div className="overlay"></div>
+              <img className="overlay" src={`${darkMode ? "/images/dark-globe-fade.png" : "/images/globe-fade.png"}`}></img>
               <Map />
             </div>
             <div onClick={backToResults}>

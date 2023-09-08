@@ -74,11 +74,11 @@ const handleMassRangeChange = (e) => {
     
 
     if (asteroidName) {
-      searchCriteria.asteroidName = asteroidName;
+      searchCriteria.asteroidName = asteroidName || "";
     }
 
     if (composition) {
-      searchCriteria.composition = composition;
+      searchCriteria.composition = composition || "";
     }
 
     if (fromYear || toYear) {

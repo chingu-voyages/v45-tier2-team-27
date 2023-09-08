@@ -4,11 +4,11 @@
 
 html,
 body{
-  @apply  overflow-x-hidden
+  @apply  overflow-x-hidden 
 }
 
 body{
-  @apply font-custom-lexend-exa  p-0 m-0  bg-white;   
+  @apply font-custom-lexend-exa  p-0 m-0  ;   
 }
 
 body.light-mode{
