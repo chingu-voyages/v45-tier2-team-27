@@ -4,7 +4,8 @@
 
 
 .full-height-map{
-    @apply relative h-[20rem] w-[100%] bg-gray-500 flex justify-center items-center mb-[-100px] 
+    @apply relative h-[20rem] w-[20rem] mx-auto bg-gray-500 flex justify-center items-center mb-[-100px];
+    border-radius: 100% 100% 100% 100% 
 }
 
 .back-to-results{
@@ -30,9 +31,16 @@
     @apply flex justify-between border px-5 border-black mt-0 h-9 items-center
 }
 
+@media(min-width:450px){
+    .full-height-map{
+        @apply w-[22rem]
+    }
+    
+}
+
 @media(min-width: 600px) {
     .full-height-map{
-        @apply h-[25rem] mb-5
+        @apply h-[32rem] w-[32rem] mb-[-24px] mt-2
     }
 
     .icon-container{
@@ -40,11 +48,11 @@
     }
 
     .map-icon-container{
-        @apply relative -top-20
+        @apply relative -top-16
     }
 
     .map-search-btn{
-        @apply absolute top-[45.5rem] h-0 right-0 left-0 
+        @apply absolute top-[50rem] h-0 right-0 left-0 
     }
 
     .back-to-results{
@@ -82,19 +90,19 @@
     }
 
     .back-to-results{
-        @apply  top-[40.45rem]
+        @apply  top-[41.45rem]
     }
     
     .back-to-results-border{
-        @apply top-[42.1rem]  
+        @apply top-[43.1rem]  
     }
 
     .map-search-btn{
-        @apply absolute top-[47.5rem] h-0 right-0 left-0 
+        @apply absolute top-[48.5rem] h-0 right-0 left-0 
     }
 
     .icon-container{
-        @apply top-[5rem]
+        @apply top-[6rem]
     }
 
     .map-title{
