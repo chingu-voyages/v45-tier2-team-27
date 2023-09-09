@@ -10,6 +10,7 @@
 
 .overlay {
     @apply h-[22.1rem] w-[23rem] fixed right-0 left-0 mx-auto top-[12.4rem] z-50 pointer-events-none;  
+    border-radius: 100% 100% 100% 100%;
   }
 
 .back-to-results{
@@ -24,7 +25,7 @@
 }
 
 .map-icon-container{
-    @apply relative -top-16
+    @apply relative -top-0
 }
 
 .map-search-results{
@@ -43,10 +44,13 @@ body.dark-mode .map-selected-container{
 
 @media(min-width:450px){
     .full-height-map{
-        @apply w-[22rem]
+        @apply w-[30rem] h-[30rem]
     }
     
-
+    .overlay {
+        @apply h-[31.1rem] w-[31rem] fixed right-0 left-0 mx-auto top-[12.4rem] z-50 pointer-events-none;  
+        border-radius: 100% 100% 100% 100%;
+      }
 }
 
 @media(min-width: 600px) {
@@ -58,12 +62,9 @@ body.dark-mode .map-selected-container{
         @apply h-[34.2rem] w-[40rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-50 pointer-events-none;  
       }
 
-    .icon-container{
-        @apply relative top-48
-    }
 
     .map-icon-container{
-        @apply relative -top-16
+        @apply relative -top-5
     }
 
     .map-search-btn{
@@ -83,25 +84,21 @@ body.dark-mode .map-selected-container{
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[37.5rem] w-[620px] fixed right-0 left-0 mx-auto top-[6.75rem] shadow-md ;
-        border-radius: 100% 100% 100% 100% ;
-        
-        
+        @apply h-[39.5rem] w-[680px] fixed right-0 left-0 mx-auto top-[6.75rem] shadow-md ;
+        border-radius: 100% 100% 100% 100% ;     
     }
 
     .overlay {
-        @apply rounded-3xl h-[38.5rem] w-[630px] fixed right-0 left-0 mx-auto top-[7rem] z-50 pointer-events-none;
- 
-        
-        
-      }
+        @apply rounded-3xl h-[40.5rem] w-[690px] fixed right-0 left-0 mx-auto top-[7rem] z-50 pointer-events-none ;
+        border-radius: 100% 100% 100% 100% ;    
+    }
 
     .map-search-results{
         @apply absolute -top-[4.5rem] right-0 left-0 w-[390px] mx-auto 
     }
 
     .map-icon-container{
-        @apply relative top-[48rem]
+        @apply relative top-[51.7rem]
     }
 
     .back-to-results{
@@ -116,11 +113,7 @@ body.dark-mode .map-selected-container{
         @apply  w-96 mx-auto  
     }
 
-
-
     .map-title{
         @apply mt-8
     }
-
-
 }

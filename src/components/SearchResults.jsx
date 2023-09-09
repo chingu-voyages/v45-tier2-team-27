@@ -232,8 +232,8 @@ export default function SearchResults() {
         <div
           className={`${
             mapClicked
-              ? "relative bottom-24 map-icon-container"
-              : "relative bottom-40"
+              ? "map-icon-container"
+              : "relative bottom-28"
           }`}
         >
           <DarkMode />

@@ -82,19 +82,19 @@
 }
 
 .search-btn{
-    @apply relative bottom-[4.9rem] text-[24px] font-bold  left-0 right-0
+    @apply absolute bottom-[6.5rem] text-[24px] font-bold right-0 left-0
 }
 
 .clear-btn{
-    @apply absolute bottom-20 text-[20px] 
+    @apply absolute bottom-12 text-[20px] 
 }
 
 .small-black-border{
-    @apply absolute bottom-28 left-0 right-0 mx-auto  pointer-events-none mb-7
+    @apply absolute bottom-20 left-0 right-0 mx-auto  pointer-events-none mb-7
 }
 
 .small-gray-border{
-    @apply absolute bottom-20 right-0 left-0 mx-auto pointer-events-none
+    @apply absolute bottom-12 right-0 left-0 mx-auto pointer-events-none
 }
 
 .search-btn-container,
@@ -151,7 +151,7 @@ body.dark-mode .mass-dropdown-container:hover .mass-range{
 }
 
 .landing-container .icon-container{
-    @apply  mt-[-30px] relative -bottom-8 z-50
+    @apply   mt-5
 }
 
 .dark-mode-icon{
@@ -200,7 +200,7 @@ body.dark-mode text{
     }
     
     .landing-btn-container{
-        @apply mt-[37rem]
+        @apply mt-[30rem]
     }
 
     .composition-dropdown-text,
@@ -238,26 +238,8 @@ body.dark-mode text{
         border-radius: 100%;
     }
 
-    .search-btn{
-        @apply bottom-[9.5rem]
-    }
-    
-    .small-black-border{
-        @apply bottom-0
-    }
 
-    .clear-btn,
-    .small-gray-border{
-        @apply -bottom-10
-    }
 
-    .icon-container{
-        @apply mt-[-200px]
-    }
-
-    .landing-container .icon-container{
-        @apply mt-[-250px]
-    }
 }
 
 
@@ -290,21 +272,17 @@ body.dark-mode text{
 
     
     .small-black-border{
-        @apply bottom-[5.5rem]
+        @apply bottom-[6.5rem]
     }
 
     .clear-btn,
     .small-gray-border{
-        @apply bottom-16
+        @apply bottom-20
     }
 
-    .landing-container- .icon-container{
-        @apply mt-[-200px]
-    }
-
-    .landing-btn-container{
-        @apply mt-[30rem]
-    }
+   .landing-container .icon-container{
+    @apply mt-[-16px]
+   }
 }
 
 /* @media(max-height: 800px) and (max-width:600px){

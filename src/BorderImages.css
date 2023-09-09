@@ -43,7 +43,7 @@
 /* Borders */
 
 .bottom-border-container{
-    @apply w-screen relative h-16
+    @apply flex justify-between w-screen
 }
 
 .bottom-left-border,

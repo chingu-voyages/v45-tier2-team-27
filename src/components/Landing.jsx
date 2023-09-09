@@ -294,10 +294,10 @@ const handleMassRangeChange = (e) => {
               alt=""
             />
             <button
-              className={`search-btn ${darkMode ? "" : "right-[4.2rem]"}`}
+              className={` ${darkMode ? "" : "right-[4.2rem]"}`}
               onClick={handleSearch}
             >
-              <Link to="/search-results">SEARCH</Link>
+              <Link className="search-btn" to="/search-results">SEARCH</Link>
             </button>
           </div>
           <div className="clear-btn-container">
