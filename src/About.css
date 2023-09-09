@@ -30,3 +30,7 @@
     @apply font-bold
 }
 
+.about-icon-container{
+    @apply mt-12
+}
+
