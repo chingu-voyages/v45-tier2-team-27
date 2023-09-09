@@ -10,6 +10,10 @@
     @apply absolute text-xl font-semibold left-0 right-0 w-32 mx-auto z-50
 }
 
+.go-back-btn:hover{
+    transform: scale(1.05)
+}
+
 .go-back-border{
     @apply absolute
 }

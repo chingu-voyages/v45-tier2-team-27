@@ -9,7 +9,7 @@
 }
 
 .overlay {
-    @apply h-[22.1rem] w-[23rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-50 pointer-events-none;  
+    @apply h-[22.1rem] w-[23rem] fixed right-0 left-0 mx-auto top-[12.4rem] z-50 pointer-events-none;  
   }
 
 .back-to-results{

@@ -2,6 +2,7 @@ import BorderImages from "./BorderImages"
 import { useContext } from "react"
 import { AuthContext } from "../App"
 import { Link } from "react-router-dom"
+import DarkMode from "./DarkMode"
 
 export default function About(){
     const { darkMode } = useContext(AuthContext)
@@ -41,7 +42,11 @@ export default function About(){
                 <Link to="/"><button className="go-back-btn">Go Back</button></Link>
             </div>
 
+            
             <BorderImages />
+            <div className="about-icon-container">
+                <DarkMode />
+            </div>
         </div>
     )
 }

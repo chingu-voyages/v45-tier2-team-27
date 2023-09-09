@@ -143,7 +143,7 @@ export default function SearchResults() {
           {mapClicked ? (
             <>
               <div className="map-container">
-                <div className="overlay"></div>
+                <img className="overlay" src={`${darkMode ? "/images/dark-globe-fade.png" : "/images/globe-fade.png"}`}></img>
                 <Map />
               </div>
               <div onClick={backToResults}>
@@ -227,7 +227,7 @@ export default function SearchResults() {
         <div className={`${mapClicked ? "map-search-btn" : ""}`}> 
           <NewSearchBtn />
         </div>
-        
+
         <BorderImages />
         <div
           className={`${
