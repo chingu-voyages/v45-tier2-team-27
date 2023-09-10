@@ -192,7 +192,7 @@ const handleMassRangeChange = (e) => {
             >
               <option defaultValue="" disabled onChange={handleYearRangeChange}></option>
               {yearRanges.map((option) => (
-                <option key={option.min} value={`${option.min}-${option.max}`}>
+                <option className="landing-options" key={option.min} value={`${option.min}-${option.max}`}>
                   {option.label}
                 </option>
               ))}
@@ -227,7 +227,7 @@ const handleMassRangeChange = (e) => {
             >
               <option defaultValue="" disabled onChange={handleCompositionChange}></option>
               {recclassList.map((recclass, index) => (
-                <option key={index} value={recclass}>
+                <option className="landing-options" key={index} value={recclass}>
                   {recclass}
                 </option>
               ))}
@@ -256,12 +256,12 @@ const handleMassRangeChange = (e) => {
               name="Mass Range"
               id="mass-range"
               className="mass-range"
-              onClick={handleMassRangeChange}
+              onChange={handleMassRangeChange}
               defaultValue=""
             >
               <option defaultValue="" disabled onChange={handleMassRangeChange}></option>
               {massRanges.map((option) => (
-                <option key={`${option.min}-${option.max}`} value={`${option.min}-${option.max}`}>
+                <option className="landing-options" key={`${option.min}-${option.max}`} value={`${option.min}-${option.max}`}>
                   {option.label}
                 </option>
               ))}
