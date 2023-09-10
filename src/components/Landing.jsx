@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import DarkMode from "./DarkMode"
 
 export default function Landing() {
+  const searchCriteria = {};
   const {
     darkMode,
     recclassList,
@@ -68,16 +69,16 @@ const handleMassRangeChange = (e) => {
       }
     }
   }
-
+  
   const handleSearch = () => {
-    const searchCriteria = {};
+    
 
     if (asteroidName) {
-      searchCriteria.asteroidName = new RegExp(asteroidName, "i");
+      searchCriteria.asteroidName = asteroidName || "";
     }
 
     if (composition) {
-      searchCriteria.composition = composition;
+      searchCriteria.composition = composition || "";
     }
 
     if (fromYear || toYear) {
@@ -89,6 +90,7 @@ const handleMassRangeChange = (e) => {
       searchCriteria.minMass = minMass || "";
       searchCriteria.maxMass = maxMass || "";
     }
+    localStorage.setItem("searchCriteria", JSON.stringify(searchCriteria));
   };
 
   const handleClear = () => {
@@ -107,7 +109,7 @@ const handleMassRangeChange = (e) => {
     { min: 1700, max: 1724, label: '1700 - 1724' },
     { min: 1725, max: 1749, label: '1725 - 1750' },
     { min: 1750, max: 1774, label: '1750 - 1774' },
-    { min: 1775, max: 1799, label: '1900 - 1909' },
+    { min: 1775, max: 1799, label: '1775 - 1799' },
     { min: 1800, max: 1824, label: '1800 - 1824' },
     { min: 1825, max: 1849, label: '1825 - 1849' },
     { min: 1850, max: 1874, label: '1850 - 1874' },
@@ -292,10 +294,10 @@ const handleMassRangeChange = (e) => {
               alt=""
             />
             <button
-              className={`search-btn ${darkMode ? "" : "right-[4.2rem]"}`}
+              className={` ${darkMode ? "" : "right-[4.2rem]"}`}
               onClick={handleSearch}
             >
-              <Link to="/search-results">SEARCH</Link>
+              <Link className="search-btn" to="/search-results">SEARCH</Link>
             </button>
           </div>
           <div className="clear-btn-container">

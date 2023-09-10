@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../App";
 import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
-import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
+  const [filteredData, setFilteredData] = useState([])
   const {
     meteoriteData,
     asteroidName,
+    setAsteroidName,
     composition,
     fromYear,
     toYear,
@@ -28,27 +29,60 @@ export default function SearchResults() {
   };
 
   const backToResults = () => {
-    setMapClicked(false);
-  };
+    setMapClicked(false)
+  }
 
-  const filteredMeteoriteData = meteoriteData.filter((item) => {
-    const isMassInRange =
-      (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
-    const isYearInRange =
-      !fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear));
-    const isAsteroidNameMatch =
-      !asteroidName ||
-      item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
-    const isCompositionMatch =
-      !composition || composition.toLowerCase() === item.recclass.toLowerCase();
-
-    return (
-      isAsteroidNameMatch &&
-      isYearInRange &&
-      isCompositionMatch &&
-      isMassInRange
-    );
-  });
+  useEffect(() => {
+    try {
+      const storedSearchCriteria = localStorage.getItem("searchCriteria");
+    
+      if (storedSearchCriteria) {
+        const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
+    
+        let newFilteredData = meteoriteData.filter((item) => {
+  
+          if (parsedSearchCriteria.asteroidName) {
+            setAsteroidName(parsedSearchCriteria.asteroidName);
+          }
+    
+          const isYearInRange =
+            (!parsedSearchCriteria.fromYear || item.year >= parsedSearchCriteria.fromYear) &&
+            (!parsedSearchCriteria.toYear || item.year <= parsedSearchCriteria.toYear);
+    
+          const isMassInRange =
+            (!parsedSearchCriteria.minMass || item.mass >= parsedSearchCriteria.minMass) &&
+            (!parsedSearchCriteria.maxMass || item.mass <= parsedSearchCriteria.maxMass);
+    
+          const isCompositionMatch =
+            !parsedSearchCriteria.composition || item.recclass.toLowerCase() === parsedSearchCriteria.composition.toLowerCase();
+    
+          return  isYearInRange && isMassInRange && isCompositionMatch;
+        });
+    
+        newFilteredData = newFilteredData.filter((item) => {
+          const isMassInRange =
+            (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
+          const isYearInRange =
+            (!fromYear || (item.year >= fromYear && (!toYear || item.year <= toYear)));
+            const isAsteroidNameMatch =
+            !asteroidName || item.name.toLowerCase().startsWith(asteroidName.toLowerCase());
+          const isCompositionMatch =
+            !composition || item.recclass.toLowerCase() === composition.toLowerCase();
+    
+          return (
+            isAsteroidNameMatch &&
+            isYearInRange &&
+            isCompositionMatch &&
+            isMassInRange
+          );
+        });
+    
+        setFilteredData(newFilteredData);
+      }
+    } catch (error) {
+      console.error("Error retrieving data from localStorage:", error);
+    }
+  }, [meteoriteData, asteroidName, setAsteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   function handleClick(filteredMeteoriteData) {
     setFilteredMeteoriteData(filteredMeteoriteData);
@@ -110,6 +144,7 @@ export default function SearchResults() {
             <>
               <div className="map-container">
                 <div className="overlay"></div>
+                {/* <img className="overlay" src={`${darkMode ? "/images/dark-globe-fade.png" : "/images/globe-fade.png"}`}></img> */}
                 <Map />
               </div>
               <div onClick={backToResults}>
@@ -162,7 +197,7 @@ export default function SearchResults() {
                 </thead>
 
                 <tbody className="search-results">
-                  {filteredMeteoriteData.map((item) => (
+                  {filteredData.map((item) => (
                     <tr key={item.id}>
                       <td className={tableDataBorder}>
                         {item.name.toString()}
@@ -193,12 +228,13 @@ export default function SearchResults() {
         <div className={`${mapClicked ? "map-search-btn" : ""}`}> 
           <NewSearchBtn />
         </div>
+
         <BorderImages />
         <div
           className={`${
             mapClicked
-              ? "relative bottom-24 map-icon-container"
-              : "relative bottom-40"
+              ? "map-icon-container"
+              : "search-icon-container"
           }`}
         >
           <DarkMode />

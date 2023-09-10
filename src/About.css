@@ -3,35 +3,88 @@
 @tailwind utilities;
 
 .go-back-container{
-    @apply flex justify-center mt-[-1.5rem]
+    @apply flex justify-center relative bottom-0  h-0
 }
 
 .go-back-btn{
-    @apply absolute  text-xl font-semibold left-0 right-0 
+    @apply absolute bottom-16 text-xl font-semibold left-0 right-0 w-32 mx-auto z-50
+}
+
+body.dark-mode .go-back-btn{
+    @apply bottom-[4.15rem]
+}
+
+.go-back-btn:hover{
+    transform: scale(1.05)
+}
+
+.go-back-border{
+    @apply absolute bottom-16
 }
 
 .about-title-container{
-    @apply mb-5
+    @apply mb-12
 }
 
 .team-member-container{
-    @apply mb-4
+    @apply mb-10
 }
 
 .team-member{
     @apply font-bold
 }
 
-@media(max-width: 1280px){
+.about-icon-container{
+    @apply absolute bottom-0 right-0 left-0
+}
+
+@media(min-width: 600px){
+    .about-icon-container{
+        @apply absolute -bottom-[3.5rem] right-0 left-0 
+    }
+
+    .team-member-container{
+        @apply mt-10
+    }
+    
+    .about-title-container{
+        @apply mb-16
+    }
+
     .go-back-btn{
-        @apply bottom-10
+        @apply absolute bottom-12
     }
-    
+
     .go-back-border{
-        @apply absolute bottom-10
+        @apply absolute bottom-12
     }
     
-    .white-border{
-        @apply absolute bottom-9
+    body.dark-mode .go-back-btn{
+        @apply bottom-[3.2rem]
     }
+    
+}
+
+@media(min-width: 1280px){
+    .about-icon-container{
+        @apply absolute bottom-16 right-0 left-0 
+    }
+
+    .team-member-container{
+        @apply mt-6 mb-0
+    }
+    
+    .about-title-container{
+        @apply mb-2
+    }
+
+    .go-back-btn{
+        @apply absolute bottom-12
+    }
+
+    .go-back-border{
+        @apply absolute bottom-12
+    }
+    
+    
 }

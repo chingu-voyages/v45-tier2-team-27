@@ -9,7 +9,7 @@ export default function Map() {
 
   return (
     <>
-      <tr className='map-selected-container'>
+      <tr className='map-selected-container '>
         <td className="selected-map-data">{selectedMeteorite.name.toString()}</td>
         <td className="selected-map-data">{selectedMeteorite.year.toString()}</td>
         <td className="selected-map-data">{selectedMeteorite.recclass.toString()}</td>
@@ -17,7 +17,7 @@ export default function Map() {
       </tr>
        
       <MapContainer
-        className="full-height-map"
+        className="full-height-map z-10"
         center={[selectedMeteorite.geolocation.latitude, selectedMeteorite.geolocation.longitude]}
         zoom={3}
         scrollWheelZoom={true}
