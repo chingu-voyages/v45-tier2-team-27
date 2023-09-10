@@ -11,19 +11,19 @@
   }
 
 .line-1 {
-  @apply top-[11.4rem] right-[4.2rem] h-[7.6rem] rotate-[160deg];
+  @apply top-[11.5rem] right-[3.4rem] h-[7.1rem] rotate-[160deg];
 }
 
 .line-2{
-  @apply top-[19.2rem] right-[7.6rem] h-[4rem] rotate-[110deg];
+  @apply top-[19.7rem] right-[6.9rem] h-[2.75rem] rotate-[110deg];
 }
 
 .line-3{
-  @apply top-[25.4rem] right-[7.7rem] h-[4.6rem] rotate-[60deg];
+  @apply top-[26.45rem] right-[6.8rem] h-[3.3rem] rotate-[60deg];
 }
 
 .line-4 {
-  @apply top-[29.3rem] right-[4.4rem] h-[8rem] rotate-[15deg];
+  @apply top-[29.65rem] right-[3.65rem] h-[7.9rem] rotate-[15deg];
 }
 
 .dot{
@@ -38,22 +38,24 @@
 
   /* Media */
 
-@media(max-width: 360px){
+@media(min-width: 360px){
+
   .line-1 {
-    @apply top-[11.5rem] right-[3.4rem] h-[7.1rem] rotate-[160deg];
+    @apply top-[11.4rem] right-[4.2rem] h-[7.6rem] rotate-[160deg];
   }
   
   .line-2{
-    @apply top-[19.7rem] right-[6.9rem] h-[2.75rem] rotate-[110deg];
+    @apply top-[19.2rem] right-[7.6rem] h-[4rem] rotate-[110deg];
   }
   
   .line-3{
-    @apply top-[26.45rem] right-[6.8rem] h-[3.3rem] rotate-[60deg];
+    @apply top-[25.4rem] right-[7.7rem] h-[4.6rem] rotate-[60deg];
   }
   
   .line-4 {
-    @apply top-[29.65rem] right-[3.65rem] h-[7.9rem] rotate-[15deg];
+    @apply top-[29.3rem] right-[4.4rem] h-[8rem] rotate-[15deg];
   }
+  
 }
   
 @media(min-width: 380px){
