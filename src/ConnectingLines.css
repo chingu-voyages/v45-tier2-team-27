@@ -52,7 +52,7 @@
   }
   
   .line-4 {
-    @apply top-[29.65rem] right-[3.75rem] h-[7.95rem] rotate-[15deg];
+    @apply top-[29.65rem] right-[3.75rem] h-[7.9rem] rotate-[15deg];
   }
 }
   
