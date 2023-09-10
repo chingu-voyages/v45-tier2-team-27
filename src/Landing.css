@@ -194,6 +194,10 @@ body.dark-mode text{
     .composition-select-container{
         @apply ml-5
     }
+
+    .landing-container{
+        @apply mt-[1.35rem]
+    }
 }
 
 @media(min-width:600px){

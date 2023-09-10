@@ -40,7 +40,7 @@
 
 @media(max-width: 360px){
   .line-1 {
-    @apply top-[11.45rem] right-[3.4rem] h-[7.1rem] rotate-[160deg];
+    @apply top-[11.5rem] right-[3.4rem] h-[7.1rem] rotate-[160deg];
   }
   
   .line-2{
@@ -48,11 +48,11 @@
   }
   
   .line-3{
-    @apply top-[26.45rem] right-[6.7rem] h-[3.1rem] rotate-[60deg];
+    @apply top-[26.45rem] right-[6.8rem] h-[3.3rem] rotate-[60deg];
   }
   
   .line-4 {
-    @apply top-[29.75rem] right-[3.6rem] h-[7.75rem] rotate-[15deg];
+    @apply top-[29.65rem] right-[3.75rem] h-[7.95rem] rotate-[15deg];
   }
 }
   
