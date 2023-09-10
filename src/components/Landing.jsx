@@ -256,7 +256,7 @@ const handleMassRangeChange = (e) => {
               name="Mass Range"
               id="mass-range"
               className="mass-range"
-              onClick={handleMassRangeChange}
+              onChange={handleMassRangeChange}
               defaultValue=""
             >
               <option defaultValue="" disabled onChange={handleMassRangeChange}></option>
