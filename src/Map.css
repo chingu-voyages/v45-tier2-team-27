@@ -58,7 +58,7 @@ body.dark-mode .map-selected-container{
 }
 
 .search-icon-container{
-    @apply  relative bottom-8
+    @apply  relative bottom-0
 }
 
 .search-field{

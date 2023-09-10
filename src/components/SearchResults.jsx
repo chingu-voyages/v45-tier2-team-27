@@ -207,7 +207,7 @@ export default function SearchResults() {
 
                       <td className={tableDataBorder}>{item.recclass.toString()}</td>
 
-                      <td className={tableDataBorder}>{item.mass.toString()}</td>
+                      <td className={tableDataBorder}>{item.mass}</td>
 
                       <td className={tableDataBorder}>
                         <a
