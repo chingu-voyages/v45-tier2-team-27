@@ -18,11 +18,11 @@
 }
 
 .bottom-right-border-img{
-    @apply absolute right-[1.7rem] bottom-2
+    @apply fixed right-[1.7rem] bottom-2
 }
 
 .bottom-left-border-img{
-    @apply absolute left-4 bottom-[0.7rem]
+    @apply fixed left-4 bottom-[0.7rem]
 }
 
 .white-bottom-right-img{
@@ -43,12 +43,12 @@
 /* Borders */
 
 .bottom-border-container{
-    @apply flex justify-between w-screen
+    @apply flex justify-between w-screen relative 
 }
 
 .bottom-left-border,
 .bottom-right-border {
-  @apply absolute 
+  @apply fixed
 }
 
 .top-right-border{
@@ -60,11 +60,11 @@
 }
 
 .bottom-right-border{
-    @apply absolute right-3 bottom-1
+    @apply  right-3 bottom-1
 }
 
 .bottom-left-border{
-    @apply  absolute left-3 bottom-1
+    @apply   left-3 bottom-1
 }
 
 .desktop-right-border,
@@ -75,6 +75,29 @@
 .desktop-left-line,
 .desktop-right-line{
     @apply hidden
+}
+
+@media(min-width: 600px){
+
+    .bottom-border-container{
+        @apply w-[600px]
+    }
+
+    .bottom-left-border{
+        @apply absolute
+    }
+
+    .bottom-right-border {
+        @apply absolute
+    }
+
+    .bottom-left-border-img{
+        @apply absolute
+    }
+
+    .bottom-right-border-img{
+        @apply absolute
+    }
 }
 
 @media(min-width:1280px){
@@ -112,57 +135,8 @@
     }
 }
 
-@media(min-width:766px){
-    .top-left-border,
-    .bottom-left-border{
-        @apply left-0
-    }
 
-    .top-right-border,
-    .bottom-right-border{
-        @apply right-0
-    }
 
-    .top-right-border-img{
-        @apply right-1
-    }
-
-    .bottom-right-border-img{
-        @apply right-4
-    }
-
-    .top-left-border-img,
-    .bottom-left-border-img{
-        @apply left-1
-    }
-
-    .white-bottom-left-img{
-        @apply left-[-0.8rem]
-    }
-}
-
-@media(min-width: 600px){
-
-    .bottom-border-container{
-        @apply w-[600px]
-    }
-
-    .bottom-left-border{
-        @apply absolute 
-    }
-
-    .bottom-right-border {
-        @apply absolute 
-    }
-
-    .bottom-left-border-img{
-        @apply absolute 
-    }
-
-    .bottom-right-border-img{
-        @apply absolute 
-    }
-}
 
 /* @media(max-height: 800px) and (max-width:600px){
     .bottom-left-border,

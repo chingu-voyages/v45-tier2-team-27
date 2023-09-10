@@ -78,28 +78,28 @@
 }
 
 .landing-btn-container{
-    @apply flex flex-col mt-20 items-center
+    @apply flex flex-col mt-20 items-center relative
 }
 
 .search-btn{
-    @apply absolute bottom-[6.5rem] text-[24px] font-bold right-0 left-0
+    @apply fixed bottom-[6.5rem] text-[24px] font-bold right-0 left-0 mx-auto
 }
 
 .clear-btn{
-    @apply absolute bottom-12 text-[20px] 
+    @apply fixed bottom-12 text-[20px] 
 }
 
 .small-black-border{
-    @apply absolute bottom-20 left-0 right-0 mx-auto  pointer-events-none mb-7
+    @apply fixed bottom-20  pointer-events-none mb-7
 }
 
 .small-gray-border{
-    @apply absolute bottom-12 right-0 left-0 mx-auto pointer-events-none
+    @apply fixed bottom-12 right-0 left-0 mx-auto pointer-events-none
 }
 
 .search-btn-container,
 .clear-btn-container{
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center relative
 }
 
 .search-btn:hover,
@@ -238,8 +238,27 @@ body.dark-mode text{
         border-radius: 100%;
     }
 
+    .landing-btn-container{
+        @apply mt-[25rem]
+    }
 
+    
+    .search-btn{
+        @apply absolute bottom-12
+    }
 
+    
+    .small-black-border{
+        @apply relative bottom-[1.5rem]
+    }
+
+    .clear-btn{
+        @apply absolute bottom-5
+    }
+
+    .small-gray-border{
+        @apply relative bottom-5
+    }
 }
 
 
@@ -277,11 +296,11 @@ body.dark-mode text{
 
     .clear-btn,
     .small-gray-border{
-        @apply bottom-20
+        @apply bottom-24
     }
 
    .landing-container .icon-container{
-    @apply mt-[-16px]
+        @apply mt-[-60px]
    }
 }
 
