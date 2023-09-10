@@ -120,13 +120,22 @@ body.dark-mode .asteroid-input {
 
 body.dark-mode .asteroid-input-container:hover .asteroid-input,
 body.dark-mode .year-dropdown-container:hover .year-select {
-  @apply bg-white;
+  @apply bg-white text-black
 
 }
 
 body.dark-mode .composition-dropdown-container:hover .meteorite-composition,
 body.dark-mode .mass-dropdown-container:hover .mass-range{
-  @apply py-1 bg-white
+  @apply py-1 bg-white text-black
+}
+
+body.dark-mode .composition-dropdown-container::after ,
+body.dark-mode .mass-dropdown-container {
+    @apply text-white
+}
+
+body.dark-mode .landing-options{
+    @apply text-black
 }
 
 /* GLOBE */
