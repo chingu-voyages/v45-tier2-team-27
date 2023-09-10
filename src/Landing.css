@@ -313,16 +313,16 @@ body.dark-mode text{
 
     
     .small-black-border{
-        @apply bottom-[6.5rem]
+        @apply bottom-[6.5rem] 
     }
 
     .clear-btn,
     .small-gray-border{
-        @apply bottom-24
+        @apply bottom-24 
     }
 
    .landing-container .icon-container{
-        @apply mt-[-60px]
+        @apply mt-[-60px] z-50
    }
 }
 
