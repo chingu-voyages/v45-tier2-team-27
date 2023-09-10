@@ -186,7 +186,7 @@ body.dark-mode text{
     @apply relative right-[-6.4rem] top-[-2px]
 }
 
-@media(max-width: 360px){
+@media(max-width: 359px){
     .year-select-container{
         @apply ml-5
     }
