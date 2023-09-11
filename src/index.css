@@ -12,7 +12,7 @@ body{
 }
 
 body.light-mode{
-  @apply bg-white
+  @apply bg-gray-100
 }
 
 body.dark-mode{

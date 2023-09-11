@@ -14,7 +14,7 @@
   }
 
 body.dark-mode .overlay{
-    @apply flex border-[#232323] border-2 top-[12.75rem] w-[20.1rem] h-[20rem] shadow-sm shadow-[black]
+    @apply flex border-[#232323] border-2 top-[12.75rem] w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323]
 }
 
 body.dark-mode .full-height-map{
@@ -94,7 +94,7 @@ body.dark-mode .search-field{
       }
     
     body.dark-mode .overlay{
-        @apply h-[32.1rem] w-[32.13rem] border-l-4 border-r-4 top-[13rem]
+        @apply h-[32.17rem] w-[32.18rem] border-l-4 border-r-4 top-[13rem]
     }
 
 
@@ -121,8 +121,7 @@ body.dark-mode .search-field{
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[45.5rem] w-[47rem] fixed right-0 left-0 mx-auto top-[2.8rem] z-10 ;
-           
+        @apply h-[45.5rem] w-[47rem] fixed right-0 left-0 mx-auto top-[2.8rem] z-10;
     }
 
     .overlay {
@@ -130,7 +129,7 @@ body.dark-mode .search-field{
     }
 
     body.dark-mode .overlay{
-        @apply h-[45.65rem] border-4 w-[47.16rem] top-[3.43rem] z-40;
+        @apply h-[45.7rem] border-4 w-[47.26rem]  top-[3.4rem] z-40;
         border-radius: 50%;
     }
 

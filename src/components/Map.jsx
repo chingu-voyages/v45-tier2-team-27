@@ -6,10 +6,11 @@ import { Icon } from 'leaflet';
 
 export default function Map() {
   const { selectedMeteorite, darkMode } = useContext(AuthContext)
+  const accessToken = "MhCiF40Pt9B9rSKGgGWRSLlUT2Ij0owLz0kxDO5Fpoby0tQmCj248rymqzaw6Prx"
 
   return (
     <>
-      <tr className='map-selected-container '>
+      <tr className='map-selected-container'>
         <td className="selected-map-data">{selectedMeteorite.name.toString()}</td>
         <td className="selected-map-data">{selectedMeteorite.year.toString()}</td>
         <td className="selected-map-data">{selectedMeteorite.recclass.toString()}</td>
@@ -17,13 +18,13 @@ export default function Map() {
       </tr>
        
       <MapContainer
-        className="full-height-map z-10"
+        className="full-height-map"
         center={[selectedMeteorite.geolocation.latitude, selectedMeteorite.geolocation.longitude]}
         zoom={3}
         scrollWheelZoom={true}
         >
         <TileLayer
-          url={`${darkMode ? "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" : 'https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png'}`}
+          url={`${darkMode ? `https://{s}.tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=${accessToken}` : `https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=${accessToken}`}`}
         />
 
         {selectedMeteorite && (
