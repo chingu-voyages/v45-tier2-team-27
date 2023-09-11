@@ -12,11 +12,11 @@ body{
 }
 
 body.light-mode{
-  @apply bg-gray-100
+  @apply bg-white
 }
 
 body.dark-mode{
-  @apply bg-[#232323] text-white
+  @apply bg-[#171819] text-white
 }
 
 body.dark-mode select{
