@@ -4,21 +4,13 @@
 
 
 .full-height-map {
-  @apply relative w-[20rem] h-[20rem] mx-auto mt-2 mb-[-100px] z-10 overflow-hidden border-none shadow-sm shadow-gray-700;
+  @apply relative w-[20rem] h-[20rem] mx-auto mt-2 mb-[-100px] z-10 overflow-hidden border-none ;
   border-radius: 50%; 
 }
 
-.overlay {
-    @apply hidden bg-transparent border-8 border-white h-[20.5rem] w-[20.5rem] fixed right-0 left-0 mx-auto top-[12.7rem] z-20 pointer-events-none;  
-    border-radius: 50%;
-  }
-
 body.dark-mode .overlay{
-    @apply flex border-[#232323] border-2 top-[12.75rem] w-[20.1rem] h-[20rem] shadow-sm shadow-[black]
-}
-
-body.dark-mode .full-height-map{
-    @apply shadow-none
+    @apply border-[#232323] border-2 top-[12.5rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
+    border-radius: 50%;
 }
 
 .back-to-results{
@@ -69,15 +61,17 @@ body.dark-mode .search-field{
     @apply bg-[#232323]
 }
 
+@media(min-width:420px){
+    body.dark-mode .overlay{
+        @apply border-[#232323] border-4 top-[8.75rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
+        border-radius: 50%;
+    }
+}
+
 @media(min-width:450px){
     .full-height-map{
         @apply w-[25rem] h-[25rem]
     }
-    
-    .overlay {
-        @apply h-[30rem] w-[30rem] fixed right-0 left-0 mx-auto top-[12.4rem] z-20 pointer-events-none;  
-        
-      }
 
     body.dark-mode .overlay{
         @apply h-[25.1rem] w-[25.1rem]
@@ -94,7 +88,8 @@ body.dark-mode .search-field{
       }
     
     body.dark-mode .overlay{
-        @apply h-[32.1rem] w-[32.13rem] border-l-4 border-r-4 top-[13rem]
+        @apply h-[32.15rem] w-[32.125rem] border-2 top-[9rem];
+        border-radius: 50%
     }
 
 
@@ -115,22 +110,17 @@ body.dark-mode .search-field{
     }
 
     .search-icon-container{
-        @apply  relative bottom-6
+        @apply  relative -bottom-[3.5rem]
     }
 }
 
 @media(min-width: 1280px) {
     .full-height-map{
-        @apply h-[45.5rem] w-[47rem] fixed right-0 left-0 mx-auto top-[2.8rem] z-10 ;
-           
-    }
-
-    .overlay {
-        @apply hidden rounded-3xl h-[40.5rem] w-[690px] fixed right-0 left-0 mx-auto top-[7rem] pointer-events-none ;   
+        @apply h-[45.5rem] w-[47rem] fixed right-0 left-0 mx-auto top-[2.8rem] z-10;
     }
 
     body.dark-mode .overlay{
-        @apply h-[45.65rem] border-4 w-[47.16rem] top-[3.43rem] z-40;
+        @apply flex left-0 right-0 fixed h-[45.65rem] w-[47.125rem] top-[3.44rem];
         border-radius: 50%;
     }
 

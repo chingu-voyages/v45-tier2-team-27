@@ -42,9 +42,7 @@
 }
 /* Borders */
 
-.bottom-border-container{
-    @apply flex justify-between w-screen relative 
-}
+
 
 .bottom-left-border,
 .bottom-right-border {
@@ -75,6 +73,12 @@
 .desktop-left-line,
 .desktop-right-line{
     @apply hidden
+}
+
+@media(max-width: 600px){
+    .bottom-border-container{
+        @apply flex justify-between w-screen relative 
+    }
 }
 
 @media(min-width: 600px){
