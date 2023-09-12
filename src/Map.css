@@ -21,7 +21,7 @@ body.dark-mode .overlay{
     transform: scale(1.05)
 }
 .back-to-results-border{
-    @apply relative top-[14.6rem] left-0 right-0 mx-auto 
+    @apply relative top-[14.7rem] left-0 right-0 mx-auto 
 }
 
 .map-search-btn{
@@ -106,11 +106,11 @@ body.dark-mode .search-field{
     }
 
     .back-to-results-border{
-        @apply top-[8.6rem] 
+        @apply top-[8.7rem] 
     }
 
     .search-icon-container{
-        @apply  relative -bottom-[3.5rem]
+        @apply  relative bottom-[3rem]
     }
 }
 

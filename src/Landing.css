@@ -375,50 +375,35 @@ body.dark-mode text{
     }
 }
 
-@media(max-height: 750px) and (max-width:600px){
-    .search-btn,
-    .small-black-border,
-    .clear-btn,
-    .small-gray-border{
-        @apply bottom-[3.5rem]
-    }
 
-    .mass-select-container{
-        @apply mb-40
-    }
-
-    .icon-container{
-        @apply mt-[-30px] mb-16
-    }
-
-    .landing-container{
-        @apply mt-0
-    }
-}
 
 
 @media(max-height: 700px) and (max-width:600px){
-    .search-btn,
-    .small-black-border,
+
     .clear-btn,
     .small-gray-border{
-        @apply bottom-[5.5rem]
+        @apply bottom-[6.5rem]
+    }
+
+    .search-btn{
+        @apply bottom-[9rem]
+    }
+    
+    .small-black-border{
+        @apply bottom-[7.5rem]
     }
 
     .icon-container{
         @apply mt-[-70px]
     }
 
-    .landing-btn-container{
-        @apply mt-[-50px]
-    }
 
     .landing-title{
         @apply pt-0 mt-10
     }
 
     .landing-container{
-        @apply mt-6
+        @apply mt-[1rem]
     }
 }
 

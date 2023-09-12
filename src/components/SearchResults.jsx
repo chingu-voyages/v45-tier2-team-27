@@ -112,7 +112,7 @@ export default function SearchResults() {
           <h2
             className={`${
               mapClicked
-                ? "text-left text-xs uppercase pb-1"
+                ? "text-left text-xs uppercase pb-1 ml-1"
                 : "uppercase pb-2 md:text-left"
             }`}
           >
@@ -155,7 +155,7 @@ export default function SearchResults() {
                       : "/images/back-to-results-border.png"
                   }`}
                   alt=""
-                  className=" back-to-results-border"
+                  className=" back-to-results-border h-8"
                 />
                 <button className="back-to-results" onClick={backToResults}>
                   Back to results
@@ -164,7 +164,7 @@ export default function SearchResults() {
             </>
           ): (
             <div className={`table-container border ${darkMode ? "border-white" : "border-black"}`}>
-              <table className=" w-full border text-left border-black lg:m-auto">
+              <table className=" w-full border search-table-text border-black lg:m-auto">
                 <thead
                   className={`sticky top-0 border ${
                     darkMode
@@ -200,7 +200,7 @@ export default function SearchResults() {
                   {filteredData.map((item) => (
                     <tr key={item.id}>
                       <td className={`${tableDataBorder} text-wrap pl-1`}>
-                        {item.name.length > 10 ? (
+                        {item.name.length > 10 && window.innerWidth < 420 ? (
                           <>
                             {item.name.substring(0, 10)}-
                             <br />
@@ -211,11 +211,11 @@ export default function SearchResults() {
                         )}
                       </td>
 
-                      <td className={`${tableDataBorder} text-left`}>{item.year.toString()}</td>
+                      <td className={`${tableDataBorder} search-year`}>{item.year.toString()}</td>
 
-                      <td className={`${tableDataBorder} text-center`}>{item.recclass.toString()}</td>
+                      <td className={`${tableDataBorder} search-recclass`}>{item.recclass.toString()}</td>
 
-                      <td className={`${tableDataBorder} text-left`}>{item.mass.toString()}</td>
+                      <td className={`${tableDataBorder} search-mass`}>{item.mass.toLocaleString()}</td>
 
                       <td className={tableDataBorder}>
                         <a

@@ -84,7 +84,7 @@
 @media(min-width: 600px){
 
     .bottom-border-container{
-        @apply w-[600px]
+        @apply w-[600px] relative
     }
 
     .bottom-left-border{
@@ -179,15 +179,15 @@
 @media (max-height: 700px) and (max-width:600px){
     .bottom-left-border,
     .bottom-right-border{
-        @apply bottom-2
+        @apply bottom-8
     }
 
     .bottom-right-border-img{
-        @apply bottom-[1rem]
+        @apply bottom-[2.5rem]
     }
 
     .bottom-left-border-img{
-        @apply bottom-[1rem]
+        @apply bottom-[2.5rem]
     }
 }
 

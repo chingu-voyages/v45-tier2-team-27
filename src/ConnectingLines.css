@@ -448,20 +448,7 @@
   .connecting-lines-container{
     @apply absolute
   }
-}
-
-@media (max-width:320px){
-
-  .line-2{
-    @apply top-[14rem] right-[7.6rem] h-[4.4rem]
-  }
-
-  .line-3{
-    @apply top-[18.9rem] h-[3.5rem] rotate-[85deg]
-  }
-
-  .line-4{
-    @apply top-[24.2rem] rotate-[50deg] h-[2.4rem] right-[4.7rem]
-  }
 } */
+
+
 
