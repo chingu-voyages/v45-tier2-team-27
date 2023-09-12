@@ -14,7 +14,7 @@ export default function NewSearchBtn() {
             : "/images/large-black-border.png"
         }`}
         alt=""
-        className="large-black-border absolute -top-2 left-0 right-0 m-auto"
+        className="large-black-border absolute -top-[0.35rem] left-0 right-0 m-auto"
       />
       <a
         href="/"
