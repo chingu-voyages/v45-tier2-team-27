@@ -23,7 +23,7 @@
 }
 
 .line-4 {
-  @apply top-[29.3rem] right-[4.4rem] h-[8rem] rotate-[15deg];
+  @apply top-[29.3rem] right-[4.4rem] h-[8.1rem] rotate-[15deg];
 }
 
 .dot{
@@ -52,7 +52,7 @@
   }
   
   .line-4 {
-    @apply top-[29.65rem] right-[3.65rem] h-[7.9rem] rotate-[15deg];
+    @apply top-[29.65rem] right-[3.65rem] h-[7.95rem] rotate-[15deg];
   }
 }
   
@@ -70,7 +70,7 @@
   }
   
   .line-4 {
-    @apply top-[29.3rem] right-[4.5rem] h-[8.1rem] rotate-[20deg];
+    @apply top-[29.3rem] right-[4.5rem] h-[8.25rem] rotate-[20deg];
   }
 }
 
@@ -88,7 +88,7 @@
   }
   
   .line-4 {
-    @apply top-[29.3rem] right-[4.7rem] h-[8.3rem] rotate-[25deg];
+    @apply top-[29.3rem] right-[4.75rem] h-[8.35rem] rotate-[25deg];
   }
 }
 
@@ -102,11 +102,11 @@
   }
 
   .line-3{
-    @apply top-[24.7rem] right-[8.5rem] h-[5.9rem] rotate-[65deg];
+    @apply top-[24.6rem] right-[8.5rem] h-[5.9rem] rotate-[65deg];
   }
   
   .line-4 {
-    @apply top-[29.2rem] right-[4.9rem] h-[8.5rem] rotate-[30deg];
+    @apply top-[29.2rem] right-[4.9rem] h-[8.7rem] rotate-[30deg];
   }
 }
 
@@ -144,42 +144,6 @@
   
   .line-4 {
     @apply top-[28.5rem] right-[6rem] h-[9.4rem] rotate-[30deg];
-  }
-}
-
-@media(min-width: 450px){
-  .line-1 {
-    @apply top-[10.8rem] right-[6rem] h-[9rem] rotate-[145deg];
-  }
-
-  .line-2{
-    @apply top-[18.1rem] right-[9.45rem] h-[7.25rem] rotate-[110deg];
-  }
-
-  .line-3{
-    @apply top-[23.7rem] right-[9.4rem] h-[7.6rem] rotate-[70deg];
-  }
-  
-  .line-4 {
-    @apply top-[28.5rem] right-[6.2rem] h-[9.5rem] rotate-[32deg];
-  }
-}
-
-@media(min-width: 485px){
-  .line-1 {
-    @apply top-[10.8rem] right-[6.4rem] h-[9.3rem] rotate-[145deg];
-  }
-
-  .line-2{
-    @apply top-[17.95rem] right-[9.7rem] h-[7.75rem] rotate-[110deg];
-  }
-
-  .line-3{
-    @apply top-[23.45rem] right-[9.6rem] h-[8rem] rotate-[70deg];
-  }
-  
-  .line-4 {
-    @apply top-[28.4rem] right-[6.38rem] h-[9.8rem] rotate-[35deg];
   }
 }
 
