@@ -112,7 +112,7 @@ export default function SearchResults() {
           <h2
             className={`${
               mapClicked
-                ? "text-left text-xs uppercase pb-1"
+                ? "text-left text-xs uppercase pb-1 ml-1"
                 : "uppercase pb-2 md:text-left"
             }`}
           >
@@ -155,7 +155,7 @@ export default function SearchResults() {
                       : "/images/back-to-results-border.png"
                   }`}
                   alt=""
-                  className=" back-to-results-border"
+                  className=" back-to-results-border h-8"
                 />
                 <button className="back-to-results" onClick={backToResults}>
                   Back to results
@@ -215,7 +215,7 @@ export default function SearchResults() {
 
                       <td className={`${tableDataBorder} search-recclass`}>{item.recclass.toString()}</td>
 
-                      <td className={`${tableDataBorder} search-mass`}>{item.mass.toString()}</td>
+                      <td className={`${tableDataBorder} search-mass`}>{item.mass.toLocaleString()}</td>
 
                       <td className={tableDataBorder}>
                         <a

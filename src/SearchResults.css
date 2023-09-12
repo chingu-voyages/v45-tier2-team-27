@@ -22,6 +22,7 @@ td {
 .new-search-container:hover .new-search-btn {
     display:inline-block;
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 @media(max-width: 420px){
@@ -49,15 +50,22 @@ td {
     }
 }
 
-@media(max-width: 340px){
-    .table-container {
-        @apply w-[100%] mx-auto;
-    }
+@media(max-width: 375px){
 
     .search-field,
     .table-container,
     .search-results{
         @apply text-xs
+    }
+}
+
+@media(min-width:600px){
+    .search-inner-container {
+        @apply w-[600px]
+    }
+
+    .table-container {
+        height: 400px;
     }
 }
 
