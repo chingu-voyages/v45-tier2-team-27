@@ -97,7 +97,7 @@ export default function SearchResults() {
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
         <div
           className={`${
-            mapClicked ? "map-search-results" : "mx-6 mt-4 mb-40"
+            mapClicked ? "map-search-results" : "w-[90%] mx-auto mt-4 mb-40"
           } `}
         >
           <h1
@@ -163,8 +163,8 @@ export default function SearchResults() {
               </div>
             </>
           ): (
-            <div className="table-container">
-              <table className=" w-full border border border-black lg:m-auto">
+            <div className={`table-container border ${darkMode ? "border-white" : "border-black"}`}>
+              <table className=" w-full border text-left border-black lg:m-auto">
                 <thead
                   className={`sticky top-0 border ${
                     darkMode
@@ -173,13 +173,13 @@ export default function SearchResults() {
                   }`}
                 >
                   <tr>
-                    <th className="uppercase">Name</th>
-                    <th className="uppercase underline">
+                    <th className="uppercase pl-1">Name</th>
+                    <th className="uppercase underline text-center">
                       <a href="/" aria-label="View year of strike summary ">
                         Year
                       </a>
                     </th>
-                    <th className="uppercase underline">
+                    <th className="uppercase underline text-center">
                       <a
                         href="/"
                         aria-label="View composition materials summary"
@@ -199,19 +199,27 @@ export default function SearchResults() {
                 <tbody className="search-results">
                   {filteredData.map((item) => (
                     <tr key={item.id}>
-                      <td className={tableDataBorder}>
-                        {item.name.toString()}
+                      <td className={`${tableDataBorder} text-wrap pl-1`}>
+                        {item.name.length > 10 ? (
+                          <>
+                            {item.name.substring(0, 10)}-
+                            <br />
+                            {item.name.substring(10)}
+                          </>
+                        ) : (
+                          item.name.toString()
+                        )}
                       </td>
 
-                      <td className={tableDataBorder}>{item.year.toString()}</td>
+                      <td className={`${tableDataBorder} text-left`}>{item.year.toString()}</td>
 
-                      <td className={tableDataBorder}>{item.recclass.toString()}</td>
+                      <td className={`${tableDataBorder} text-center`}>{item.recclass.toString()}</td>
 
-                      <td className={tableDataBorder}>{item.mass.toString()}</td>
+                      <td className={`${tableDataBorder} text-left`}>{item.mass.toString()}</td>
 
                       <td className={tableDataBorder}>
                         <a
-                          className="uppercase underline text-sky-600 cursor-pointer"
+                          className="pr-1 underline text-sky-600 cursor-pointer"
                           aria-label="View map"
                           onClick={() => handleMapLinkClick(item)}
                         >

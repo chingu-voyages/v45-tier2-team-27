@@ -16,7 +16,7 @@ body.light-mode{
 }
 
 body.dark-mode{
-  @apply bg-[#171819] text-white
+  @apply bg-[#232323] text-white
 }
 
 body.dark-mode select{

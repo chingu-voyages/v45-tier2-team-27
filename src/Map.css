@@ -8,18 +8,9 @@
   border-radius: 50%; 
 }
 
-.overlay-blur {
-    @apply  bg-[transparent] h-[51.5rem] w-[51.5rem] fixed right-0 left-0 mx-auto top-[1.7rem] z-20 pointer-events-none;  
-    
-  }
-
 body.dark-mode .overlay{
-    @apply border-[#191919] border-4 top-[8.77rem] -left-[1px] right-1 mx-auto w-[20.2rem] h-[20.1rem] shadow-sm shadow-[#191919] z-30 absolute;
+    @apply border-[#232323] border-2 top-[12.5rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
     border-radius: 50%;
-}
-
-body.dark-mode .full-height-map{
-    @apply shadow-none
 }
 
 .back-to-results{
@@ -70,9 +61,9 @@ body.dark-mode .search-field{
     @apply bg-[#232323]
 }
 
-@media(min-width: 380px){
+@media(min-width:420px){
     body.dark-mode .overlay{
-        @apply border-[#191919] border-4 top-[8.77rem] left-[4px] right-1 mx-auto w-[20.4rem] h-[20.1rem] shadow-sm shadow-[#191919] z-30 absolute;
+        @apply border-[#232323] border-4 top-[8.75rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
         border-radius: 50%;
     }
 }
@@ -81,11 +72,6 @@ body.dark-mode .search-field{
     .full-height-map{
         @apply w-[25rem] h-[25rem]
     }
-    
-    .overlay {
-        @apply h-[30rem] w-[30rem] fixed right-0 left-0 mx-auto top-[12.4rem] z-20 pointer-events-none;  
-        
-      }
 
     body.dark-mode .overlay{
         @apply h-[25.1rem] w-[25.1rem]
@@ -124,7 +110,7 @@ body.dark-mode .search-field{
     }
 
     .search-icon-container{
-        @apply  relative bottom-6
+        @apply  relative -bottom-[3.5rem]
     }
 }
 
@@ -133,12 +119,8 @@ body.dark-mode .search-field{
         @apply h-[45.5rem] w-[47rem] fixed right-0 left-0 mx-auto top-[2.8rem] z-10;
     }
 
-    .overlay {
-        @apply hidden rounded-3xl h-[40.5rem] w-[690px] fixed right-0 left-0 mx-auto top-[7rem] pointer-events-none ;   
-    }
-
     body.dark-mode .overlay{
-        @apply flex left-0 right-0 fixed h-[45.76rem] border-4 w-[47.36rem] top-[3.38rem];
+        @apply flex left-0 right-0 fixed h-[45.65rem] w-[47.125rem] top-[3.44rem];
         border-radius: 50%;
     }
 

@@ -264,6 +264,10 @@ body.dark-mode text{
         @apply mt-[25rem]
     }
 
+    .landing-container .icon-container{
+        @apply mt-2
+    }
+
     
     .search-btn{
         @apply absolute bottom-12

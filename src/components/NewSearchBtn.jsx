@@ -6,7 +6,7 @@ export default function NewSearchBtn() {
 
   const { darkMode } = useContext(AuthContext);
   return (
-    <div className="mx-10 my-12 py-1 bottom-20 relative">
+    <div className="mx-10 my-12 py-1 bottom-20 relative new-search-container">
       <img
         src={`${
           darkMode
@@ -18,7 +18,7 @@ export default function NewSearchBtn() {
       />
       <a
         href="/"
-        className="uppercase relative"
+        className="uppercase relative new-search-btn"
         aria-label="Start a new search"
       >
         Start new search
