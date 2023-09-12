@@ -21,7 +21,6 @@ td {
 
 .new-search-container:hover .new-search-btn {
     display:inline-block;
-
     transform: scale(1.05);
 }
 
@@ -34,6 +33,19 @@ td {
     .table-container,
     .search-results{
         @apply text-sm
+    }
+
+    .search-mass
+    .search-year{
+        @apply text-left
+    }
+
+    .search-recclass{
+        @apply text-center
+    }
+
+    .search-table-text{
+        @apply text-left
     }
 }
 
