@@ -4,6 +4,7 @@ import BorderImages from "./BorderImages";
 import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
+import { Link } from "react-router-dom";
 
 export default function SearchResults() {
   const [mapClicked, setMapClicked] = useState(false);
@@ -84,8 +85,8 @@ export default function SearchResults() {
     }
   }, [meteoriteData, asteroidName, setAsteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
-  function handleClick(filteredMeteoriteData) {
-    setFilteredMeteoriteData(filteredMeteoriteData);
+  function handleClick() {
+    setFilteredMeteoriteData(filteredData);
   }
 
   const tableDataBorder = `border-y ${
@@ -175,22 +176,19 @@ export default function SearchResults() {
                   <tr>
                     <th className="uppercase pl-1">Name</th>
                     <th className="uppercase underline text-center">
-                      <a href="/" aria-label="View year of strike summary ">
+                    <Link to="/chart/scatter" onClick={() => handleClick()} aria-label="View year of strike summary ">
                         Year
-                      </a>
+                      </Link>
                     </th>
                     <th className="uppercase underline text-center">
-                      <a
-                        href="/"
-                        aria-label="View composition materials summary"
-                      >
+                    <Link to="/chart/radio" onClick={() => handleClick()} aria-label="View composition materials summary">
                         Comp
-                      </a>
+                      </Link>
                     </th>
                     <th className="uppercase underline">
-                      <a href="/" aria-label="View mass value summary">
+                    <Link to="/chart/radar" onClick={() => handleClick()} aria-label="View mass value summary">
                         Mass
-                      </a>
+                      </Link>
                     </th>
                     <th></th>
                   </tr>
