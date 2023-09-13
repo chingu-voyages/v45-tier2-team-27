@@ -35,6 +35,7 @@ export default function RadioChart() {
         COLORS[recclass] = colorArray[i % colorArray.length];
         i++;
     }
+    const showLegend = Object.keys(groupedData).length <= 5;
 
     const plotData = Object.keys(groupedData).map(recclass => ({
         recclass,
@@ -50,7 +51,11 @@ export default function RadioChart() {
             if (width <= 768) {  // breakpoint here
                 setContainerWidth(400);
             } else {
-                setContainerWidth(600);
+                if (!showLegend) {
+                    setContainerWidth(800);
+                } else {
+                    setContainerWidth(600);
+                }
             }
         };
 
@@ -65,8 +70,8 @@ export default function RadioChart() {
     return (
         <ResponsiveContainer width="80%" height={containerWidth}>
             <RadialBarChart
-                innerRadius="40%"
-                outerRadius="90%"
+                innerRadius="50%"
+                outerRadius="100%"
                 data={plotData}
                 startAngle={180}
                 endAngle={0}
@@ -82,7 +87,7 @@ export default function RadioChart() {
                         <Cell key={`cell-${index}`} fill={COLORS[entry.recclass]} />
                     ))}
                 </RadialBar>
-                <Legend
+                {showLegend && (<Legend
                     iconSize={10}
                     layout="vertical"
                     verticalAlign="bottom"
@@ -94,7 +99,7 @@ export default function RadioChart() {
                             color: COLORS[recclass]
                         }))
                     }
-                />
+                />)}
                 <Tooltip content={<CustomTooltip />} />
 
             </RadialBarChart>

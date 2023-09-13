@@ -4,11 +4,22 @@ import Radio from './RadioChart'
 import Scatter from './ScatterChart'
 import { Outlet, useMatch } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../App";
 
 export default function BigChartBorder() {
     const matchScatter = useMatch("/chart/scatter");
     const matchRadar = useMatch("/chart/radar");
     const matchRadio = useMatch("/chart/radio");
+    const {
+
+        composition,
+        fromYear,
+        toYear,
+        minMass,
+        maxMass,
+        asteroidInput,
+      } = useContext(AuthContext);
 
     let selectedImage = '';
     if (matchRadar) {
@@ -26,15 +37,21 @@ export default function BigChartBorder() {
             <img className='' src="/images/big-chart-title.png" />
             <div className="title-border">
                 <div className="flex justify-around p-3 mx-10" >
-                    <p className="uppercase">
-                        K
+                    <p className="capitalize font-semibold">
+                        <q>{asteroidInput}</q>
                     </p>
-                    <span>&#8226;</span>
-                    <p className="uppercase">2000-2010</p>
-                    <span>&#8226;</span>
-                    <p className="uppercase">composition</p>
-                    <span>&#8226;</span>
-                    <p className="uppercase">mass value</p>
+                    <span>&bull;</span>
+                    <p className="font-semibold">
+                        {fromYear && toYear ? `${fromYear}-${toYear}` : "Any Year"}
+                    </p>
+                    <span>&bull;</span>
+                    <p className="capitalize font-semibold">
+                        {composition || "Any Composition"}
+                    </p>
+                    <span>&bull;</span>
+                    <p className="font-semibold">
+                        {minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}
+                    </p>
                 </div>
 
             </div>

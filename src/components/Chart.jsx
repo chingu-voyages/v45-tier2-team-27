@@ -6,27 +6,35 @@ import React, { useState } from 'react';
 import Radar from './RadarChart'
 import Radio from './RadioChart'
 import Scatter from './ScatterChart'
+import { Link } from "react-router-dom";
 import { Outlet, useMatch } from "react-router-dom";
+import { useContext} from "react";
+import { AuthContext } from "../App";
 
 
 export default function Chart() {
-    const [currentChart, setCurrentChart] = useState('Radar');
-    const [selectedImage, setSelectedImage] = useState('radar-menu');
+    const matchScatter = useMatch("/chart/scatter");
+    const matchRadar = useMatch("/chart/radar");
+    const matchRadio = useMatch("/chart/radio");
 
-    const renderChart = () => {
-        if (currentChart === 'Radar') {
-            return <Radar />;
-        } else if (currentChart === 'Radio') {
-            return <Radio />;
-        } else if (currentChart === 'Scatter') {
-            return <Scatter />;
-        }
-    };
+    const {
+        composition,
+        fromYear,
+        toYear,
+        minMass,
+        maxMass,
+        asteroidInput,
+    } = useContext(AuthContext);
 
-    const handleClick = (chartName, imageName) => {
-        setCurrentChart(chartName);
-        setSelectedImage(imageName);
-    };
+    let selectedImage = '';
+    if (matchRadar) {
+        selectedImage = 'radar-menu';
+    } else if (matchRadio) {
+        selectedImage = 'radio-menu';
+    } else if (matchScatter) {
+        selectedImage = 'graph-menu';
+    }
+
     return (
         <div className="search-container text-center mt-12 mx-6 h-screen">
 
@@ -36,31 +44,32 @@ export default function Chart() {
                 <img className="w-4/5 h-auto" src="/images/search_field.png" alt="" />
                 <div className="flex justify-between" style={{ width: '68%', marginTop: '-15px' }}>
                     <p className="uppercase">
-                        K
+                        {asteroidInput}
                     </p>
                     <span>&#8226;</span>
-                    <p className="uppercase">2000-2010</p>
+                    <p className="uppercase">{fromYear && toYear ? `${fromYear}-${toYear}` : "Any Year"}</p>
                     <span>&#8226;</span>
-                    <p className="uppercase">Comp</p>
+                    <p className="uppercase">{composition || "Any Composition"}</p>
                     <span>&#8226;</span>
-                    <p className="uppercase">Mass</p>
+                    <p className="uppercase">{minMass && maxMass ? `${minMass}g - ${maxMass}g` : "Any Mass"}</p>
                 </div>
             </div>
 
 
 
             <div className="flex justify-between justify-between items-center px-20 mt-6 md:hidden">
-                <img className={`w-16 h-16 ${selectedImage === 'radar-menu' ? 'border-2 border-black' : ''}`}
-                    src="/images/radar-menu.svg" alt=""
-                    onClick={() => handleClick('Radar', 'radar-menu')} />
-                <img className={`w-16 h-16 ${selectedImage === 'radio-menu' ? 'border-2 border-black' : ''}`}
-                    src="/images/radio-menu.png" alt=""
-                    onClick={() => handleClick('Radio', 'radio-menu')}
-                />
-                <img className={`w-16 h-16 ${selectedImage === 'graph-menu' ? 'border-2 border-black' : ''}`}
-                    src="/images/graph-menu.svg" alt=""
-                    onClick={() => handleClick('Scatter', 'graph-menu')}
-                />
+                <Link to={'/chart/radar'}>
+                    <img className={`w-16 h-16 ${selectedImage === 'radar-menu' ? 'border-2 border-black' : ''}`}
+                        src="/images/radar-menu.svg" alt=""
+                    /></Link>
+                <Link to={'/chart/radio'}>
+                    <img className={`w-16 h-16 ${selectedImage === 'radio-menu' ? 'border-2 border-black' : ''}`}
+                        src="/images/radio-menu.png" alt=""
+                    /></Link>
+                <Link to={'/chart/scatter'}>
+                    <img className={`w-16 h-16 ${selectedImage === 'graph-menu' ? 'border-2 border-black' : ''}`}
+                        src="/images/graph-menu.svg" alt=""
+                    /></Link>
             </div>
             <div className="flex justify-center">
                 <div className="field-border">
