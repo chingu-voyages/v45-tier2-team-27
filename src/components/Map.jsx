@@ -6,7 +6,7 @@ import { Icon } from 'leaflet';
 import { Link } from 'react-router-dom';
 
 export default function Map() {
-  const { meteoriteData, setMeteoriteData, setMapClicked, selectedMeteorite, darkMode } = useContext(AuthContext);
+  const { meteoriteData, setAsteroidName, setMapClicked, selectedMeteorite, darkMode } = useContext(AuthContext);
   const accessToken = "MhCiF40Pt9B9rSKGgGWRSLlUT2Ij0owLz0kxDO5Fpoby0tQmCj248rymqzaw6Prx";
 
   const targetMeteorite = selectedMeteorite || (meteoriteData.length > 0 ? meteoriteData : null);
@@ -15,12 +15,9 @@ export default function Map() {
     return null; 
   }
 
-  const searchMeteorite = (meteorite) => {
-    setMeteoriteData([meteorite])
-    setTimeout(() => {
-      setMapClicked(false);
-    }, 3000);
-    
+  const searchMeteorite = (name) => {
+    setAsteroidName(name); 
+    setMapClicked(false);
   };
 
   return (
@@ -68,14 +65,42 @@ export default function Map() {
                 <br />
                 <Link
                   to="/search-results"
-                  onClick={() => searchMeteorite(meteorite)}
+                  onClick={() => searchMeteorite(meteorite.name)}
                 >
                   Search
                 </Link>
               </Popup>
             </Marker>
           ))
-        ) : null}
+        ) : ( 
+        <Marker
+          key={targetMeteorite.id}
+          position={[targetMeteorite.geolocation?.latitude || 0, targetMeteorite.geolocation?.longitude || 0]}
+          icon={new Icon({
+            iconUrl: "./images/target.png", 
+            iconSize: [20, 20],
+          })}
+        >
+          <Popup>
+            targetMeteorite Name: {targetMeteorite.name}
+            <br />
+            Latitude: {targetMeteorite.geolocation?.latitude || 0}
+            <br />
+            Longitude: {targetMeteorite.geolocation?.longitude || 0}
+            <br />
+            Composition: {targetMeteorite.recclass || 0}
+            <br />
+            Mass: {targetMeteorite.mass.toLocaleString()|| 0}
+            <br />
+            <Link
+              to="/search-results"
+              onClick={() => searchMeteorite(targetMeteorite.name)}
+            >
+              Search
+            </Link>
+          </Popup>
+        </Marker>
+      )}
       </MapContainer>
     </>
   );
