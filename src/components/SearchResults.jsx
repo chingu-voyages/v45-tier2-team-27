@@ -39,12 +39,12 @@ export default function SearchResults() {
     try {
       const storedSearchCriteria = localStorage.getItem("searchCriteria");
       
+      const meteorites = Array.isArray(meteoriteData) ? meteoriteData : [meteoriteData];
+
       if (storedSearchCriteria) {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
-        
-        
-          let newFilteredData = meteoriteData.filter((item) => {
+          let newFilteredData = meteorites.filter((item) => {
         
           if (parsedSearchCriteria.asteroidName) {
             setAsteroidName(parsedSearchCriteria.asteroidName);
