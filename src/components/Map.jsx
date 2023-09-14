@@ -22,7 +22,7 @@ export default function Map() {
 
   return (
     <>
-    <table>
+    <table className='w-full'>
       <tbody>
         <tr className='map-selected-container'>
           <td className="selected-map-data">{targetMeteorite.name?.toString()}</td>
@@ -66,6 +66,7 @@ export default function Map() {
                 <Link
                   to="/search-results"
                   onClick={() => searchMeteorite(meteorite.name)}
+                  onTouchStart={() => searchMeteorite(meteorite.name)}
                 >
                   Search
                 </Link>
