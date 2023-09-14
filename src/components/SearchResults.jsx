@@ -85,7 +85,7 @@ export default function SearchResults() {
     } catch (error) {
       console.error("Error retrieving data from localStorage:", error);
     }
-  }, [meteoriteData, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
+  }, [meteoriteData, mapClicked, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   function handleClick() {
     setFilteredMeteoriteData(filteredData);

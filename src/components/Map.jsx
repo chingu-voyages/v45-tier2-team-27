@@ -31,7 +31,7 @@ export default function Map() {
           <td className="selected-map-data">{targetMeteorite.mass?.toString()}</td> 
         </tr>
       </tbody>
-      </table>   
+    </table>   
       <MapContainer
         className="full-height-map"
         center={[targetMeteorite.geolocation?.latitude || 0, targetMeteorite.geolocation?.longitude || 0]}
