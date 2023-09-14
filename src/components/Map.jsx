@@ -17,7 +17,10 @@ export default function Map() {
 
   const searchMeteorite = (meteorite) => {
     setMeteoriteData([meteorite])
-    setMapClicked(false);
+    setTimeout(() => {
+      setMapClicked(false);
+    }, 3000);
+    
   };
 
   return (
