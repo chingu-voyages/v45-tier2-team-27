@@ -38,15 +38,17 @@ export default function SearchResults() {
   useEffect(() => {
     try {
       const storedSearchCriteria = localStorage.getItem("searchCriteria");
-    
+      
       if (storedSearchCriteria) {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
-        let newFilteredData = []
-        if (Array.isArray(meteoriteData)) {
+        let newFilteredData = Array.isArray(meteoriteData) ? meteoriteData : [];
+        
           newFilteredData = meteoriteData.filter((item) => {
         
-  
+          if (parsedSearchCriteria.asteroidName) {
+            setAsteroidName(parsedSearchCriteria.asteroidName);
+          }
         
           const isYearInRange =
             (!parsedSearchCriteria.fromYear || item.year >= parsedSearchCriteria.fromYear) &&
@@ -61,7 +63,7 @@ export default function SearchResults() {
     
           return  isYearInRange && isMassInRange && isCompositionMatch;
         });
-      }
+      
         newFilteredData = newFilteredData.filter((item) => {
           const isMassInRange =
             (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
