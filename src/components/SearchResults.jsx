@@ -219,7 +219,7 @@ export default function SearchResults() {
 
                       <td className={`${tableDataBorder} search-mass`}>{item.mass.toLocaleString()}</td>
 
-                      <td className={`${tableDataBorder}`}>
+                      <td className={`${tableDataBorder} w-[50px]`}>
                         <a
                           className="pr-1 underline text-sky-600 cursor-pointer"
                           aria-label="View map"

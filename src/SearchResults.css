@@ -26,22 +26,13 @@ td {
 }
 
 .map-gif{
-    @apply relative overflow-hidden z-10 top-2.5 right-1 w-12 h-7
+    @apply relative overflow-hidden z-10 top-2.5 right-0 w-7 h-7
 }
 
 
 
-@media(max-width:320px){
-    .map-gif{
-        @apply w-[500px] h-5  right-2
-    }
-}
 
-@media(max-width:400px){
-    .map-gif{
-        @apply w-32 h-7
-    }
-}
+
 
 @media(max-width: 450px){
     .table-container {
@@ -66,18 +57,7 @@ td {
     .search-table-text{
         @apply text-left
     }
-}
 
-@media(max-width: 500px){
-    .map-gif{
-        @apply w-32 h-7
-    }
-}
-
-@media(min-width: 450px){
-    .map-gif{
-        @apply w-20 h-7
-    }
 }
 
 
@@ -90,9 +70,7 @@ td {
         height: 400px;
     }
 
-    .map-gif{
-        @apply  w-7 h-7
-    }
+ 
 }
 
 @media(min-width:1280px) {
