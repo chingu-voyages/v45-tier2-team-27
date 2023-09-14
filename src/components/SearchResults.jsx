@@ -171,7 +171,7 @@ export default function SearchResults() {
             <div className={`table-container border ${darkMode ? "border-white" : "border-black"}`}>
               <table className=" w-full border search-table-text border-black lg:m-auto">
                 <thead
-                  className={`sticky top-0 border ${
+                  className={`sticky top-0 border z-50 ${
                     darkMode
                       ? "bg-zinc-600 border-white"
                       : "bg-gray-300 border-black"
@@ -219,13 +219,13 @@ export default function SearchResults() {
 
                       <td className={`${tableDataBorder} search-mass`}>{item.mass.toLocaleString()}</td>
 
-                      <td className={tableDataBorder}>
+                      <td className={`${tableDataBorder}`}>
                         <a
                           className="pr-1 underline text-sky-600 cursor-pointer"
                           aria-label="View map"
                           onClick={() => handleMapLinkClick(item)}
                         >
-                          Map
+                          <img className="map-gif" src="/images/globe.gif" alt="Map" />
                         </a>
                       </td>
                     </tr>
