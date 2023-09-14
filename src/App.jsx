@@ -55,7 +55,8 @@ function App() {
   const [selectedMeteorite, setSelectedMeteorite] = useState(null);
   const [asteroidInput, setAsteroidInput] = useState("");
   const [filteredMeteoriteData, setFilteredMeteoriteData] = useState([])
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  const [mapClicked, setMapClicked] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width: 1280px)");
 
 
   const getCurrentPage = () => {
@@ -102,7 +103,9 @@ function App() {
           asteroidInput,
           setAsteroidInput,
           filteredMeteoriteData,
-          setFilteredMeteoriteData
+          setFilteredMeteoriteData,
+          mapClicked,
+          setMapClicked
         }}
       >
 

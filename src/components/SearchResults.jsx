@@ -7,7 +7,7 @@ import DarkMode from "./DarkMode";
 import { Link } from "react-router-dom";
 
 export default function SearchResults() {
-  const [mapClicked, setMapClicked] = useState(false);
+  
   const [filteredData, setFilteredData] = useState([])
   const {
     meteoriteData,
@@ -22,6 +22,8 @@ export default function SearchResults() {
     asteroidInput,
     darkMode,
     setFilteredMeteoriteData,
+    mapClicked,
+    setMapClicked,
   } = useContext(AuthContext);
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -40,7 +42,10 @@ export default function SearchResults() {
       if (storedSearchCriteria) {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
-        let newFilteredData = meteoriteData.filter((item) => {
+        let newFilteredData = []
+        if (Array.isArray(meteoriteData)) {
+          newFilteredData = meteoriteData.filter((item) => {
+        
   
           if (parsedSearchCriteria.asteroidName) {
             setAsteroidName(parsedSearchCriteria.asteroidName);
@@ -59,7 +64,7 @@ export default function SearchResults() {
     
           return  isYearInRange && isMassInRange && isCompositionMatch;
         });
-    
+      }
         newFilteredData = newFilteredData.filter((item) => {
           const isMassInRange =
             (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
