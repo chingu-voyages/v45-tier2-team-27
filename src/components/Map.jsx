@@ -4,10 +4,9 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { Link } from 'react-router-dom';
-import FetchApi from './FetchApi';
 
 export default function Map() {
-  const { meteoriteData, setMeteoriteData, setAsteroidName, setMapClicked, selectedMeteorite, darkMode } = useContext(AuthContext);
+  const { meteoriteData, setMeteoriteData, setMapClicked, selectedMeteorite, darkMode } = useContext(AuthContext);
   const accessToken = "MhCiF40Pt9B9rSKGgGWRSLlUT2Ij0owLz0kxDO5Fpoby0tQmCj248rymqzaw6Prx";
 
   const targetMeteorite = selectedMeteorite || (meteoriteData.length > 0 ? meteoriteData : null);

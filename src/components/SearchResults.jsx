@@ -42,9 +42,9 @@ export default function SearchResults() {
       if (storedSearchCriteria) {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
-        let newFilteredData = Array.isArray(meteoriteData) ? meteoriteData : [];
         
-          newFilteredData = meteoriteData.filter((item) => {
+        
+          let newFilteredData = meteoriteData.filter((item) => {
         
           if (parsedSearchCriteria.asteroidName) {
             setAsteroidName(parsedSearchCriteria.asteroidName);
@@ -87,7 +87,7 @@ export default function SearchResults() {
     } catch (error) {
       console.error("Error retrieving data from localStorage:", error);
     }
-  }, [meteoriteData, mapClicked, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
+  }, [meteoriteData, mapClicked, setAsteroidName, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   function handleClick() {
     setFilteredMeteoriteData(filteredData);
