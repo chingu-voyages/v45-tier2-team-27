@@ -47,10 +47,7 @@ export default function SearchResults() {
           newFilteredData = meteoriteData.filter((item) => {
         
   
-          if (parsedSearchCriteria.asteroidName) {
-            setAsteroidName(parsedSearchCriteria.asteroidName);
-          }
-    
+        
           const isYearInRange =
             (!parsedSearchCriteria.fromYear || item.year >= parsedSearchCriteria.fromYear) &&
             (!parsedSearchCriteria.toYear || item.year <= parsedSearchCriteria.toYear);
@@ -88,7 +85,7 @@ export default function SearchResults() {
     } catch (error) {
       console.error("Error retrieving data from localStorage:", error);
     }
-  }, [meteoriteData, asteroidName, setAsteroidName, composition, fromYear, toYear, minMass, maxMass]);
+  }, [meteoriteData, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   function handleClick() {
     setFilteredMeteoriteData(filteredData);
