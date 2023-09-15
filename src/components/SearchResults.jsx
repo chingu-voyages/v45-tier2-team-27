@@ -98,7 +98,7 @@ export default function SearchResults() {
       <div className="search-inner-container text-center mt-16 xl:mx-auto">
         <div
           className={`${
-            mapClicked ? "map-search-results" : "w-[90%] mx-auto mt-4 mb-40"
+            mapClicked ? "map-search-results" : "w-[90%] mx-auto mt-4 mb-20 xl:mb-32"
           } `}
         >
           <h1
@@ -237,7 +237,7 @@ export default function SearchResults() {
 
         <BorderImages />
         <div
-          className={`${
+          className={`darkmode-icons ${
             mapClicked
               ? "map-icon-container"
               : "search-icon-container"
