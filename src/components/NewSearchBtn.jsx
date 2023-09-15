@@ -1,12 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../App";
 
-
 export default function NewSearchBtn() {
-
   const { darkMode } = useContext(AuthContext);
   return (
-    <div className="mx-10 my-12 py-1 bottom-20 relative new-search-container">
+    <div className="new-search-container">
       <img
         src={`${
           darkMode
@@ -14,11 +12,11 @@ export default function NewSearchBtn() {
             : "/images/large-black-border.png"
         }`}
         alt=""
-        className="large-black-border absolute -top-[0.35rem] left-0 right-0 m-auto"
+        className="new-search-border"
       />
       <a
         href="/"
-        className="uppercase relative new-search-btn"
+        className="new-search-btn"
         aria-label="Start a new search"
       >
         Start new search
