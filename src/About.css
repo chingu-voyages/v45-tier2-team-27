@@ -38,6 +38,10 @@ body.dark-mode .go-back-btn{
     @apply absolute bottom-0 right-0 left-0
 }
 
+.linkedin{
+    @apply  text-blue-600 underline
+}
+
 @media(min-width: 600px){
     .about-icon-container{
         @apply absolute bottom-0 right-0 left-0 

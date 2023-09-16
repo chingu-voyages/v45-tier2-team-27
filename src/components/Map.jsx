@@ -22,7 +22,7 @@ export default function Map() {
 
   return (
     <>
-    <table className='w-full'>
+    <table className='w-full mt-0 pt-0'>
       <tbody>
         <tr className='map-selected-container'>
           <td className="selected-map-data">{targetMeteorite.name?.toString()}</td>

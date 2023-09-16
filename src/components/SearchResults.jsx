@@ -5,6 +5,7 @@ import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
 import { Link } from "react-router-dom";
+import AppTitle from "./AppTitle";
 
 export default function SearchResults() {
   
@@ -105,15 +106,10 @@ export default function SearchResults() {
             mapClicked ? "map-search-results" : "w-[90%] mx-auto mt-4 mb-40"
           } `}
         >
-          <h1
-            className={`${
-              mapClicked
-                ? "uppercase text-3xl md:text-3xl map-title"
-                : "uppercase text-3xl md:text-3xl py-4"
-            }`}
-          >
-            Skyfall
-          </h1>
+          <div className={`${mapClicked ? "mb-[-34.3px] mt-[-20px]" : ""}`}>
+            <AppTitle />
+          </div>
+        
           <h2
             className={`${
               mapClicked

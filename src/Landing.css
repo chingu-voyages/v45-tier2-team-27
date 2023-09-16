@@ -10,7 +10,7 @@
 }
 
 .landing-title{
-    @apply text-3xl mb-[1.85rem] mt-[3.5rem]
+    @apply w-44 mb-[2.4rem] mt-[3.5rem] 
 }
 
 .asteroid-container{
@@ -153,6 +153,16 @@ body.dark-mode .landing-options{
     @apply hidden
 }
 
+.click-globe-container{
+    @apply flex absolute top-96 justify-center text-sm
+}
+
+.infinity-img{
+    @apply h-10 w-10 relative -top-2.5
+}
+
+
+
 /* ICONS */
 
 .icon-container{
@@ -234,6 +244,32 @@ body.dark-mode text{
         @apply left-[3.5rem]
     }
 
+    .landing-btn-container{
+        @apply mt-[25rem]
+    }
+
+    .landing-container .icon-container{
+        @apply mt-2
+    }
+
+    
+    .search-btn{
+        @apply absolute bottom-12
+    }
+
+    
+    .small-black-border{
+        @apply relative bottom-[1.5rem]
+    }
+
+    .clear-btn{
+        @apply absolute bottom-5
+    }
+
+    .small-gray-border{
+        @apply relative bottom-5
+    }
+
     /* GLOBE */
     .globe-container{
         @apply hidden
@@ -260,30 +296,8 @@ body.dark-mode text{
         border-radius: 100%;
     }
 
-    .landing-btn-container{
-        @apply mt-[25rem]
-    }
-
-    .landing-container .icon-container{
-        @apply mt-2
-    }
-
-    
-    .search-btn{
-        @apply absolute bottom-12
-    }
-
-    
-    .small-black-border{
-        @apply relative bottom-[1.5rem]
-    }
-
-    .clear-btn{
-        @apply absolute bottom-5
-    }
-
-    .small-gray-border{
-        @apply relative bottom-5
+    .click-globe-container{
+        @apply  top-[33rem]
     }
 }
 
@@ -325,9 +339,17 @@ body.dark-mode text{
         @apply bottom-24 
     }
 
+    .landing-title{
+        @apply w-[]
+    }
+
    .landing-container .icon-container{
         @apply mt-[-60px] z-50
    }
+
+   .click-globe-container{
+    @apply  top-[32rem]
+}
 }
 
 /* @media(max-height: 800px) and (max-width:600px){

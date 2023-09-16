@@ -9,7 +9,7 @@
 }
 
 body.dark-mode .overlay{
-    @apply border-[#232323] border-2 top-[12.5rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
+    @apply border-[#232323] border-2 top-[10.75rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
     border-radius: 50%;
 }
 
@@ -63,7 +63,7 @@ body.dark-mode .search-field{
 
 @media(min-width:420px){
     body.dark-mode .overlay{
-        @apply border-[#232323] border-4 top-[8.75rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
+        @apply border-[#232323] border-4 top-[8.5rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
         border-radius: 50%;
     }
 }
@@ -82,13 +82,9 @@ body.dark-mode .search-field{
     .full-height-map{
         @apply h-[32rem] w-[32rem] mb-[-24px] mt-3 
     }
-
-    .overlay {
-        @apply h-[34.2rem] w-[40rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-20 pointer-events-none;  
-      }
     
     body.dark-mode .overlay{
-        @apply h-[32.15rem] w-[32.125rem] border-2 top-[9rem];
+        @apply h-[32.15rem] w-[32.125rem] border-2 top-[8.75rem];
         border-radius: 50%
     }
 

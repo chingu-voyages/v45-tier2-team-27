@@ -6,6 +6,7 @@ import Trapezoid from "./Trapezoid"
 import { AuthContext } from "../App"
 import { Link } from "react-router-dom"
 import DarkMode from "./DarkMode"
+import AppTitle from "./AppTitle"
 
 export default function Landing() {
   const searchCriteria = {};
@@ -148,7 +149,7 @@ const handleMassRangeChange = (e) => {
   return (
     <>
       <div className={`landing-container `}>
-        <h1 className="landing-title">SKYFALL</h1>
+        <AppTitle />
         <div className="asteroid-container">
           <div className="asteroid-input-container">
             <div
@@ -280,6 +281,11 @@ const handleMassRangeChange = (e) => {
         <div className="landing-globe-container">
           <Globe />
           <ConnectingLines />
+        </div>
+
+        <div className="click-globe-container">
+          <p className={`click-globe-text ${darkMode ? "text-white" : "text-black"}`}>Click Globe for</p>
+          <img className="infinity-img" src={`${darkMode ? "/images/white-infinity.png" : "/images/black-infinity.png"}`} alt="" />
         </div>
 
         <div className="landing-btn-container">
