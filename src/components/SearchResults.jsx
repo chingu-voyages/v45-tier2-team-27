@@ -158,7 +158,7 @@ export default function SearchResults() {
                   alt=""
                   className=" back-to-results-border h-8"
                 />
-                <button className="back-to-results" onClick={backToResults}>
+                <button className="back-to-results uppercase text-sm" onClick={backToResults}>
                   Back to results
                 </button>
               </div>
@@ -237,13 +237,13 @@ export default function SearchResults() {
                         {item.mass.toLocaleString()}
                       </td>
 
-                      <td className={`pr-3 ${tableDataBorder}`}>
+                      <td className={`pr-3 ${tableDataBorder} w-10 min-w-10`}>
                         <a
                           className="cursor-pointer"
                           aria-label="View map"
                           onClick={() => handleMapLinkClick(item)}
                         >
-                          <img src="/images/globe-icon.png" alt="A globe"/>
+                          <img className="map-globe" src="/images/globe-icon.png" alt="A globe"/>
                         </a>
                       </td>
                     </tr>

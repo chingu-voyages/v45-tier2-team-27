@@ -94,19 +94,23 @@ body.dark-mode .search-field{
     }
 
     .map-search-btn{
-        @apply absolute top-[50.5rem] h-0 right-0 left-0 
+        @apply absolute top-[48.5rem] h-0 right-0 left-0
     }
 
     .back-to-results{
-        @apply  top-28
+        @apply  top-[6.5rem]
     }
 
     .back-to-results-border{
-        @apply top-[8.7rem] 
+        @apply top-[8.1rem] 
     }
 
     .search-icon-container{
         @apply  relative bottom-[3rem]
+    }
+
+    .map-icon-container{
+        @apply bottom-[3.5rem]
     }
 }
 

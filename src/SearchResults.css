@@ -20,6 +20,19 @@ td {
 }
 
 
+@media(max-width: 360px){
+    .map-globe{
+        @apply min-w-full
+    }
+}
+
+@media(max-width: 450px){
+    .map-globe{
+        @apply w-7
+    }
+}
+
+
 @media(max-width: 420px) {
     .table-container {
         @apply w-[100%] mx-auto;
@@ -28,7 +41,7 @@ td {
     .search-field,
     .table-container,
     .search-results {
-        @apply text-sm
+        @apply text-xs
     }
 
     .search-mass .search-year {
@@ -61,14 +74,6 @@ td {
 
     .table-container {
         height: 400px;
-    }
-
- 
-}
-
-@media(min-width:600px) and (max-width:1280px) {
-    .darkmode-icons {
-        @apply mt-8
     }
 }
 

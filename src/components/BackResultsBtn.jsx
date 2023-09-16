@@ -16,7 +16,7 @@ export default function BackResultsBtn() {
       />
       <a
         href="/search-results"
-        className="back-results-btn"
+        className="back-results-btn uppercase text-sm"
         aria-label="Go back to search results"
       >
         Back to results
