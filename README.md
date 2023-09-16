@@ -64,9 +64,9 @@ npm run build
 
 - **Emma Ma** (Developer)
     - [Github](https://github.com/EmmaBin)
-    - [Linkedin]()
+    - [Linkedin](https://www.linkedin.com/in/binmaemma/)
 
-- **John Foughty** (Designer)
+- **John Foughty** (UX Researcher & Designer)
     - [Linkedin](https://www.linkedin.com/in/john-foughty-8ab43026/)
 
 - **Sarah Murphee** (Voyage Guide)
