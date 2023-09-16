@@ -71,3 +71,10 @@ npm run build
 
 - **Sarah Murphee** (Voyage Guide)
     - [Linkedin](https://www.linkedin.com/in/sarah-murphree/)
+ 
+##Screenshots
+
+![image](https://github.com/chingu-voyages/v45-tier2-team-27/assets/104113643/8f1a0bf6-e6b7-4907-babf-0eb4ba7924ae)
+![image](https://github.com/chingu-voyages/v45-tier2-team-27/assets/104113643/edcb6396-fd80-497d-8115-b5bdb794aeeb)
+
+
