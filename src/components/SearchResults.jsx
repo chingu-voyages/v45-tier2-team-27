@@ -167,8 +167,12 @@ export default function SearchResults() {
                 </button>
               </div>
             </>
-          ): (
-            <div className={`table-container border ${darkMode ? "border-white" : "border-black"}`}>
+          ) : (
+            <div
+              className={`table-container border ${
+                darkMode ? "border-white" : "border-black"
+              }`}
+            >
               <table className=" w-full border search-table-text border-black lg:m-auto">
                 <thead
                   className={`sticky top-0 border z-50 ${
@@ -180,17 +184,29 @@ export default function SearchResults() {
                   <tr>
                     <th className="uppercase pl-1">Name</th>
                     <th className="uppercase underline text-center">
-                    <Link to="/chart/scatter" onClick={() => handleClick()} aria-label="View year of strike summary ">
+                      <Link
+                        to="/chart/scatter"
+                        onClick={() => handleClick()}
+                        aria-label="View year of strike summary "
+                      >
                         Year
                       </Link>
                     </th>
                     <th className="uppercase underline text-center">
-                    <Link to="/chart/radio" onClick={() => handleClick()} aria-label="View composition materials summary">
+                      <Link
+                        to="/chart/radio"
+                        onClick={() => handleClick()}
+                        aria-label="View composition materials summary"
+                      >
                         Comp
                       </Link>
                     </th>
                     <th className="uppercase underline">
-                    <Link to="/chart/radar" onClick={() => handleClick()} aria-label="View mass value summary">
+                      <Link
+                        to="/chart/radar"
+                        onClick={() => handleClick()}
+                        aria-label="View mass value summary"
+                      >
                         Mass
                       </Link>
                     </th>
@@ -213,19 +229,25 @@ export default function SearchResults() {
                         )}
                       </td>
 
-                      <td className={`${tableDataBorder} search-year`}>{item.year.toString()}</td>
+                      <td className={`${tableDataBorder} search-year`}>
+                        {item.year.toString()}
+                      </td>
 
-                      <td className={`${tableDataBorder} search-recclass`}>{item.recclass.toString()}</td>
+                      <td className={`${tableDataBorder} search-recclass`}>
+                        {item.recclass.toString()}
+                      </td>
 
-                      <td className={`${tableDataBorder} search-mass`}>{item.mass.toLocaleString()}</td>
+                      <td className={`${tableDataBorder} search-mass`}>
+                        {item.mass.toLocaleString()}
+                      </td>
 
-                      <td className={`${tableDataBorder} w-[50px]`}>
+                      <td className={`pr-3 ${tableDataBorder}`}>
                         <a
-                          className="pr-1 underline text-sky-600 cursor-pointer"
+                          className="cursor-pointer"
                           aria-label="View map"
                           onClick={() => handleMapLinkClick(item)}
                         >
-                          <img className="map-gif" src="/images/globe.gif" alt="Map" />
+                          <img src="/images/globe-icon.png" alt="A globe"/>
                         </a>
                       </td>
                     </tr>
@@ -235,16 +257,14 @@ export default function SearchResults() {
             </div>
           )}
         </div>
-        <div className={`${mapClicked ? "map-search-btn" : ""}`}> 
+        <div className={`${mapClicked ? "map-search-btn" : ""}`}>
           <NewSearchBtn />
         </div>
 
         <BorderImages />
         <div
           className={`${
-            mapClicked
-              ? "map-icon-container"
-              : "search-icon-container"
+            mapClicked ? "map-icon-container" : "search-icon-container"
           }`}
         >
           <DarkMode />
