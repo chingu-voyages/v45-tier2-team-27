@@ -4,21 +4,26 @@
 
 This app was created for Chingu Voyage 45 by Team 27. The app displays meteorite data retrieved from the [NASA Open Data Portal Meteorite Landings API]((https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh)) when a user searches for the name, year of strike, composition, and mass range of a meteorite.
 
-Live Site: https://team27-skyfall.netlify.app/
+**Live Site**: https://team27-skyfall.netlify.app/
 
 ## Features 
 
-This app includes:
+### Core Functionality
 
-- A search component enabling users to filter meteorite data by name, composition, mass range, and year of strike
-- A search button that will perform the search based on the user's input and display the filtered details.
-- A clear button that will reset the search criteria.
-- A table that displays a row for each meteorite data based on the search criteria.
-- A row at the top of the table that will show the specific search the user inputted.
-- A geolocation display that converts the longitude and latitude of the meteorite strike into a location 
-- Three different charts (Radar, Radio, and Scatter) that graphically displays year, composition, and mass 
-metrics of either a specific meteorite or all meteorite strikes. 
-- Light/Dark mode 
+- **Search Component**: Allows users to filter meteorite data by name, composition, mass range, and year of strike.
+- **Search and Clear Buttons**: Perform the search based on user's input and reset the search criteria.
+- **Data Table**: Displays search results in a tabular format, each row representing a unique meteorite entry.
+- **Search Summary Row**: A row at the top of the table that will show the specific search the user inputted.
+- **Geolocation Display**: A geolocation display that converts the longitude and latitude of the meteorite strike into a location 
+
+### Visualizations
+- **Charts**: Includes Radar, Radio, and Scatter charts to graphically represent metrics for the year, composition, and mass of either a specific meteorite or all meteorite strikes.
+
+### UI Features
+- **Light/Dark Mode**: Toggle between light and dark themes for better readability. 
+
+### Responsiveness
+- **Mobile and Desktop Views**: The design is responsive, adapting to different screen sizes.
 
 ## Running the Project 
 
@@ -64,7 +69,7 @@ npm run build
 
 - **Emma Ma** (Developer)
     - [Github](https://github.com/EmmaBin)
-    - [Linkedin]()
+    - [Linkedin](https://www.linkedin.com/in/binmaemma/)
 
 - **John Foughty** (Designer)
     - [Linkedin](https://www.linkedin.com/in/john-foughty-8ab43026/)
