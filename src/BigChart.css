@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.big-chart-container{
+ @apply flex my-20 justify-center items-center md:w-max
+}
+
+.big-chart-btns {
+    @apply ml-4 mt-14 
+}
+
+@media(max-width: 1050px) {
+    .big-chart-container {
+        @apply flex-col
+    }
+}

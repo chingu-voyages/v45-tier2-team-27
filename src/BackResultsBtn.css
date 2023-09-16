@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.back-results-container {
+    @apply mb-12 py-1 relative
+}
+
+.back-results-border {
+    @apply absolute left-0 right-0 m-auto
+}
+
+.back-results-btn {
+    @apply capitalize relative mx-14 top-1
+}
+
+.back-results-container:hover .back-results-btn {
+    display: inline-block;
+    transform: scale(1.05);
+}

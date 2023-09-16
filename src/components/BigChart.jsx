@@ -5,14 +5,13 @@ import "../SearchResults.css";
 
 export default function BigChart() {
     return (
-        <div className="flex mx-6 my-20 justify-center items-center">
-            <BigChartBorder />
+      <div className="big-chart-container">
+        <BigChartBorder />
 
-            <div>
-                <NewSearchBtn />
-                <BackResultsBtn />
-            </div>
-
+        <div className="big-chart-btns">
+          <NewSearchBtn />
+          <BackResultsBtn />
         </div>
-    )
+      </div>
+    );
 }
