@@ -1,19 +1,26 @@
+import { useContext } from "react";
+import { AuthContext } from "../App";
 
 export default function BackResultsBtn() {
-      return (
-        <div className="mx-10 my-12 py-1 relative">
-          <img
-            src="/images/large-black-border.png"
-            alt=""
-            className="large-black-border absolute -top-2 left-0 right-0 m-auto"
-          />
-          <a
-            href="/search-results"
-            className="uppercase relative"
-            aria-label="Go back to search results"
-          >
-           Back to results
-          </a>
-        </div>
-      );
+  const { darkMode } = useContext(AuthContext);
+  return (
+    <div className="back-results-container">
+      <img
+        src={`${
+          darkMode
+            ? "/images/white-back-to-results-border.png"
+            : "/images/back-to-results-border.png"
+        }`}
+        alt=""
+        className="back-results-border"
+      />
+      <a
+        href="/search-results"
+        className="back-results-btn"
+        aria-label="Go back to search results"
+      >
+        Back to results
+      </a>
+    </div>
+  );
 }
