@@ -14,18 +14,18 @@ body.dark-mode .overlay{
 }
 
 .back-to-results{
-    @apply relative top-[13rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
+    @apply relative top-[11.5rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
 }
 
 .back-to-results:hover{
     transform: scale(1.05)
 }
 .back-to-results-border{
-    @apply relative top-[14.7rem] left-0 right-0 mx-auto 
+    @apply relative top-[13.2rem] left-0 right-0 mx-auto 
 }
 
 .map-search-btn{
-    @apply relative -bottom-7
+    @apply relative -top-9
 }
 
 .map-icon-container{
@@ -129,7 +129,7 @@ body.dark-mode .search-field{
     }
 
     .map-icon-container{
-        @apply relative top-[53rem]
+        @apply relative top-[47rem]
     }
 
     .back-to-results{
@@ -141,7 +141,7 @@ body.dark-mode .search-field{
     }
 
     .map-search-btn{
-        @apply  w-96 mx-auto  mt-8
+        @apply  w-96 mx-auto  mt-16
     }
 
     .map-title{

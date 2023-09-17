@@ -12,6 +12,7 @@ import "./Map.css";
 import "./NewSearchBtn.css";
 import "./BackResultsBtn.css";
 import "./BigChart.css";
+import "./Charts.css"
 import Landing from "./components/Landing";
 import { Route, Routes } from "react-router-dom";
 import RadarChart from "./components/RadarChart";

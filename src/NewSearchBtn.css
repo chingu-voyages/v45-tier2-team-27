@@ -4,7 +4,7 @@
 
 
 .new-search-container {
-    @apply relative mx-10 py-1 bottom-8
+    @apply relative mx-10 py-1 bottom-8 mb-5
 }
 
 .new-search-border {

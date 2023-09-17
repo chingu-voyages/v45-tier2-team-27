@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.chart-icon-container {
+    @apply  left-0 right-0 relative -bottom-[9.2rem]
+}
+
+
+
+.chart-border-container{
+    @apply mt-24
+}
+
+
+.map-results-border{
+    @apply absolute left-0 right-0 m-auto -top-2
+}
+
+
+.first-btn:hover,
+.second-btn:hover,
+.third-btn:hover{
+    transform: scale(1.05);
+}
+
+.tooltip {
+    @apply absolute top-[7.8rem] bg-gray-600 text-gray-100 text-sm py-1 px-2 rounded-md;
+
+  }
+
+  .sidebar-tooltip {
+    @apply absolute bg-gray-600 text-gray-100 text-sm py-1 px-2 rounded-md;
+    display: none;
+  }
+  
+  .sidebar-item:hover .sidebar-tooltip {
+    display: block;
+  }
+
+.chart-button-container{
+    @apply flex justify-evenly
+}
+
+.radio-chart{
+    @apply mt-20
+}
+
+.big-chart-icons{
+    @apply absolute right-20 top-[39.5rem]
+}
+
+@media(max-width: 500px){
+    .radio-chart{
+        @apply mt-5
+    }
+}
+
+

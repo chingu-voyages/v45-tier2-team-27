@@ -86,7 +86,7 @@ export default function Scatterchart() {
         const updateDimensions = () => {
             const width = window.innerWidth;
 
-            if (width <= 768) {  // breakpoint here
+            if (width < 1280) {  // breakpoint here
                 setContainerWidth(400);
             } else {
                 setContainerWidth(600);
@@ -105,7 +105,7 @@ export default function Scatterchart() {
 
 
     return (
-        <ResponsiveContainer width={containerWidth} height="80%">
+        <ResponsiveContainer className="w-[80%] mx-auto" height="80%">
             <ScatterChart
                 margin={{
                     top: 65,
