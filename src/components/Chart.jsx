@@ -8,11 +8,11 @@ import Radio from './RadioChart'
 import Scatter from './ScatterChart'
 import { Link } from "react-router-dom";
 import { Outlet, useMatch } from "react-router-dom";
+
 import { useContext} from "react";
 import App, { AuthContext } from "../App";
 import DarkMode from "./DarkMode";
 import AppTitle from "./AppTitle";
-
 
 export default function Chart() {
     const matchScatter = useMatch("/chart/scatter");
@@ -51,6 +51,9 @@ export default function Chart() {
       <>
         <AppTitle />
         <div className="chart-container search-container text-center mt-12 ">
+
+        <div className="search-container text-center">
+
 
             <h2 className="uppercase pb-2 ">You Searched:</h2>
 
