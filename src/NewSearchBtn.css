@@ -4,15 +4,15 @@
 
 
 .new-search-container {
-    @apply relative mx-10 py-1 bottom-8
+    @apply relative mx-10 py-1 bottom-8 mb-5
 }
 
 .new-search-border {
-    @apply absolute -top-[0.35rem] left-0 right-0 m-auto
+    @apply absolute -top-[0.38rem] left-0 right-0 m-auto
 }
 
 .new-search-btn {
-    @apply uppercase relative mx-8
+    @apply uppercase relative mx-8 
 }
 
 .new-search-container:hover .new-search-btn {

@@ -37,7 +37,7 @@ export default function Radarchart() {
         const updateDimensions = () => {
             const width = window.innerWidth;
 
-            if (width <= 768) {  // breakpoint here
+            if (width < 1280) {  // breakpoint here
                 setContainerWidth(400);
                 setCoordinateX(200)
                 setCoordinateY(200)
@@ -57,11 +57,11 @@ export default function Radarchart() {
         };
     }, []);
     return (
-        <ResponsiveContainer width={containerWidth} height="80%">
+        <ResponsiveContainer width="80%" className="radar-chart  mx-auto text-xs">
             <RadarChart
-                cx={coordinateX}
-                cy={coordinateY}
-                outerRadius={150}
+
+                outerRadius={`${window.innerWidth < 1280 ? (window.innerWidth < 600 ? (window.innerWidth < 450 ? "90" : "120") : "150") : "200"}`}
+
                 width={800}
                 height={800}
                 data={filteredMeteoriteData}

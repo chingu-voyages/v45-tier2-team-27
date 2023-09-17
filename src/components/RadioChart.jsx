@@ -48,7 +48,7 @@ export default function RadioChart() {
         const updateDimensions = () => {
             const width = window.innerWidth;
 
-            if (width <= 768) {  // breakpoint here
+            if (width < 1280) {  // breakpoint here
                 setContainerWidth(400);
             } else {
                 if (!showLegend) {
@@ -68,7 +68,7 @@ export default function RadioChart() {
         };
     }, []);
     return (
-        <ResponsiveContainer width="80%" height={containerWidth}>
+        <ResponsiveContainer  className={`mx-auto radio-chart`} >
             <RadialBarChart
                 innerRadius="50%"
                 outerRadius="100%"

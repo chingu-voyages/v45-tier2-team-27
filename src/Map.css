@@ -9,23 +9,23 @@
 }
 
 body.dark-mode .overlay{
-    @apply border-[#232323] border-2 top-[12.5rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
+    @apply border-[#232323] border-2 top-[10.75rem] mx-auto w-[20.12rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 fixed right-0 left-0 pointer-events-none;
     border-radius: 50%;
 }
 
 .back-to-results{
-    @apply relative top-[13rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
+    @apply relative top-[11.5rem] right-0 left-0 w-52 h-5 capitalize mx-auto cursor-pointer 
 }
 
 .back-to-results:hover{
     transform: scale(1.05)
 }
 .back-to-results-border{
-    @apply relative top-[14.7rem] left-0 right-0 mx-auto 
+    @apply relative top-[13.2rem] left-0 right-0 mx-auto 
 }
 
 .map-search-btn{
-    @apply relative -bottom-7
+    @apply relative -top-9
 }
 
 .map-icon-container{
@@ -63,7 +63,7 @@ body.dark-mode .search-field{
 
 @media(min-width:420px){
     body.dark-mode .overlay{
-        @apply border-[#232323] border-4 top-[8.75rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
+        @apply border-[#232323] border-4 top-[8.5rem]  mx-auto w-[20.1rem] h-[20.1rem] shadow-sm shadow-[#232323] z-30 absolute right-0 left-0 pointer-events-none;
         border-radius: 50%;
     }
 }
@@ -82,13 +82,9 @@ body.dark-mode .search-field{
     .full-height-map{
         @apply h-[32rem] w-[32rem] mb-[-24px] mt-3 
     }
-
-    .overlay {
-        @apply h-[34.2rem] w-[40rem] fixed right-0 left-0 mx-auto top-[12.8rem] z-20 pointer-events-none;  
-      }
     
     body.dark-mode .overlay{
-        @apply h-[32.15rem] w-[32.125rem] border-2 top-[9rem];
+        @apply h-[32.15rem] w-[32.125rem] border-2 top-[8.75rem];
         border-radius: 50%
     }
 
@@ -98,19 +94,23 @@ body.dark-mode .search-field{
     }
 
     .map-search-btn{
-        @apply absolute top-[50.5rem] h-0 right-0 left-0 
+        @apply absolute top-[48.5rem] h-0 right-0 left-0
     }
 
     .back-to-results{
-        @apply  top-28
+        @apply  top-[6.5rem]
     }
 
     .back-to-results-border{
-        @apply top-[8.7rem] 
+        @apply top-[8.1rem] 
     }
 
     .search-icon-container{
         @apply  relative bottom-[3rem]
+    }
+
+    .map-icon-container{
+        @apply bottom-[3.5rem]
     }
 }
 
@@ -129,7 +129,7 @@ body.dark-mode .search-field{
     }
 
     .map-icon-container{
-        @apply relative top-[53rem]
+        @apply relative top-[47rem]
     }
 
     .back-to-results{
@@ -141,7 +141,7 @@ body.dark-mode .search-field{
     }
 
     .map-search-btn{
-        @apply  w-96 mx-auto  mt-8
+        @apply  w-96 mx-auto  mt-16
     }
 
     .map-title{

@@ -12,6 +12,7 @@ import "./Map.css";
 import "./NewSearchBtn.css";
 import "./BackResultsBtn.css";
 import "./BigChart.css";
+import "./Charts.css"
 import Landing from "./components/Landing";
 import { Route, Routes } from "react-router-dom";
 import RadarChart from "./components/RadarChart";
@@ -58,7 +59,8 @@ function App() {
   const [selectedMeteorite, setSelectedMeteorite] = useState(null);
   const [asteroidInput, setAsteroidInput] = useState("");
   const [filteredMeteoriteData, setFilteredMeteoriteData] = useState([])
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  const [mapClicked, setMapClicked] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width: 1280px)");
 
 
   const getCurrentPage = () => {
@@ -105,7 +107,9 @@ function App() {
           asteroidInput,
           setAsteroidInput,
           filteredMeteoriteData,
-          setFilteredMeteoriteData
+          setFilteredMeteoriteData,
+          mapClicked,
+          setMapClicked
         }}
       >
 

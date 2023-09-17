@@ -38,9 +38,13 @@ body.dark-mode .go-back-btn{
     @apply absolute bottom-0 right-0 left-0
 }
 
+.linkedin{
+    @apply  text-blue-600 underline
+}
+
 @media(min-width: 600px){
     .about-icon-container{
-        @apply absolute bottom-0 right-0 left-0 
+        @apply absolute -bottom-[7.8rem] right-0 left-0 
     }
 
     .team-member-container{
@@ -50,7 +54,7 @@ body.dark-mode .go-back-btn{
 
 @media(min-width: 1280px){
     .about-icon-container{
-        @apply absolute bottom-12 right-0 left-0 
+       @apply relative bottom-12
     }
     
     .about-title-container{

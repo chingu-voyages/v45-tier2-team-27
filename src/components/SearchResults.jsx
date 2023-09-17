@@ -5,9 +5,10 @@ import NewSearchBtn from "./NewSearchBtn";
 import Map from "./Map";
 import DarkMode from "./DarkMode";
 import { Link } from "react-router-dom";
+import AppTitle from "./AppTitle";
 
 export default function SearchResults() {
-  const [mapClicked, setMapClicked] = useState(false);
+  
   const [filteredData, setFilteredData] = useState([])
   const {
     meteoriteData,
@@ -22,6 +23,8 @@ export default function SearchResults() {
     asteroidInput,
     darkMode,
     setFilteredMeteoriteData,
+    mapClicked,
+    setMapClicked,
   } = useContext(AuthContext);
 
   const handleMapLinkClick = (selectedMeteorite) => {
@@ -36,16 +39,18 @@ export default function SearchResults() {
   useEffect(() => {
     try {
       const storedSearchCriteria = localStorage.getItem("searchCriteria");
-    
+      
+      const meteorites = Array.isArray(meteoriteData) ? meteoriteData : [meteoriteData];
+
       if (storedSearchCriteria) {
         const parsedSearchCriteria = JSON.parse(storedSearchCriteria);
     
-        let newFilteredData = meteoriteData.filter((item) => {
-  
+          let newFilteredData = meteorites.filter((item) => {
+        
           if (parsedSearchCriteria.asteroidName) {
             setAsteroidName(parsedSearchCriteria.asteroidName);
           }
-    
+        
           const isYearInRange =
             (!parsedSearchCriteria.fromYear || item.year >= parsedSearchCriteria.fromYear) &&
             (!parsedSearchCriteria.toYear || item.year <= parsedSearchCriteria.toYear);
@@ -59,7 +64,7 @@ export default function SearchResults() {
     
           return  isYearInRange && isMassInRange && isCompositionMatch;
         });
-    
+      
         newFilteredData = newFilteredData.filter((item) => {
           const isMassInRange =
             (!minMass || item.mass >= minMass) && (!maxMass || item.mass <= maxMass);
@@ -83,7 +88,7 @@ export default function SearchResults() {
     } catch (error) {
       console.error("Error retrieving data from localStorage:", error);
     }
-  }, [meteoriteData, asteroidName, setAsteroidName, composition, fromYear, toYear, minMass, maxMass]);
+  }, [meteoriteData, mapClicked, setAsteroidName, asteroidName, composition, fromYear, toYear, minMass, maxMass]);
 
   function handleClick() {
     setFilteredMeteoriteData(filteredData);
@@ -101,15 +106,10 @@ export default function SearchResults() {
             mapClicked ? "map-search-results" : "w-[90%] mx-auto mt-4 mb-20 xl:mb-32"
           } `}
         >
-          <h1
-            className={`${
-              mapClicked
-                ? "uppercase text-3xl md:text-3xl map-title"
-                : "uppercase text-3xl md:text-3xl py-4"
-            }`}
-          >
-            Skyfall
-          </h1>
+          <div className={`${mapClicked ? "mb-[-34.3px] mt-[-20px]" : ""}`}>
+            <AppTitle />
+          </div>
+        
           <h2
             className={`${
               mapClicked
@@ -158,7 +158,7 @@ export default function SearchResults() {
                   alt=""
                   className=" back-to-results-border h-8"
                 />
-                <button className="back-to-results" onClick={backToResults}>
+                <button className="back-to-results uppercase text-sm" onClick={backToResults}>
                   Back to results
                 </button>
               </div>
@@ -171,7 +171,7 @@ export default function SearchResults() {
             >
               <table className=" w-full border search-table-text border-black lg:m-auto">
                 <thead
-                  className={`sticky top-0 border ${
+                  className={`sticky top-0 border z-50 ${
                     darkMode
                       ? "bg-zinc-600 border-white"
                       : "bg-gray-300 border-black"
@@ -237,13 +237,13 @@ export default function SearchResults() {
                         {item.mass.toLocaleString()}
                       </td>
 
-                      <td className={`pr-3 ${tableDataBorder}`}>
+                      <td className={`pr-3 ${tableDataBorder} w-10 min-w-10`}>
                         <a
                           className="cursor-pointer"
                           aria-label="View map"
                           onClick={() => handleMapLinkClick(item)}
                         >
-                          <img src="/images/globe-icon.png" alt="A globe"/>
+                          <img className="map-globe" src="/images/globe-icon.png" alt="A globe"/>
                         </a>
                       </td>
                     </tr>
