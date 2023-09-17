@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.new-search-container {
+    @apply relative mx-10 py-1 bottom-8
+}
+
+.new-search-border {
+    @apply absolute -top-[0.35rem] left-0 right-0 m-auto
+}
+
+.new-search-btn {
+    @apply uppercase relative mx-8
+}
+
+.new-search-container:hover .new-search-btn {
+    display: inline-block;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .new-search-container {
+        @apply mx-0
+    }
+}

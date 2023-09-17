@@ -89,7 +89,7 @@ export default function Chart() {
                 </div>
             </div>
             <div className="flex justify-center">
-                <div className='small-screen-box'>
+                <div className='small-screen-box mb-12'>
                     <Outlet />
                 </div>
             </div>
