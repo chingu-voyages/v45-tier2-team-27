@@ -70,11 +70,11 @@
 .year-dropdown-text,
 .mass-dropdown-text,
 .composition-dropdown-text{
-    @apply relative  left-[3.5rem] text-xs py-0 mt-[-7px]
+    @apply relative  left-[3.5rem] text-[10px] py-0 mt-[-7px]
 }
 
 .asteroid-text{
-    @apply relative text-xs mt-[10px] mb-[-7px]
+    @apply relative text-[10px] mt-[10px] mb-[-7px]
 }
 
 .landing-btn-container{
@@ -154,7 +154,7 @@ body.dark-mode .landing-options{
 }
 
 .click-globe-container{
-    @apply flex absolute top-96 justify-center text-sm
+    @apply flex absolute top-96 justify-center text-xs
 }
 
 .infinity-img{
