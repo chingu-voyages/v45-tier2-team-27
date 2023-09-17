@@ -11,8 +11,7 @@ import { Outlet, useMatch } from "react-router-dom";
 import { useContext} from "react";
 import { AuthContext } from "../App";
 
-import { useContext} from "react";
-import App, { AuthContext } from "../App";
+
 import DarkMode from "./DarkMode";
 import AppTitle from "./AppTitle";
 
