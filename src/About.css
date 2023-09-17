@@ -44,7 +44,7 @@ body.dark-mode .go-back-btn{
 
 @media(min-width: 600px){
     .about-icon-container{
-        @apply absolute -bottom-[7.8rem] right-0 left-0 
+        @apply relative bottom-6 right-0 left-0 
     }
 
     .team-member-container{
