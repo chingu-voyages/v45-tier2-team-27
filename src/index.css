@@ -27,8 +27,21 @@ body.dark-mode input{
   @apply bg-white 
 }
 
+.app-container {
+  @apply absolute left-1/2 transform -translate-x-1/2;
+}
 
+@media (min-width: 600px) {
+  .app-container {
+    @apply top-[35%] -translate-y-1/2 inset-y-0;
+  }
+}
 
+@media (min-width: 1280px) {
+  .app-container {
+    @apply max-w-[1280px] top-[35%];
+  }
+}
 
 
 

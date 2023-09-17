@@ -5,90 +5,89 @@
 
 /* Border images */
 
-.top-border-container {
-    @apply flex justify-between
+.top-border-container{
+    @apply flex justify-between 
 }
 
-.top-left-border-img {
+.top-left-border-img{
     @apply absolute top-8 left-4
 }
 
-.top-right-border-img {
+.top-right-border-img{
     @apply absolute top-[1.19rem] right-[0.9rem]
 }
 
-.bottom-right-border-img {
+.bottom-right-border-img{
     @apply fixed right-[1.7rem] bottom-2
 }
 
-.bottom-left-border-img {
+.bottom-left-border-img{
     @apply fixed left-4 bottom-[0.7rem]
 }
 
-.white-bottom-right-img {
+.white-bottom-right-img{
     @apply bottom-2.5 right-7
 }
 
-.white-bottom-left-img {
+.white-bottom-left-img{
     @apply bottom-3 left-0
 }
 
-.white-top-left-img {
+.white-top-left-img{
     @apply top-8 left-5
 }
 
-.white-top-right-img {
+.white-top-right-img{
     @apply top-5 right-4
 }
-
 /* Borders */
 
 
 
 .bottom-left-border,
 .bottom-right-border {
-    @apply fixed
+  @apply fixed
 }
 
-.top-right-border {
+.top-right-border{
     @apply absolute top-4 right-3
 }
 
-.top-left-border {
+.top-left-border{
     @apply absolute top-4 left-3
 }
 
-.bottom-right-border {
-    @apply right-3 bottom-1
+.bottom-right-border{
+    @apply  right-3 bottom-1
 }
 
-.bottom-left-border {
-    @apply left-3 bottom-1
+.bottom-left-border{
+    @apply   left-3 bottom-1
 }
 
 .desktop-right-border,
-.desktop-left-border {
+.desktop-left-border{
     @apply hidden
 }
 
 .desktop-left-line,
-.desktop-right-line {
+.desktop-right-line{
     @apply hidden
 }
 
-@media(max-width: 600px) {
-    .bottom-border-container {
-        @apply flex justify-between w-screen relative
+@media(max-width: 600px){
+    .bottom-border-container{
+        @apply flex justify-between w-screen relative 
     }
 }
 
-@media(min-width: 600px) {
+@media(min-width: 600px){
 
-    .bottom-border-container {
+    .bottom-border-container{
         @apply w-[600px] relative
     }
 
-    .bottom-left-border {
+    .bottom-left-border{
         @apply absolute
     }
 
@@ -96,46 +95,46 @@
         @apply absolute
     }
 
-    .bottom-left-border-img {
+    .bottom-left-border-img{
         @apply absolute
     }
 
-    .bottom-right-border-img {
+    .bottom-right-border-img{
         @apply absolute
     }
 }
 
-@media(min-width:1280px) {
-    .bottom-border-container {
+@media(min-width:1280px){
+    .bottom-border-container{
         @apply min-w-[1280px]
     }
 
-    .top-border-container {
+    .top-border-container{
         @apply invisible
     }
 
-    .bottom-border-container {
+    .bottom-border-container{
         @apply invisible
     }
 
-    .desktop-right-border {
+    .desktop-right-border{
         @apply fixed top-0 right-0
     }
 
-    .desktop-left-border {
+    .desktop-left-border{
         @apply fixed top-0 left-0
     }
 
     .desktop-right-border,
-    .desktop-left-border {
+    .desktop-left-border{
         @apply flex pointer-events-none
     }
 
-    .desktop-right-line {
+    .desktop-right-line{
         @apply flex absolute right-16 top-9 h-[45rem]
     }
 
-    .desktop-left-line {
+    .desktop-left-line{
         @apply flex absolute left-16 top-9 h-[45rem]
     }
 }
@@ -213,3 +212,4 @@
         @apply bottom-[4.4rem]
     }
 } */
+
