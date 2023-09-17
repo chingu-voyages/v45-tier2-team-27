@@ -54,7 +54,7 @@ body.dark-mode .go-back-btn{
 
 @media(min-width: 1280px){
     .about-icon-container{
-       @apply -bottom-12
+       @apply relative bottom-12
     }
     
     .about-title-container{
