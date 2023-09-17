@@ -68,13 +68,16 @@
 }
 
 .year-dropdown-text,
-.mass-dropdown-text,
-.composition-dropdown-text{
-    @apply relative  left-[3.5rem] text-[10px] py-0 mt-[-7px]
+.mass-dropdown-text{
+    @apply relative  left-[5.5rem] text-xs py-0 mt-[-7px]
 }
 
 .asteroid-text{
-    @apply relative text-[10px] mt-[10px] mb-[-7px]
+    @apply relative text-xs mt-[10px] mb-[-7px]
+}
+
+.composition-dropdown-text{
+    @apply text-xs py-0 mt-[-7px] ml-20
 }
 
 .landing-btn-container{
@@ -154,11 +157,11 @@ body.dark-mode .landing-options{
 }
 
 .click-globe-container{
-    @apply flex absolute top-96 justify-center text-xs
+    @apply flex absolute top-96 justify-center text-[10px]
 }
 
 .infinity-img{
-    @apply h-10 w-10 relative -top-2.5
+    @apply h-8 w-8 relative -top-2
 }
 
 
@@ -235,9 +238,8 @@ body.dark-mode text{
         @apply mt-[30rem]
     }
 
-    .composition-dropdown-text,
-    .year-dropdown-text{
-        @apply relative left-2 
+    .composition-dropdown-text{
+        @apply ml-10
     }
 
     .year-dropdown-text{

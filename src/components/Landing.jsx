@@ -207,7 +207,7 @@ const handleMassRangeChange = (e) => {
               <Trapezoid />
             </div>
           </div>
-          <p className="year-dropdown-text">Year of Strike</p>
+          <p className="year-dropdown-text">Year</p>
         </div>
 
         <div className="composition-select-container">
@@ -275,7 +275,7 @@ const handleMassRangeChange = (e) => {
               <Trapezoid />
             </div>
           </div>
-          <p className="mass-dropdown-text">Mass Range</p>
+          <p className="mass-dropdown-text">Mass</p>
         </div>
 
         <div className="landing-globe-container">
