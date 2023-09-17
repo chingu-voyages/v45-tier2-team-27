@@ -16,7 +16,7 @@ export default function About(){
                 <h2 className="text-lg">by Team 27</h2>
             </div>
             <div>
-                <a className="linkedin relative -top-7" href="https://github.com/chingu-voyages/v45-tier2-team-27">GitHub Repo</a>
+                <a className="linkedin relative -top-1" href="https://github.com/chingu-voyages/v45-tier2-team-27">GitHub Repo</a>
             </div>
             <div className="team-member-container">
                 <h1 className="team-member">Alexandra Akinyemi</h1>
