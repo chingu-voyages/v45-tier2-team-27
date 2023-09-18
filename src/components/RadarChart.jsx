@@ -25,7 +25,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 export default function Radarchart() {
-
+    
     const [containerWidth, setContainerWidth] = useState(600);
     const [coordinateX, setCoordinateX] = useState(200);
     const [coordinateY, setCoordinateY] = useState(200);
@@ -48,6 +48,7 @@ export default function Radarchart() {
             }
         };
 
+        
 
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
@@ -56,15 +57,25 @@ export default function Radarchart() {
             window.removeEventListener('resize', updateDimensions);
         };
     }, []);
+
+    const randomMeteorites =
+  filteredMeteoriteData.length > 30
+    ? Array.from(
+        { length: 30 },
+        () =>
+          filteredMeteoriteData[
+            Math.floor(Math.random() * filteredMeteoriteData.length)
+          ]
+      )
+    : filteredMeteoriteData;
+
     return (
         <ResponsiveContainer width="80%" className="radar-chart  mx-auto text-xs">
             <RadarChart
-
                 outerRadius={`${window.innerWidth < 1280 ? (window.innerWidth < 600 ? (window.innerWidth < 450 ? "90" : "120") : "150") : "200"}`}
-
                 width={800}
                 height={800}
-                data={filteredMeteoriteData}
+                data={randomMeteorites}
             >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="name" />
