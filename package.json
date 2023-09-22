@@ -33,6 +33,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/jest": "^29.5.5",
     "css-loader": "^6.8.1",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
