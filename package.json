@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "jest": {
+    "testEnvironment": "jsdom",
     "transform": {
       "^.+\\.[t|j]sx?$": [
         "babel-jest",
