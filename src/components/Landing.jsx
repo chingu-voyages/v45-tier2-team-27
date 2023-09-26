@@ -50,29 +50,29 @@ export default function Landing() {
       setFromYear(fromYearValue);
       setToYear(toYearValue);
     }
-}
-    
-const handleMassRangeChange = (e) => {
+  }
+
+  const handleMassRangeChange = (e) => {
     const input = e.target.value;
-  
+
     if (input === "1000000+") {
       setMinMass(1000000);
       setMaxMass(Infinity);
     } else {
       const [minMassInput, maxMassInput] = input.split('-').map(mass => mass.trim());
-  
+
       const minMassValue = parseInt(minMassInput);
       const maxMassValue = parseInt(maxMassInput);
-  
+
       if (!isNaN(minMassValue) && !isNaN(maxMassValue)) {
         setMinMass(minMassValue);
         setMaxMass(maxMassValue);
       }
     }
   }
-  
+
   const handleSearch = () => {
-    
+
 
     if (asteroidName) {
       searchCriteria.asteroidName = asteroidName || "";
@@ -129,7 +129,7 @@ const handleMassRangeChange = (e) => {
     { min: 2010, max: 2019, label: '2010 - 2019' },
     { min: 2020, max: 2023, label: '2020 - 2023' },
   ]
-      
+
 
   const massRanges = [
     { min: 0, max: 24, label: "0 - 25" },
@@ -153,21 +153,20 @@ const handleMassRangeChange = (e) => {
         <div className="asteroid-container">
           <div className="asteroid-input-container">
             <div
-              className={`asteroid-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`asteroid-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
             <input
+              data-testid="asteroid-input"
               className="asteroid-input"
               type="text"
               onChange={handleAsteroidNameChange}
             />
             <div
-              className={`upside-down-asteroid-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode-trap"
-              }`}
+              className={`upside-down-asteroid-trap ${darkMode ? "dark-mode-trap" : "light-mode-trap"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -178,9 +177,8 @@ const handleMassRangeChange = (e) => {
         <div className="year-select-container">
           <div className="year-dropdown-container">
             <div
-              className={`year-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`year-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -200,9 +198,8 @@ const handleMassRangeChange = (e) => {
             </select>
 
             <div
-              className={`upside-down-year-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`upside-down-year-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -213,9 +210,8 @@ const handleMassRangeChange = (e) => {
         <div className="composition-select-container">
           <div className="composition-dropdown-container">
             <div
-              className={`composition-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`composition-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -234,9 +230,8 @@ const handleMassRangeChange = (e) => {
               ))}
             </select>
             <div
-              className={`upside-down-composition-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`upside-down-composition-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -247,9 +242,8 @@ const handleMassRangeChange = (e) => {
         <div className="mass-select-container">
           <div className="mass-dropdown-container">
             <div
-              className={`mass-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`mass-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -268,9 +262,8 @@ const handleMassRangeChange = (e) => {
               ))}
             </select>
             <div
-              className={`upside-down-mass-trap ${
-                darkMode ? "dark-mode-trap" : "light-mode"
-              }`}
+              className={`upside-down-mass-trap ${darkMode ? "dark-mode-trap" : "light-mode"
+                }`}
             >
               <Trapezoid />
             </div>
@@ -292,11 +285,10 @@ const handleMassRangeChange = (e) => {
           <div className="search-btn-container">
             <img
               className="small-black-border"
-              src={`${
-                darkMode
-                  ? "/images/small-white-border.png"
-                  : "/images/small-black-border.png"
-              } `}
+              src={`${darkMode
+                ? "/images/small-white-border.png"
+                : "/images/small-black-border.png"
+                } `}
               alt=""
             />
             <button
