@@ -51,6 +51,10 @@ npm run dev
 npm run build 
 ```
 
+## Testing
+```
+npm run test
+```
 ## Dependencies
 
 - [React](https://react.dev/)
@@ -59,6 +63,8 @@ npm run build
 - [Recharts](https://recharts.org/en-US/)
 - [Leaflet](https://leafletjs.com/) 
 - [Vite](https://vitejs.dev/)
+- [Jest](https://jestjs.io/)
+- [@testing-library/react](https://testing-library.com/docs/)
 
 ## Contributors
 
