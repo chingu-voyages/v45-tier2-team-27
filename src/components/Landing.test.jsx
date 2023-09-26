@@ -1,8 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Landing from "./Landing"
 import { AuthContext } from "../App"
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
+
 
 describe('Test Landing Page', () => {
   const setAsteroidInput = jest.fn();
@@ -45,4 +47,27 @@ describe('Test Landing Page', () => {
     expect(setAsteroidName).toHaveBeenCalledWith('New Asteroid');
 
   });
+
+  it('test if link goes to correct route', async () => {
+
+
+    render(
+      <MemoryRouter initialEntries={['/initial-route']}>
+        <AuthContext.Provider value={authContextValues}>
+          <Routes>
+            <Route path="/initial-route" element={<Landing />} />
+            <Route path="/search-results" element={<div>Search Results Page</div>} />
+          </Routes>
+        </AuthContext.Provider>
+      </MemoryRouter>
+    )
+    const buttonElement = screen.getByRole('link', { name: /SEARCH/i });
+
+    fireEvent.click(buttonElement);
+
+    console.log(screen.debug());
+    await screen.findByText('Search Results Page');
+
+
+  })
 });
